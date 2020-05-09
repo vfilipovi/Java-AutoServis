@@ -15,19 +15,19 @@ public class Radnik extends BaseEntity {
     private double iznosOsnovice;
     private float koefPlace;
     @Enumerated(EnumType.STRING)
-    private StatusRanogOdnosa statusRanogOdnosa;
+    private StatusRadnogOdnosa statusRadnogOdnosa;
     @Enumerated(EnumType.STRING)
-    private VrstaRanogOdnosa vrstaRanogOdnosa;
+    private VrstaRadnogOdnosa vrstaRadnogOdnosa;
 
     public String getImeIPrezime() {
         return ime + " " + prezime;
     }
 
-    public enum StatusRanogOdnosa {
+    public enum StatusRadnogOdnosa {
         ZAPOSLEN, NEZAPOSLEN
     }
 
-    public enum VrstaRanogOdnosa {
+    public enum VrstaRadnogOdnosa {
         ODREDENO, NEODREDENO, PRAKTIKANT
     }
 }
