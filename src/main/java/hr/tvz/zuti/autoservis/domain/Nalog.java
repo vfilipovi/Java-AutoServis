@@ -1,6 +1,6 @@
-package hr.tvz.autoservis.autoservis.domain;
+package hr.tvz.zuti.autoservis.domain;
 
-import hr.tvz.autoservis.autoservis.domain.base.BaseEntity;
+import hr.tvz.zuti.autoservis.domain.base.BaseEntity;
 import lombok.*;
 import javax.persistence.*;
 import java.util.Date;

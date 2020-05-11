@@ -1,4 +1,4 @@
-package hr.tvz.autoservis.autoservis;
+package hr.tvz.zuti.autoservis;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

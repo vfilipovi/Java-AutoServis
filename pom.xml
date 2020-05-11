@@ -8,7 +8,7 @@
         <version>2.2.7.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>hr.tvz.autoservis</groupId>
+    <groupId>hr.tvz.zuti</groupId>
     <artifactId>autoservis</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>autoservis</name>

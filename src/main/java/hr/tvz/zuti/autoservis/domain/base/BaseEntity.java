@@ -1,4 +1,4 @@
-package hr.tvz.autoservis.autoservis.domain.base;
+package hr.tvz.zuti.autoservis.domain.base;
 
 import lombok.*;
 
