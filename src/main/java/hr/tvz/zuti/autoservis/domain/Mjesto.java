@@ -1,6 +1,6 @@
 package hr.tvz.zuti.autoservis.domain;
 
-import hr.tvz.zuti.autoservis.domain.base.BaseEntity;
+import hr.tvz.zuti.autoservis.domain.base.EntityBase;
 import lombok.*;
 import javax.persistence.*;
 
@@ -8,6 +8,6 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Mjesto extends BaseEntity {
+public class Mjesto extends EntityBase {
     private String nazivMjesta;
 }

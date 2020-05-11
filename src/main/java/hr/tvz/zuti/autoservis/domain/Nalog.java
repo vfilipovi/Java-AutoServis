@@ -1,6 +1,6 @@
 package hr.tvz.zuti.autoservis.domain;
 
-import hr.tvz.zuti.autoservis.domain.base.BaseEntity;
+import hr.tvz.zuti.autoservis.domain.base.EntityBase;
 import lombok.*;
 import javax.persistence.*;
 import java.util.Date;
@@ -9,7 +9,7 @@ import java.util.Date;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Nalog extends BaseEntity {
+public class Nalog extends EntityBase {
     private String registracijaVozila;
     @Enumerated(EnumType.STRING)
     private Prioritet prioritet;

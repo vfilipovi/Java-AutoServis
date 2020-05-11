@@ -1,6 +1,6 @@
 package hr.tvz.zuti.autoservis.domain;
 
-import hr.tvz.zuti.autoservis.domain.base.BaseEntity;
+import hr.tvz.zuti.autoservis.domain.base.OsobaBase;
 import lombok.*;
 import javax.persistence.*;
 
@@ -8,14 +8,5 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Klijent extends BaseEntity {
-    private String ime;
-    private String prezime;
-    private String oib;
-    private String BrojMob;
-
-    public String getImeIPrezime() {
-        return ime + " " + prezime;
-    }
-
+public class Klijent extends OsobaBase {
 }

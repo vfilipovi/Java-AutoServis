@@ -1,6 +1,7 @@
 package hr.tvz.zuti.autoservis.domain;
 
-import hr.tvz.zuti.autoservis.domain.base.BaseEntity;
+import hr.tvz.zuti.autoservis.domain.base.EntityBase;
+import hr.tvz.zuti.autoservis.domain.base.OsobaBase;
 import lombok.*;
 import javax.persistence.*;
 
@@ -8,20 +9,13 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Radnik extends BaseEntity {
-    private String ime;
-    private String prezime;
-    private String BrojMob;
+public class Radnik extends OsobaBase {
     private double iznosOsnovice;
     private float koefPlace;
     @Enumerated(EnumType.STRING)
     private StatusRadnogOdnosa statusRadnogOdnosa;
     @Enumerated(EnumType.STRING)
     private VrstaRadnogOdnosa vrstaRadnogOdnosa;
-
-    public String getImeIPrezime() {
-        return ime + " " + prezime;
-    }
 
     public enum StatusRadnogOdnosa {
         ZAPOSLEN, NEZAPOSLEN
