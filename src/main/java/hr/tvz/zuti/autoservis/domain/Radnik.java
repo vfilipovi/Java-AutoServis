@@ -1,6 +1,5 @@
 package hr.tvz.zuti.autoservis.domain;
 
-import hr.tvz.zuti.autoservis.domain.base.EntityBase;
 import hr.tvz.zuti.autoservis.domain.base.OsobaBase;
 import lombok.*;
 import javax.persistence.*;
@@ -11,7 +10,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Radnik extends OsobaBase {
     private double iznosOsnovice;
-    private float koefPlace;
+    private double koefPlace;
     @Enumerated(EnumType.STRING)
     private StatusRadnogOdnosa statusRadnogOdnosa;
     @Enumerated(EnumType.STRING)
