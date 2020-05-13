@@ -52,6 +52,6 @@ public class RadnikController {
 
         radnikService.deleteRadnikById(radnikId);
 
-        return  new ResponseEntity<>("Radnik s ID-em " + radnikId + " je izbrisan.", HttpStatus.OK);
+        return  new ResponseEntity<>("Radnik s ID-em " + radnikId + " je izbrisan.", HttpStatus.NO_CONTENT);
     }
 }
