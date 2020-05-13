@@ -17,7 +17,7 @@ public class KlijentService {
 
     public Optional<Klijent> findKlijentById(Integer klijentId) { return klijentRepository.findById(klijentId); }
 
-    public Iterable<Klijent> findAllKlijneti() { return klijentRepository.findAll(); }
+    public Iterable<Klijent> findAllKlijenti() { return klijentRepository.findAll(); }
 
     public void deleteKlijentById(Integer klijentId) { klijentRepository.deleteById(klijentId); }
 }

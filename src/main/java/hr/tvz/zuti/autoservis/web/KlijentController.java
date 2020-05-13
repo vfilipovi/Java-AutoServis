@@ -44,13 +44,13 @@ public class KlijentController {
     }
 
     @GetMapping("")
-    public Iterable<Klijent> getAllKlijenti() { return klijentService.findAllKlijneti(); }
+    public Iterable<Klijent> getAllKlijenti() { return klijentService.findAllKlijenti(); }
 
     @DeleteMapping("/{klijentId}")
     public  ResponseEntity<?> deleteKlijent(@PathVariable Integer klijentId) {
 
         klijentService.deleteKlijentById(klijentId);
 
-        return  new ResponseEntity<>("Korisnik s ID-em " + klijentId + " je izbrisan.", HttpStatus.OK);
+        return  new ResponseEntity<>("Korisnik s ID-em " + klijentId + " je izbrisan.", HttpStatus.NO_CONTENT);
     }
 }

@@ -10,16 +10,17 @@ import javax.validation.constraints.Pattern;
 @Setter
 @NoArgsConstructor
 public class OsobaBase extends EntityBase{
+    @NonNull
     @NotBlank(message = "Polje ime mora biti ispunjeno.")
     private String ime;
+    @NonNull
     @NotBlank(message = "Polje prezime mora biti ispunjeno.")
     private String prezime;
+    @Column(unique = true)
+    @NonNull
     @NotBlank(message = "Polje OIB mora biti ispunjeno.")
     @Pattern(regexp = "^[0-9]{11}$", message = "Oib moram biti isključivo numerički niz od 11 znamenki.")
     private String oib;
-    @NotBlank(message = "Polje 'Broj mobitela' mora biti ispunjeno.")
-    @Pattern(regexp = "^[0-9]{10}$", message = "Broj mobitela morama biti isključivo numerički niz od 10 znamenki.")
-    private String brojMob;
 
     public String getImeIPrezime() { return ime + " " + prezime; }
 }

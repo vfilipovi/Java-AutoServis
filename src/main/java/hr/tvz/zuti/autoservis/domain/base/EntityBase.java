@@ -12,7 +12,7 @@ import java.util.Date;
 public class EntityBase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    protected Integer id;
     private Date created_At;
     private Date updated_At;
 
@@ -22,7 +22,5 @@ public class EntityBase {
     }
 
     @PreUpdate
-    protected void onUpdate() {
-        this.updated_At = new Date();
-    }
+    protected void onUpdate() { this.updated_At = new Date(); }
 }

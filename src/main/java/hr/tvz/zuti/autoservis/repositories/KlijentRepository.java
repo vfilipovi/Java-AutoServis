@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface KlijentRepository extends CrudRepository<Klijent, Integer> {
+public interface KlijentRepository extends CrudRepository<Klijent, Integer>{
     @Override
     <S extends Klijent> S save(S s);
 
