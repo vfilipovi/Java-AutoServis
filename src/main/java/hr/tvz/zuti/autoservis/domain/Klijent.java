@@ -7,7 +7,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
-@Entity
+@Entity(name = "Klijent")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -18,4 +18,10 @@ public class Klijent extends OsobaBase {
 
     @Email(message = "Molimo unesite ispravan format email adrese.")
     private String email;
+
+    @NotBlank(message = "Mjesto mora biti odabrano")
+    private Integer fk_mjesto;
+
+    @ManyToOne()
+    private Mjesto mjesto;
 }

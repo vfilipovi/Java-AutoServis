@@ -15,4 +15,7 @@ public interface KvarRepository extends CrudRepository<Kvar, Integer> {
 
     @Override
     Iterable<Kvar> findAll();
+
+    @Override
+    void deleteById(Integer integer);
 }

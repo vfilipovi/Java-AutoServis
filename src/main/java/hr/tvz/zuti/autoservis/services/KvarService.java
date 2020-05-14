@@ -15,7 +15,9 @@ public class KvarService {
     @Autowired
     private KvarRepository kvarRepository;
 
-    public Kvar saveOrUpdateKvar(Kvar kvar) { return kvarRepository.save(kvar); }
+    public Kvar saveOrUpdateKvar(Kvar kvar) {
+        return kvarRepository.save(kvar);
+    }
 
     public Optional<Kvar> findKvarById(Integer kvarId) { return kvarRepository.findById(kvarId); }
 
