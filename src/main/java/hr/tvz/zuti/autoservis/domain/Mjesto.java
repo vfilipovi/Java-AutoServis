@@ -4,6 +4,8 @@ import hr.tvz.zuti.autoservis.domain.base.EntityBase;
 import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.awt.print.Book;
+import java.util.Set;
 
 @Entity
 @Getter

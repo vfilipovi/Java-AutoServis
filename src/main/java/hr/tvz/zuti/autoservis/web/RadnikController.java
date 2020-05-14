@@ -26,13 +26,13 @@ public class RadnikController {
     private MapValidationErrorService mapValidationErrorService;
 
 
-    public ResponseEntity<?> createNewRadnik(@Valid @RequestBody Radnik radnik, BindingResult result) {
+    public ResponseEntity<?> createNewRadnik(@Valid @RequestBody Radnik _radnik, BindingResult result) {
 
         ResponseEntity<?> errorMap = mapValidationErrorService.MapValidationService(result);
 
         if (errorMap != null) return errorMap;
 
-        Radnik radnik1 = radnikService.saveOrUpdateRadnik(radnik);
+        Radnik radnik = radnikService.saveOrUpdateRadnik(_radnik);
         //  ResponseEntity<> is short for ResponseEntity<Radnik>
         return new ResponseEntity<>(radnik, HttpStatus.CREATED);
     }

@@ -11,7 +11,9 @@ import javax.validation.constraints.NotBlank;
 @NoArgsConstructor
 public class Kvar extends EntityBase {
     @NonNull
-    @NotBlank(message = "Polje 'naziv kvara' mora biti ispunjeno.")
+    @NotBlank(message = "Polje 'Naziv kvara' mora biti ispunjeno.")
     private String nazivKvara;
+    @NonNull
+    @NotBlank(message = "Polje 'Opis kvara' mora biti ispunjeno.")
     private String opisKvara;
 }

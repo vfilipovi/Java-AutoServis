@@ -13,7 +13,7 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 public class Nalog extends EntityBase {
-    private static final String _pattern = "dd-MM-yyyy HH:mm:ss";
+    private static final String _pattern = "dd-MM-yyyy";
     private static final String _timezone = "Europe/Zagreb";
 
     @NonNull
