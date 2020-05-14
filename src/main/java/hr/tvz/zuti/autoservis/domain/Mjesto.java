@@ -13,12 +13,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-@Entity
 @Getter
 @Setter
 @NoArgsConstructor
+@Entity(name = "Mjesto")
 public class Mjesto extends EntityBase {
     @NonNull
     @NotBlank(message = "Polje 'Naziv mjesta' mora biti ispunjeno.")
     private String nazivMjesta;
+
 }
