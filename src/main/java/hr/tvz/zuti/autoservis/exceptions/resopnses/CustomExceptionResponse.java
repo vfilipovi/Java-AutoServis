@@ -5,11 +5,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class KlijentOibExceptionResponse {
+public class CustomExceptionResponse {
 
     private String errorMessage;
 
-    public KlijentOibExceptionResponse(String errorMessage) {
+    public CustomExceptionResponse(String errorMessage) {
         this.errorMessage = errorMessage;
     }
 }

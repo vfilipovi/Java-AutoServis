@@ -15,4 +15,10 @@ public interface MjestoRepository extends CrudRepository<Mjesto, Integer> {
 
     @Override
     Optional<Mjesto> findById(Integer integer);
+
+    @Override
+    Iterable<Mjesto> findAll();
+
+    @Override
+    void deleteById(Integer integer);
 }
