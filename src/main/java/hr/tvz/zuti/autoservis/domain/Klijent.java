@@ -19,9 +19,7 @@ public class Klijent extends OsobaBase {
     @Email(message = "Molimo unesite ispravan format email adrese.")
     private String email;
 
-    @NotBlank(message = "Mjesto mora biti odabrano")
-    private Integer fk_mjesto;
-
-    @ManyToOne()
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "mjesto_id", nullable = false)
     private Mjesto mjesto;
 }
