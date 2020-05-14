@@ -1,7 +1,6 @@
 package hr.tvz.zuti.autoservis.web;
 
 import hr.tvz.zuti.autoservis.domain.Klijent;
-import hr.tvz.zuti.autoservis.exceptions.KlijentOibException;
 import hr.tvz.zuti.autoservis.services.KlijentService;
 import hr.tvz.zuti.autoservis.services.MapValidationErrorService;
 
@@ -37,8 +36,10 @@ public class KlijentController {
     }
 
     @GetMapping("/{klijentId}")
-    public Klijent getKlijentById(@PathVariable Integer klijentId) {
-        return klijentService.findKlijentById(klijentId).orElseThrow(() -> new KlijentOibException("Klijent s ID-em '" + klijentId + "' ne postoji."));
+    public ResponseEntity<Optional<Klijent>> getKlijentById(@PathVariable Integer klijentId) {
+
+        Optional<Klijent> klijent = klijentService.findKlijentById(klijentId);
+        return new ResponseEntity<>(klijent, HttpStatus.OK);
     }
 
     @GetMapping("")

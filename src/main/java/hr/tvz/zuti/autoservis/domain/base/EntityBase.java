@@ -13,8 +13,8 @@ public class EntityBase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;
-    private Date created_At;
-    private Date updated_At;
+    protected Date created_At;
+    protected Date updated_At;
 
     @PrePersist
     protected void onCreate() {

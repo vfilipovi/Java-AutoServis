@@ -12,15 +12,15 @@ import javax.validation.constraints.Pattern;
 public class OsobaBase extends EntityBase{
     @NonNull
     @NotBlank(message = "Polje ime mora biti ispunjeno.")
-    private String ime;
+    protected String ime;
     @NonNull
     @NotBlank(message = "Polje prezime mora biti ispunjeno.")
-    private String prezime;
+    protected String prezime;
     @Column(unique = true)
     @NonNull
     @NotBlank(message = "Polje OIB mora biti ispunjeno.")
     @Pattern(regexp = "^[0-9]{11}$", message = "Oib moram biti isključivo numerički niz od 11 znamenki.")
-    private String oib;
+    protected String oib;
 
     public String getImeIPrezime() { return ime + " " + prezime; }
 }

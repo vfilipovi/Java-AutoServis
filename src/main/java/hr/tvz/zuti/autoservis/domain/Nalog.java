@@ -33,6 +33,12 @@ public class Nalog extends EntityBase {
     @NonNull
     @Min(0)
     private int utroseniRadniSatiServisa;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    private Radnik radnik;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    private Klijent klijent;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    private Kvar kvar;
 
     public enum Prioritet {
         NISKI, SREDNJI, VISOKI

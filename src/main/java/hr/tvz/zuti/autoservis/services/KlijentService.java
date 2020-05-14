@@ -23,15 +23,10 @@ public class KlijentService {
     }
 
     public Optional<Klijent> findKlijentById(Integer klijentId) {
-//        Optional<Klijent> klijent = klijentRepository.findById(klijentId);
-//        if (klijent.isPresent())
-//            return klijent;
-//        else throw new NotFoundException("Ne postoji klijent s ID-em '" + klijentId + "'.");
-        try {
-            return klijentRepository.findById(klijentId);
-        } catch (Exception e) {
-            throw new KlijentOibException("Klijent s ID-em '" + klijentId + "' ne postoji.");
-        }
+        Optional<Klijent> klijent = klijentRepository.findById(klijentId);
+        if (klijent.isPresent())
+            return klijent;
+        else throw new KlijentOibException("Ne postoji klijent s ID-em '" + klijentId + "'.");
     }
 
     public Iterable<Klijent> findAllKlijenti() { return klijentRepository.findAll(); }

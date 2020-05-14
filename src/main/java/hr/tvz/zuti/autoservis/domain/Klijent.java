@@ -1,5 +1,6 @@
 package hr.tvz.zuti.autoservis.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import hr.tvz.zuti.autoservis.domain.base.OsobaBase;
 import lombok.*;
 import javax.persistence.*;
@@ -20,5 +21,6 @@ public class Klijent extends OsobaBase {
     @NotBlank(message = "Polje 'Email' mora biti ispunjeno.")
     @Email(message = "Molimo unesite ispravan format email adrese.")
     private String email;
-
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    private Mjesto mjesto;
 }

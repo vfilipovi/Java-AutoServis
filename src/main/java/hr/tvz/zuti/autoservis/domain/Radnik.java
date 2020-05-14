@@ -15,6 +15,8 @@ public class Radnik extends OsobaBase {
     private StatusRadnogOdnosa statusRadnogOdnosa;
     @Enumerated(EnumType.STRING)
     private VrstaRadnogOdnosa vrstaRadnogOdnosa;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    private Mjesto mjesto;
 
     public enum StatusRadnogOdnosa {
         ZAPOSLEN, NEZAPOSLEN
