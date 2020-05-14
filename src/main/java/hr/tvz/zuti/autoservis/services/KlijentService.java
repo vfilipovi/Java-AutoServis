@@ -5,7 +5,7 @@ import hr.tvz.zuti.autoservis.exceptions.KlijentOibException;
 import hr.tvz.zuti.autoservis.repositories.KlijentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import lombok.*;
 import java.util.Optional;
 
 @Service
