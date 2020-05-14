@@ -1,7 +1,7 @@
 package hr.tvz.zuti.autoservis.services;
 
 import hr.tvz.zuti.autoservis.domain.Klijent;
-import hr.tvz.zuti.autoservis.exceptions.KlijentOibException;
+import hr.tvz.zuti.autoservis.exceptions.CustomException;
 import hr.tvz.zuti.autoservis.repositories.KlijentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +18,7 @@ public class KlijentService {
         try {
             return klijentRepository.save(klijent);
         } catch (Exception e) {
-            throw new KlijentOibException("Klijent OIB '" + klijent.getOib() + "' već postoji u sustavu.");
+            throw new CustomException("Klijent OIB '" + klijent.getOib() + "' već postoji u sustavu.");
         }
     }
 
@@ -26,7 +26,7 @@ public class KlijentService {
         Optional<Klijent> klijent = klijentRepository.findById(klijentId);
         if (klijent.isPresent())
             return klijent;
-        else throw new KlijentOibException("Ne postoji klijent s ID-em '" + klijentId + "'.");
+        else throw new CustomException("Ne postoji klijent s ID-em '" + klijentId + "'.");
     }
 
     public Iterable<Klijent> findAllKlijenti() { return klijentRepository.findAll(); }

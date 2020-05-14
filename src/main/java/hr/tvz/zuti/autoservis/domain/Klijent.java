@@ -1,6 +1,5 @@
 package hr.tvz.zuti.autoservis.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import hr.tvz.zuti.autoservis.domain.base.OsobaBase;
 import lombok.*;
 import javax.persistence.*;

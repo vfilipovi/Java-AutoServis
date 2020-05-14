@@ -1,8 +1,7 @@
 package hr.tvz.zuti.autoservis.services;
 
-import hr.tvz.zuti.autoservis.domain.Klijent;
 import hr.tvz.zuti.autoservis.domain.Mjesto;
-import hr.tvz.zuti.autoservis.repositories.KlijentRepository;
+import hr.tvz.zuti.autoservis.exceptions.CustomException;
 import hr.tvz.zuti.autoservis.repositories.MjestoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +16,15 @@ public class MjestoService {
 
     public Mjesto saveOrUpdateMjesto(Mjesto mjesto) { return mjestoRepository.save(mjesto); }
 
-    public Optional<Mjesto> findMjestoById(Integer mjestoId) { return mjestoRepository.findById(mjestoId); }
+    public Optional<Mjesto> findMjestoById(Integer mjestoId) {
+        Optional<Mjesto> mjesto = mjestoRepository.findById(mjestoId);
+        if (mjesto.isPresent())
+            return mjesto;
+        else throw new CustomException("Ne postoji mjesto s ID-em '" + mjestoId + "'.");
+    }
+
+    public Iterable<Mjesto> findAllMjesta() { return mjestoRepository.findAll(); }
+
+    public void deleteMjestotById(Integer mjestoId) { mjestoRepository.deleteById(mjestoId); }
 
 }
