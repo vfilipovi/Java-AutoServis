@@ -26,14 +26,13 @@ public class KvarController {
     private MapValidationErrorService mapValidationErrorService;
 
     @PostMapping("")
-    public ResponseEntity<?> createNewKvar(@Valid @RequestBody Kvar kvar, BindingResult result) {
+    public ResponseEntity<?> createNewKvar(@Valid @RequestBody Kvar _kvar, BindingResult result) {
 
         ResponseEntity<?> errorMap = mapValidationErrorService.MapValidationService(result);
 
         if (errorMap != null) return errorMap;
 
-        Kvar kvar1 = kvarService.saveOrUpdateKvar(kvar);
-        //  ResponseEntity<> is short for ResponseEntity<Klijent>
+        Kvar kvar = kvarService.saveOrUpdateKvar(_kvar);
         return new ResponseEntity<>(kvar, HttpStatus.CREATED);
     }
 
