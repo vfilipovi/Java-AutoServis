@@ -1,9 +1,7 @@
 package hr.tvz.zuti.autoservis.web;
 
 
-import hr.tvz.zuti.autoservis.domain.Klijent;
 import hr.tvz.zuti.autoservis.domain.Kvar;
-import hr.tvz.zuti.autoservis.services.KlijentService;
 import hr.tvz.zuti.autoservis.services.KvarService;
 import hr.tvz.zuti.autoservis.services.MapValidationErrorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
 import java.util.Optional;
 
@@ -54,6 +51,6 @@ public class KvarController {
 
         kvarService.deleteKvarById(kvarId);
 
-        return new ResponseEntity<>("Kvar s ID-em " + kvarId + " je izbrisan.", HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }

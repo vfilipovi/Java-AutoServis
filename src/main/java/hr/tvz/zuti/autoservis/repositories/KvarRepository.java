@@ -2,20 +2,7 @@ package hr.tvz.zuti.autoservis.repositories;
 
 import hr.tvz.zuti.autoservis.domain.Kvar;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
-
-public interface KvarRepository extends CrudRepository<Kvar, Integer> {
-
-    @Override
-    <S extends Kvar> S save(S s);
-
-    @Override
-    Optional<Kvar> findById(Integer integer);
-
-    @Override
-    Iterable<Kvar> findAll();
-
-    @Override
-    void deleteById(Integer integer);
-}
+@Repository
+public interface KvarRepository extends CrudRepository<Kvar, Integer> { }
