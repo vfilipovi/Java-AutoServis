@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "autoServisAngular": {
+    "Angular-AutoServis": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/autoServisAngular",
+            "outputPath": "dist/Angular-AutoServis",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "autoServisAngular:build"
+            "browserTarget": "Angular-AutoServis:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "autoServisAngular:build:production"
+              "browserTarget": "Angular-AutoServis:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "autoServisAngular:build"
+            "browserTarget": "Angular-AutoServis:build"
           }
         },
         "test": {
@@ -110,15 +110,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "autoServisAngular:serve"
+            "devServerTarget": "Angular-AutoServis:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "autoServisAngular:serve:production"
+              "devServerTarget": "Angular-AutoServis:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "autoServisAngular"
+  "defaultProject": "Angular-AutoServis"
 }
