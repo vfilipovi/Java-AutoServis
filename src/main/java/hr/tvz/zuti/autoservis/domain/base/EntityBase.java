@@ -13,14 +13,14 @@ public class EntityBase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;
-    protected Date created_At;
-    protected Date updated_At;
+    protected Date createdAt;
+    protected Date updatedAt;
 
     @PrePersist
     protected void onCreate() {
-        this.created_At = new Date();
+        this.createdAt = new Date();
     }
 
     @PreUpdate
-    protected void onUpdate() { this.updated_At = new Date(); }
+    protected void onUpdate() { this.updatedAt = new Date(); }
 }

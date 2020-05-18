@@ -16,10 +16,9 @@ public class OsobaBase extends EntityBase{
     @NonNull
     @NotBlank(message = "Polje prezime mora biti ispunjeno.")
     protected String prezime;
-    @Column(unique = true)
-    @NonNull
     @NotBlank(message = "Polje OIB mora biti ispunjeno.")
     @Pattern(regexp = "^[0-9]{11}$", message = "Oib moram biti isključivo numerički niz od 11 znamenki.")
+    @Column(unique = true)
     protected String oib;
 
     public String getImeIPrezime() { return ime + " " + prezime; }

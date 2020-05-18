@@ -1,7 +1,8 @@
 package hr.tvz.zuti.autoservis.services;
 
 import hr.tvz.zuti.autoservis.domain.Klijent;
-import hr.tvz.zuti.autoservis.exceptions.CustomException;
+import hr.tvz.zuti.autoservis.exceptions.OsobaOibException;
+import hr.tvz.zuti.autoservis.exceptions.NotFoundException;
 import hr.tvz.zuti.autoservis.repositories.KlijentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,18 +19,22 @@ public class KlijentService {
         try {
             return klijentRepository.save(klijent);
         } catch (Exception e) {
-            throw new CustomException("Klijent OIB '" + klijent.getOib() + "' već postoji u sustavu.");
+            throw new OsobaOibException("Klijent OIB '" + klijent.getOib() + "' već postoji u sustavu.");
         }
     }
 
     public Optional<Klijent> findKlijentById(Integer klijentId) {
-        Optional<Klijent> klijent = klijentRepository.findById(klijentId);
-        if (klijent.isPresent())
-            return klijent;
-        else throw new CustomException("Ne postoji klijent s ID-em '" + klijentId + "'.");
+        if (!klijentRepository.existsById(klijentId))
+            throw new NotFoundException("Klijent s ID-em '" + klijentId + "' ne postoji.");
+        return klijentRepository.findById(klijentId);
     }
 
     public Iterable<Klijent> findAllKlijenti() { return klijentRepository.findAll(); }
 
-    public void deleteKlijentById(Integer klijentId) { klijentRepository.deleteById(klijentId); }
+    public void deleteKlijentById(Integer klijentId) {
+
+        if (!klijentRepository.existsById(klijentId))
+            throw new NotFoundException("Klijent s ID-em '" + klijentId + "' ne postoji.");
+        klijentRepository.deleteById(klijentId);
+    }
 }

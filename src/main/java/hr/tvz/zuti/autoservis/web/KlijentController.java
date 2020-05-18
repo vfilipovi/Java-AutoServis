@@ -3,13 +3,11 @@ package hr.tvz.zuti.autoservis.web;
 import hr.tvz.zuti.autoservis.domain.Klijent;
 import hr.tvz.zuti.autoservis.services.KlijentService;
 import hr.tvz.zuti.autoservis.services.MapValidationErrorService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
 import java.util.Optional;
 
@@ -31,14 +29,14 @@ public class KlijentController {
         if (errorMap != null) return errorMap;
 
         Klijent klijent = klijentService.saveOrUpdateKlijent(_klijent);
-        //  ResponseEntity<> is short for ResponseEntity<Klijent>
         return new ResponseEntity<>(klijent, HttpStatus.CREATED);
     }
 
     @GetMapping("/{klijentId}")
-    public ResponseEntity<Optional<Klijent>> getKlijentById(@PathVariable Integer klijentId) {
+    public ResponseEntity<?> getKlijentById(@PathVariable Integer klijentId) {
 
         Optional<Klijent> klijent = klijentService.findKlijentById(klijentId);
+
         return new ResponseEntity<>(klijent, HttpStatus.OK);
     }
 
@@ -52,7 +50,7 @@ public class KlijentController {
 
         if (errorMap != null) return errorMap;
 
-        Optional<Object> updatedKlijent = klijentService.findKlijentById(klijentId).map(klijent -> {
+        Optional<Klijent> updatedKlijent = klijentService.findKlijentById(klijentId).map(klijent -> {
             klijent.setIme(_klijent.getIme());
             klijent.setPrezime(_klijent.getPrezime());
             klijent.setOib(_klijent.getOib());
@@ -70,6 +68,6 @@ public class KlijentController {
 
         klijentService.deleteKlijentById(klijentId);
 
-        return  new ResponseEntity<>("Korisnik s ID-em " + klijentId + " je izbrisan.", HttpStatus.NO_CONTENT);
+        return  new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
