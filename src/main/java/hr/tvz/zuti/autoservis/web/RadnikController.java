@@ -14,6 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/radnici")
+@CrossOrigin(origins = "http://localhost:4200")
 public class RadnikController {
 
     @Autowired
