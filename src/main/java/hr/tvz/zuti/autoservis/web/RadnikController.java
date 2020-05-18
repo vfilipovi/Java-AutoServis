@@ -9,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
 import java.util.Optional;
 
@@ -31,7 +30,6 @@ public class RadnikController {
         if (errorMap != null) return errorMap;
 
         Radnik radnik = radnikService.saveOrUpdateRadnik(_radnik);
-        //  ResponseEntity<> is short for ResponseEntity<Radnik>
         return new ResponseEntity<>(radnik, HttpStatus.CREATED);
     }
 
@@ -39,11 +37,12 @@ public class RadnikController {
     public ResponseEntity<Optional<Radnik>> getRadnikById(@PathVariable Integer radnikId) {
 
         Optional<Radnik> radnik = radnikService.findRadnikById(radnikId);
+
         return new ResponseEntity<>(radnik, HttpStatus.OK);
     }
 
     @GetMapping("")
-    public Iterable<Radnik> getAllRadniki() { return radnikService.findAllRadniki(); }
+    public Iterable<Radnik> getAllRadnci() { return radnikService.findAllRadnici(); }
 
     @PutMapping("/{radnikId}")
     public ResponseEntity<?> updateRadnikById(@Valid @RequestBody Radnik _radnik, @PathVariable Integer radnikId, BindingResult result) {
@@ -72,6 +71,6 @@ public class RadnikController {
 
         radnikService.deleteRadnikById(radnikId);
 
-        return  new ResponseEntity<>("Korisnik s ID-em " + radnikId + " je izbrisan.", HttpStatus.NO_CONTENT);
+        return  new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
