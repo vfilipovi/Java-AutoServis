@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-6" *ngIf="kvar">
+    <div class="card">
+      <div class="card-header">
+       <!-- {{'students.detailsForm.studentDetails' | translate}}-->
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div>
+            <label><b>ID kvara: </b></label> {{kvar.id}}
+          </div>
+          <div>
+            <label><b>Naziv kvara: </b></label> {{kvar.nazivKvara}}
+          </div>
+          <div>
+            <label><b>Opis kvara: </b></label> {{kvar.opisKvara}}
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!--<button type="button" class="btn btn-outline-secondary float-right" routerLink="/kvarovi">{{'students.detailsForm.back' | translate}}</button>-->

@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { UserService } from '../user/user.service';
 
 @Component({
-  selector: 'app-students',                     //popravi
+  selector: 'app-kvarovi',                     //popravi
   templateUrl: './kvarovi.component.html'
 })
 export class KvaroviComponent implements OnInit {
