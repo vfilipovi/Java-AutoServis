@@ -30,11 +30,11 @@ export class KvaroviComponent implements OnInit {
   }
 
   navigateToEdit(kvar: Kvar) {
-    this.router.navigate([`/kvarovi/edit/${kvar.id}`]);
+    this.router.navigate([`/kvar/edit/${kvar.id}`]);
   }
 
   navigateToDetails(kvar: Kvar) {
-    this.router.navigate([`/kvarovi/detail/${kvar.id}`]);
+    this.router.navigate([`/kvar/detail/${kvar.id}`]);
   }
 
 }

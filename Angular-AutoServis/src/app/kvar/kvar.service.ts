@@ -10,7 +10,7 @@ import { SERVER_API_URL } from '../constants/app.constants';
 })
 export class KvarService {
 
-  private kvaroviUrl = `${SERVER_API_URL}/api/v1/kvarovi`;
+  private kvaroviUrl = `${SERVER_API_URL}/kvarovi`;
 
   constructor(
     private http: HttpClient
@@ -24,7 +24,7 @@ export class KvarService {
       );
   }
 
-  getKvar(id: number): Observable<Kvar> {
+  getKvar(id: string): Observable<Kvar> {
     const url = `${this.kvaroviUrl}/${id}`;
     return this.http.get<Kvar>(url)
       .pipe(

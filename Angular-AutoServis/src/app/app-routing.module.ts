@@ -13,6 +13,7 @@ import { MjestaComponent } from './mjesta/mjesta.component';
 
 import { ForbiddenPageComponent } from './forbidden-page/forbidden-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {KvarEditComponent} from "./kvar/kvarovi-edit/kvar-edit.component";
 
 const routes: Routes = [
   {
@@ -34,6 +35,22 @@ const routes: Routes = [
   {
     path: 'mjesta',
     component: MjestaComponent,
+  },
+  {
+    path: 'kvarovi',
+    component: KvaroviComponent,
+  },
+  {
+    path: 'kvar/detail/:id',
+    component: KvarDetailComponent,
+  },
+  {
+    path: 'kvar/create',
+    component: KvarCreateComponent
+  },
+  {
+    path: 'kvar/edit/:id',
+    component: KvarEditComponent,
   },
   {
     path: 'forbidden',

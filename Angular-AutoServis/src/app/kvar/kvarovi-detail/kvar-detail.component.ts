@@ -24,29 +24,17 @@ export class KvarDetailComponent implements OnInit {
   ) { }
 
 
-  ngOnInit() {
-    this.kvar = new Kvar();
-
-    this.id = this.route.snapshot.params['id'];
-
-    this.kvarService.getKvar(this.id)
-      .subscribe(data => {
-        console.log(data)
-        this.kvar = data;
-      }, error => console.log(error));
-  }
-
-
-  /*ngOnInit(): void {
+  ngOnInit(): void {
     this.route.paramMap.pipe(
       switchMap(params => {
         const id = params.get('id');
-        return this.kvarService.getKvar(id);
+        return this.kvarService.getKvar(id.toString());
       }
       )
     ).subscribe((kvar: Kvar) => {
       this.kvar = kvar;
     });
   }
-*/
+
+
 }

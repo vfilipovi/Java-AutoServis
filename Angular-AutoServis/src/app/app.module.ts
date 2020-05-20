@@ -10,7 +10,6 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { KlijentiComponent } from './klijenti/klijenti.component';
 import { KlijentFormComponent } from './klijenti/klijent-form/klijent-form.component';
@@ -19,6 +18,11 @@ import { KlijentEditComponent } from './klijenti/klijent-edit/klijent-edit.compo
 import { KlijentCreateComponent } from './klijenti/klijent-create/klijent-create.component';
 
 import { MjestaComponent } from './mjesta/mjesta.component';
+import {KvaroviComponent} from "./kvar/kvarovi.component";
+import {KvarCreateComponent} from "./kvar/kvarovi-create/kvar-create.component";
+import {KvarDetailComponent} from "./kvar/kvarovi-detail/kvar-detail.component";
+import {KvarEditComponent} from "./kvar/kvarovi-edit/kvar-edit.component";
+import {KvarFormComponent} from "./kvar/kvarovi-form/kvar-form.component";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -32,7 +36,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     KlijentCreateComponent,
     KlijentEditComponent,
     KlijentDetailComponent,
-    MjestaComponent
+    MjestaComponent,
+    KvaroviComponent,
+    KvarCreateComponent,
+    KvarDetailComponent,
+    KvarEditComponent,
+    KvarFormComponent
+
   ],
   imports: [
     BrowserModule,

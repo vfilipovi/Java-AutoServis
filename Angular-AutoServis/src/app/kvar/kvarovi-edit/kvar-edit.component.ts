@@ -20,7 +20,7 @@ export class KvarEditComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.pipe(
       switchMap(params => {
-        const id: number = Number(params.get('id'));
+        const id = (params.get('id'));
         return this.kvarService.getKvar(id);
       }
       )

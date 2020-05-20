@@ -1,35 +1,27 @@
 <div class="clearfix">
-  <h5 class="float-left">{{'kvarovi.title' | translate}}
+  <h5 class="float-left">Popis kvarova
   </h5>
-  <button type="button" class="btn btn-primary float-right" routerLink="/students/create"
-    *ngIf="userService.isRoleAdmin()">
-    {{'kvarovi.create' | translate}}</button>
+  <button type="button" class="btn btn-primary float-right" routerLink="/kvar/create">
+    Dodaj novi kvar</button>
 </div>
 
 <table class="table mt-4">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">{{'kvar.nazivKvara' | translate}}</th>
-      <th scope="col">{{'kvar.opisKvara' | translate}}</th>
-      <th scope="col">Naziv</th>
-      <th scope="col">Opis</th>
-      <ng-container *ngIf="userService.isRoleAdmin()">
-        <th scope="col" class="text-center">{{'kvarovi.details' | translate}}</th>
-        <th scope="col" class="text-center">{{'kvarovi.edit' | translate}}</th>
-      </ng-container>
+      <th scope="col">Naziv kvara</th>
+      <th scope="col">Datum Kreiranja</th>
+      <th scope="col" class="text-center">Detalji</th>
+      <th scope="col" class="text-center">Uređivanje</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let kvar of kvarovi; index as i">
       <th scope="row">{{i + 1}}</th>
-      <td>{{kvar?.id}}</td>
-      <td>{{kvar?.createdAt}}</td>
       <td>{{kvar?.nazivKvara}}</td>
-      <td>{{kvar?.opisKvara}}</td>
-      <ng-container *ngIf="userService.isRoleAdmin()">
+      <td>{{kvar?.createdAt | date:'d.M.yyyy'}}</td>
         <td class="text-center">
-          <button type="button" class="btn btn-outline-primary" (click)="navigateToDetails(Kvar)">
+          <button type="button" class="btn btn-outline-primary" (click)="navigateToDetails(kvar)">
             <svg class="bi bi-eye" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
@@ -42,7 +34,7 @@
           </button>
         </td>
         <td class="text-center">
-          <button type="button" class="btn btn-outline-primary" (click)="navigateToEdit(Kvar)">
+          <button type="button" class="btn btn-outline-primary" (click)="navigateToEdit(kvar)">
             <svg class="bi bi-pencil" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
@@ -54,7 +46,6 @@
             </svg>
           </button>
         </td>
-      </ng-container>
     </tr>
   </tbody>
 </table>
