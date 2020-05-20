@@ -4,23 +4,44 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { KvarDetailComponent } from './kvar/kvarovi-detail/kvar-detail.component';
 
+import { KlijentiComponent } from './klijenti/klijenti.component';
+import { KlijentDetailComponent } from './klijenti/klijent-detail/klijent-detail.component';
+import { KlijentCreateComponent } from './klijenti/klijent-create/klijent-create.component';
+import { KlijentEditComponent } from './klijenti/klijent-edit/klijent-edit.component';
+
+import { MjestaComponent } from './mjesta/mjesta.component';
+
+import { ForbiddenPageComponent } from './forbidden-page/forbidden-page.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
-    path: 'kvarovi',
-    component: KvaroviComponent,
-    //canActivate: [AuthGuardService]
+    path: 'klijenti',
+    component: KlijentiComponent,
   },
   {
-    path: 'kvarovi/create',
-    component: KvarCreateComponent,
-    //canActivate: [AdminAuthGuardService]
+    path: 'klijenti/detail/:id',
+    component: KlijentDetailComponent,
   },
   {
-    path: 'students/detail/:id',
-    component: KvarDetailComponent,
-    //canActivate: [AdminAuthGuardService]
+    path: 'klijenti/create',
+    component: KlijentCreateComponent
   },
+  {
+    path: 'klijenti/edit/:id',
+    component: KlijentEditComponent,
+  },
+  {
+    path: 'mjesta',
+    component: MjestaComponent,
+  },
+  {
+    path: 'forbidden',
+    component: ForbiddenPageComponent
+  },
+  {
+    path: '**', component: PageNotFoundComponent
+  }
 ];
 
 @NgModule({
