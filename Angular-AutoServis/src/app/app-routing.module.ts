@@ -11,6 +11,9 @@ import { KlijentEditComponent } from './klijenti/klijent-edit/klijent-edit.compo
 
 import { MjestaComponent } from './mjesta/mjesta.component';
 
+import { RadniciComponent} from "./radnik/radnici.component";
+import { RadnikCreateComponent} from "./radnik/radnik-create/radnik-create.component";
+
 import { ForbiddenPageComponent } from './forbidden-page/forbidden-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {KvarEditComponent} from "./kvar/kvarovi-edit/kvar-edit.component";
@@ -51,6 +54,14 @@ const routes: Routes = [
   {
     path: 'kvar/edit/:id',
     component: KvarEditComponent,
+  },
+  {
+    path: 'radnici',
+    component: RadniciComponent
+  },
+  {
+    path 'radnik/create',
+    component: RadnikCreateComponent
   },
   {
     path: 'forbidden',
