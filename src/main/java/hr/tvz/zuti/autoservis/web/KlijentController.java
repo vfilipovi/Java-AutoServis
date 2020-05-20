@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.Optional;
 
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping("/api/v1/klijenti")
 public class KlijentController {
@@ -21,6 +22,7 @@ public class KlijentController {
     @Autowired
     private MapValidationErrorService mapValidationErrorService;
 
+    @CrossOrigin
     @PostMapping("")
     public ResponseEntity<?> createNewKlijent(@Valid @RequestBody Klijent _klijent, BindingResult result) {
 
@@ -32,6 +34,7 @@ public class KlijentController {
         return new ResponseEntity<>(klijent, HttpStatus.CREATED);
     }
 
+    @CrossOrigin
     @GetMapping("/{klijentId}")
     public ResponseEntity<?> getKlijentById(@PathVariable Integer klijentId) {
 
@@ -40,9 +43,11 @@ public class KlijentController {
         return new ResponseEntity<>(klijent, HttpStatus.OK);
     }
 
+    @CrossOrigin
     @GetMapping("")
     public Iterable<Klijent> getAllKlijenti() { return klijentService.findAllKlijenti(); }
 
+    @CrossOrigin
     @PutMapping("/{klijentId}")
     public ResponseEntity<?> updateKlijentById(@Valid @RequestBody Klijent _klijent, @PathVariable Integer klijentId, BindingResult result) {
 

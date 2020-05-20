@@ -1,30 +1,27 @@
 <div class="clearfix">
-  <h5 class="float-left">Popis klijenata
+  <h5 class="float-left">Popis mjesta
   </h5>
-  <button type="button" class="btn btn-primary float-right" routerLink="/klijenti/create">
-    Dodaj novog klijenta</button>
+  <button type="button" class="btn btn-primary float-right" routerLink="/mjesta/create">
+    Dodaj novo mjesto</button>
 </div>
 
 <table class="table mt-4">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Ime</th>
-      <th scope="col">Prezime</th>
-      <th scope="col">OIB</th>
-      <th scope="col" class="text-center"></th>
-      <th scope="col" class="text-center"></th>
-      <th scope="col" class="text-center"></th>
+      <th scope="col">Naziv mjesta</th>
+        <th scope="col" class="text-center"></th>
+        <th scope="col" class="text-center"></th>
+        <th scope="col" class="text-center"></th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let klijent of klijenti; index as i">
+    <tr *ngFor="let mjesto of mjesta; index as i">
       <th scope="row">{{i + 1}}</th>
-      <td>{{klijent?.ime}}</td>
-      <td>{{klijent?.prezime}}</td>
-      <td>{{klijent?.oib}}</td>
+      <td>{{mjesto?.nazivMjesta}}</td>
+
         <td class="text-center">
-          <button type="button" class="btn btn-outline-primary" (click)="navigateToDetails(klijent)">
+          <button type="button" class="btn btn-outline-primary" (click)="navigateToDetails(mjesto)">
             <svg class="bi bi-eye" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
@@ -37,7 +34,7 @@
           </button>
         </td>
         <td class="text-center">
-          <button type="button" class="btn btn-outline-primary" (click)="navigateToEdit(klijent)">
+          <button type="button" class="btn btn-outline-primary" (click)="navigateToEdit(mjesto)">
             <svg class="bi bi-pencil" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
@@ -50,7 +47,7 @@
           </button>
         </td>
         <td class="text-center">
-          <button type="button" class="btn btn-outline-danger" (click)="deleteKlijent(klijent)">
+          <button type="button" class="btn btn-outline-danger" (click)="deleteMjesto(mjesto)">
             <svg class="bi bi-trash" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg">
               <path

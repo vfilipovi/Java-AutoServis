@@ -24,7 +24,7 @@ export class KlijentService {
       );
   }
 
-  getKlijent(id: number): Observable<Klijent> {
+  getKlijent(id: string): Observable<Klijent> {
     const url = `${this.klijentiUrl}/${id}`;
     return this.http.get<Klijent>(url)
       .pipe(
@@ -48,8 +48,8 @@ export class KlijentService {
     );
   }
 
-  deleteKlijent(klijent: Klijent | number): Observable<Klijent> {
-    const id = typeof klijent === 'number' ? klijent : klijent.id;
+  deleteKlijent(klijent: Klijent | string): Observable<Klijent> {
+    const id = typeof klijent === 'string' ? klijent : klijent.id;
     const url = `${this.klijentiUrl}/${id}`;
 
     return this.http.delete<Klijent>(url).pipe(
