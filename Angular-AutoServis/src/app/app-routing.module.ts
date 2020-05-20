@@ -21,15 +21,15 @@ const routes: Routes = [
     component: KlijentiComponent,
   },
   {
-    path: 'klijenti/detail/:id',
+    path: 'klijent/detail/:id',
     component: KlijentDetailComponent,
   },
   {
-    path: 'klijenti/create',
+    path: 'klijent/create',
     component: KlijentCreateComponent
   },
   {
-    path: 'klijenti/edit/:id',
+    path: 'klijent/edit/:id',
     component: KlijentEditComponent,
   },
   {

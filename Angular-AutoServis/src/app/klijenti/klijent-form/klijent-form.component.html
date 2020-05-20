@@ -35,8 +35,9 @@
 
       <div class="form-group">
         <label for="mjesto">Odaberi mjesto</label>
-        <select id="mjesto" [(ngModel)]="klijent.mjesto.id" class="form-control" name="mjesto">
-          <option *ngFor="let mjesto of mjesta" value="{{mjesto.id}}">
+        <select id="mjesto" [(ngModel)]="klijent.mjesto" class="form-control" name="mjesto">
+          <option disabled selected>-- Molimo odaberite mjesto --</option>
+          <option [ngValue]="mjesto" *ngFor="let mjesto of mjesta" value="{{mjesto}}">
             {{mjesto.nazivMjesta}}
           </option>
         </select>

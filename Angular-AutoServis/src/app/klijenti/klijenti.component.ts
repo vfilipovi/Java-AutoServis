@@ -30,7 +30,7 @@ export class KlijentiComponent implements OnInit {
   }
 
   navigateToEdit(klijent: Klijent) {
-    this.router.navigate([`/klijenti/edit/${klijent.id}`]);
+    this.router.navigate([`/klijent/edit/${klijent.id}`]);
   }
 
   navigateToDetails(klijent: Klijent) {
@@ -38,11 +38,13 @@ export class KlijentiComponent implements OnInit {
   }
 
   deleteKlijent(klijent: Klijent) {
-    this.klijenti = this.klijenti.filter(s => s !== klijent);
-    this.klijentService.deleteKlijent(klijent).subscribe(
-      () => this.toastrService.success('Uspješno ste obrisali klijenta!'),
-      () => this.toastrService.success('Došlo je do pogreške prilikom brisanja klijenta!')
-    );
+    if (confirm('Jese li sigurrni da želite obrisati klijenta: ' + klijent.imeIPrezime)) {
+      this.klijenti = this.klijenti.filter(s => s !== klijent);
+      this.klijentService.deleteKlijent(klijent).subscribe(
+        () => this.toastrService.success('Uspješno ste obrisali klijenta!', 'Brisanje'),
+        () => this.toastrService.error('Došlo je do pogreške prilikom brisanja klijenta!', 'Greška')
+      );
+    }
   }
 
 }
