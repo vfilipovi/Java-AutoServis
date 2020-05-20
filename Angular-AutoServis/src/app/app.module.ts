@@ -26,6 +26,7 @@ import {KvarFormComponent} from "./kvar/kvarovi-form/kvar-form.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 
 import { RadniciComponent } from "./radnik/radnici.component";
+import {RadnikCreateComponent} from "./radnik/radnik-create/radnik-create.component";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
