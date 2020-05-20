@@ -47,11 +47,11 @@ export class KlijentFormComponent implements OnInit {
     this.klijentService.addKlijent(this.klijent).subscribe(
       (klijent: Klijent) => {
         this.klijent = klijent;
-        this.toastrService.success('Uspješno ste spremili podatke klijenta!');
+        this.toastrService.success('Uspješno ste spremili podatke klijenta!', 'Spremanje');
         delay(2000).then(() => this.router.navigate(['klijenti']));
       },
       () => {
-        this.toastrService.error('Došlo je do pogreške prilikom spremanja podataka klijenta!');
+        this.toastrService.error('Došlo je do pogreške prilikom spremanja podataka klijenta!', 'Greška');
         this.saving = false;
       }
     );
@@ -61,13 +61,11 @@ export class KlijentFormComponent implements OnInit {
     this.klijentService.updateKlijent(this.klijent).subscribe(
       (klijent: Klijent) => {
         this.klijent = klijent;
-        console.log(klijent);
-
-        this.toastrService.success('Uspješno ste spremili podatke klijenta!');
+        this.toastrService.success('Uspješno ste spremili podatke klijenta!', 'Aržurirano');
         delay(2000).then(() => this.router.navigate(['klijenti']));
       },
       () => {
-        this.toastrService.error('Došlo je do pogreške prilikom spremanja podataka klijenta!');
+        this.toastrService.error('Došlo je do pogreške prilikom spremanja podataka klijenta!', 'Greška');
         this.saving = false;
       }
     );
