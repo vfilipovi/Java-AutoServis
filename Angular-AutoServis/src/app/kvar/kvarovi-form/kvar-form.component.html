@@ -1,0 +1,36 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-group mr-2">
+    </div>
+  </div>
+</div>
+
+
+<div class="card">
+    <div class="card-body">
+        <form #kvarForm="ngForm">
+            <div class="form-group">
+                <b><label for="nazivKvara">Naziv kvara</label></b>
+                <input [(ngModel)]="kvar.nazivKvara" type="text" class="form-control" id="nazivKvara" name="nazivKvara"
+                    placeholder="Unesite naziv kvara" required>
+            </div>
+          <div class="form-group">
+            <b><label for="opisKvara">Opis kvara</label></b>
+            <textarea rows="5" [(ngModel)]="kvar.opisKvara" class="form-control" id="opisKvara" name="opisKvara"
+                      placeholder="Unesite opis kvara" required></textarea>
+          </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="float-right">
+                        <button routerLink="/kvarovi" [disabled]="saving" class="btn btn-outline-secondary mr-4"
+                            type="button">Otkaži</button>
+                        <button (click)="save()" [disabled]="!kvarForm.valid || saving" class="btn btn-success"
+                            type="button">Spremi
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

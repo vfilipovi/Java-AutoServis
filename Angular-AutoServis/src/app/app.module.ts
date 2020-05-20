@@ -18,6 +18,12 @@ import { KlijentEditComponent } from './klijenti/klijent-edit/klijent-edit.compo
 import { KlijentCreateComponent } from './klijenti/klijent-create/klijent-create.component';
 
 import { MjestaComponent } from './mjesta/mjesta.component';
+import {KvaroviComponent} from "./kvar/kvarovi.component";
+import {KvarCreateComponent} from "./kvar/kvarovi-create/kvar-create.component";
+import {KvarDetailComponent} from "./kvar/kvarovi-detail/kvar-detail.component";
+import {KvarEditComponent} from "./kvar/kvarovi-edit/kvar-edit.component";
+import {KvarFormComponent} from "./kvar/kvarovi-form/kvar-form.component";
+import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -26,12 +32,19 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
+    PageNotFoundComponent,
     KlijentiComponent,
     KlijentFormComponent,
     KlijentCreateComponent,
     KlijentEditComponent,
     KlijentDetailComponent,
-    MjestaComponent
+    MjestaComponent,
+    KvaroviComponent,
+    KvarCreateComponent,
+    KvarDetailComponent,
+    KvarEditComponent,
+    KvarFormComponent
+
   ],
   imports: [
     BrowserModule,

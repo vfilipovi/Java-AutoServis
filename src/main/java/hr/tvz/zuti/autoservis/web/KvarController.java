@@ -1,6 +1,7 @@
 package hr.tvz.zuti.autoservis.web;
 
 
+import hr.tvz.zuti.autoservis.domain.Klijent;
 import hr.tvz.zuti.autoservis.domain.Kvar;
 import hr.tvz.zuti.autoservis.services.KvarService;
 import hr.tvz.zuti.autoservis.services.MapValidationErrorService;
@@ -47,11 +48,20 @@ public class KvarController {
         return kvarService.findAllKvarovi();
     }
 
-    @DeleteMapping("/{kvarId}")
-    public ResponseEntity<?> deleteKvar(@PathVariable Integer kvarId) {
+    @PutMapping("/{kvarId}")
+    public ResponseEntity<?> updateKvarById(@Valid @RequestBody Kvar _kvar, @PathVariable Integer kvarId, BindingResult result) {
 
-        kvarService.deleteKvarById(kvarId);
+        ResponseEntity<?> errorMap = mapValidationErrorService.MapValidationService(result);
 
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        if (errorMap != null) return errorMap;
+
+        Optional<Kvar> updatedKvar = kvarService.findKvarById(kvarId).map(kvar -> {
+            kvar.setNazivKvara(_kvar.getNazivKvara());
+            kvar.setOpisKvara(_kvar.getOpisKvara());
+
+            return kvarService.saveOrUpdateKvar(kvar);
+        });
+
+        return new ResponseEntity<>(updatedKvar, HttpStatus.OK);
     }
 }

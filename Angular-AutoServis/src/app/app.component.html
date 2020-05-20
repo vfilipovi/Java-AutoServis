@@ -1,10 +1,97 @@
-<div class="container">
-  <div class="row" style="margin-top: 80px;">
-      <div class="col-md-12">
-          <router-outlet>
+
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" >Auto servis Jožo</a>
+
+  <!--DROPDOWN Button-->
+
+   <div class="d-inline-block pull-left dropdown-menu-left" ngbDropdown #myDrop="ngbDropdown" style="text-align:left !important;">
+     <button class="btn btn btn-secondary mr-2 pull-right" style="text-align:left !important;" id="dropdownManual" ngbDropdownAnchor (focus)="myDrop.open()">Select Language</button>
+     <div ngbDropdownMenu aria-labelledby="dropdownManual">
+       <button ngbDropdownItem>English</button>
+       <button ngbDropdownItem>Hrvatski</button>
+     </div>
+   </div>
+
+  <a class="col-sm-3 col-md-8 mr-0" ></a>
+
+   <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" >Odjavi se</a>
+    </li>
+  </ul>
 
 
-          </router-outlet>
+
+  <ul class="navbar-nav px-3">
+    <!--<li class="dropdown dropdown-menu-right ngbDropdown" ngbDropdown>
+      <a class="nav-link dropdown-toggle d-inline-block" id="id01" href="#" ngbDropdownToggle>Files</a>
+      <div class="dropdown-menu" aria-labelledby="id01" ngbDropdownMenu>
+        <a class="dropdown-item" href="#">HTML</a>
+        <a class="dropdown-item" href="#">TS</a>
+        <a class="dropdown-item" href="#">JS</a>
       </div>
+    </li>
+    -->
+  </ul>
+
+
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link">
+              <span data-feather="home"></span>
+              Dashboard <span class="sr-only"></span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">
+              <span data-feather="file"></span>
+              Pregled naloga preko registracije
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" >
+              <span data-feather="shopping-cart"></span>
+              Nalozi
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/kvarovi" routerLinkActive="active" >
+              <span data-feather="users"></span>
+              Kvarovi
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/klijenti" routerLinkActive="active">
+              <span data-feather="bar-chart-2"></span>
+              Klijenti
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" >
+              <span data-feather="layers"></span>
+              Radnici
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" >
+              <span data-feather="layers"></span>
+              Mjesta
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <router-outlet></router-outlet>
+    </main>
   </div>
 </div>
