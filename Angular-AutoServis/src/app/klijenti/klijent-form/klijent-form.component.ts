@@ -65,7 +65,7 @@ export class KlijentFormComponent implements OnInit {
         delay(2000).then(() => this.router.navigate(['klijenti']));
       },
       () => {
-        this.toastrService.error('Došlo je do pogreške prilikom spremanja podataka klijenta!', 'Greška');
+        this.toastrService.error('Došlo je do pogreške prilikom spremanja podataka klijenta!');
         this.saving = false;
       }
     );

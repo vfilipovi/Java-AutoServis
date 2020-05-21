@@ -6,42 +6,42 @@
 
 <div class="card">
   <div class="card-body">
-    <form #klijentForm="ngForm">
+    <form #radnikForm="ngForm">
       <div class="form-group">
         <label for="ime">Ime</label>
-        <input [(ngModel)]="klijent.ime" type="text" class="form-control" id="ime" name="ime" placeholder="Unesite ime"
+        <input [(ngModel)]="radnik.ime" type="text" class="form-control" id="ime" name="ime" placeholder="Unesite ime"
           required>
       </div>
       <div class="form-group">
         <label for="prezime">Prezime</label>
-        <input [(ngModel)]="klijent.prezime" type="text" class="form-control" id="prezime" name="prezime"
+        <input [(ngModel)]="radnik.prezime" type="text" class="form-control" id="prezime" name="prezime"
           placeholder="Unesite ime" required>
       </div>
       <div class="form-group">
         <label for="oib">OIB</label>
-        <input [(ngModel)]="klijent.oib" type="text" class="form-control" id="oib" name="oib" minlength="11"
+        <input [(ngModel)]="radnik.oib" type="text" class="form-control" id="oib" name="oib" minlength="11"
           maxlength="11" placeholder="Unesite OIB" required #oib="ngModel">
-        <div *ngIf="!klijentForm.pristine && oib.invalid" class="invalid-feedback d-block">
+        <div *ngIf="!radnikForm.pristine && oib.invalid" class="invalid-feedback d-block">
           OIB mora sadržavati 11 znakova.
         </div>
       </div>
       <div class="form-group">
         <label for="email">Email</label>
-        <input [(ngModel)]="klijent.email" type="email" class="form-control" id="email" name="email"
+        <input [(ngModel)]="radnik.email" type="email" class="form-control" id="email" name="email"
           placeholder="Unesite email adresu" required>
       </div>
       <div class="form-group">
         <label for="brojMob">Broj mobitela</label>
-        <input [(ngModel)]="klijent.brojMob" type="text" class="form-control" id="brojMob" name="brojMob" minlength="10"
+        <input [(ngModel)]="radnik.brojMob" type="text" class="form-control" id="brojMob" name="brojMob" minlength="10"
           maxlength="10" placeholder="Unesite brojMob" required #brojMob="ngModel">
-        <div *ngIf="!klijentForm.pristine && brojMob.invalid" class="invalid-feedback d-block">
+        <div *ngIf="!radnikForm.pristine && brojMob.invalid" class="invalid-feedback d-block">
           Broj mobitel mora sadržavati 10 znakova.
         </div>
       </div>
 
       <div class="form-group">
         <label for="mjesto">Odaberi mjesto</label>
-        <select id="mjesto" [(ngModel)]="klijent.mjesto" class="form-control" name="mjesto">
+        <select id="mjesto" [(ngModel)]="radnik.mjesto" class="form-control" name="mjesto">
           <option disabled selected>-- Molimo odaberite mjesto --</option>
           <option [ngValue]="mjesto" *ngFor="let mjesto of mjesta" value="{{mjesto}}">
             {{mjesto.nazivMjesta}}
@@ -52,9 +52,9 @@
       <div class="row">
         <div class="col-md-12">
           <div class="float-right">
-            <button routerLink="/klijenti" [disabled]="saving" class="btn btn-outline-secondary mr-4"
+            <button routerLink="/radniki" [disabled]="saving" class="btn btn-outline-secondary mr-4"
               type="button">Odustani</button>
-            <button (click)="save()" [disabled]="!klijentForm.valid || saving" class="btn btn-success"
+            <button (click)="save()" [disabled]="!radnikForm.valid || saving" class="btn btn-success"
               type="button">Spremi
             </button>
           </div>

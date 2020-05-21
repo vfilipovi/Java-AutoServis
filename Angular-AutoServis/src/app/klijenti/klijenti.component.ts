@@ -38,7 +38,7 @@ export class KlijentiComponent implements OnInit {
   }
 
   deleteKlijent(klijent: Klijent) {
-    if (confirm('Jese li sigurrni da želite obrisati klijenta: ' + klijent.imeIPrezime)) {
+    if (confirm('Jese li sigurrni da želite obrisati klijenta: ' + klijent.imeIPrezime + ' ?')) {
       this.klijenti = this.klijenti.filter(s => s !== klijent);
       this.klijentService.deleteKlijent(klijent).subscribe(
         () => this.toastrService.success('Uspješno ste obrisali klijenta!', 'Brisanje'),

@@ -9,9 +9,9 @@ import { SERVER_API_URL } from '../constants/app.constants';
   providedIn: 'root'
 })
 export class RadnikService {
-  private radniciUrl = '${SERVER_API_URL}/radnici';
+  private radniciUrl = `${SERVER_API_URL}/radnici`;
 
-  constructor (
+  constructor(
     private http: HttpClient
   ) {}
 
@@ -23,15 +23,15 @@ export class RadnikService {
       );
   }
   getRadnik(id: string): Observable<Radnik> {
-    const url = '${this.radniciUrl}/${id}';
+    const url = `${this.radniciUrl}/${id}`;
     return this.http.get<Radnik>(url)
       .pipe(
-        tap(_ => console.log('fetched radnik id=${id}')),
-        catchError(this.handleError<Radnik>('getRadnik id=${id}'))
+        tap(_ => console.log(`fetched radnik id=${id}`)),
+        catchError(this.handleError<Radnik>(`getRadnik id=${id}`))
       );
   }
   updateRadnik(radnik: Radnik): Observable<any> {
-    const url = '${this.radniciUrl}/$(radnik.id)';
+    const url = `${this.radniciUrl}/$(radnik.id)`;
     return this.http.put(url, radnik)
       .pipe(
         tap(_ => console.log('updated radnik id=${radnik.id}')),
@@ -39,19 +39,17 @@ export class RadnikService {
       );
   }
   addRadnik (radnik: Radnik): Observable<Radnik> {
-    return this.http.post<Radnik>(this.radniciUrl, radnik)
-      .pipe(
-        tap((newRadnik: Radnik) => console.log('added radnik=${newRadnik.id}')),
-        catchError(this.handleError<Radnik>{'addRadnik'})
+    return this.http.post<Radnik>(this.radniciUrl, radnik).pipe(
+        tap((newRadnik: Radnik) => console.log(`added radnik=${newRadnik.id}`)),
+        catchError(this.handleError<Radnik>('addRadnik'))
       );
   }
   deleteRadnik(radnik: Radnik | string): Observable<Radnik> {
     const id = typeof radnik === 'string' ? radnik : radnik.id;
-    const url = '${this.klijentiUrl}/${id}';
+    const url = `${this.radniciUrl}/${id}`;
 
-    return this.http.delete<Radnik>(url)
-      .pipe(
-        tap(_ => console.log('deleted radnik id=${id}')),
+    return this.http.delete<Radnik>(url).pipe(
+        tap(_ => console.log(`deleted radnik id=${id}`)),
         catchError(this.handleError<Radnik>('deleteRadnik'))
       );
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Radnik } from '../klijent.model';
+import { Radnik } from '../radnik.model';
 
 @Component({
   selector: 'app-radnik-create',
