@@ -1,4 +1,4 @@
-import { Component, Directive, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { KlijentService } from '../klijent.service';
 import { Klijent } from '../klijent.model';
 import { ActivatedRoute } from '@angular/router';

@@ -33,19 +33,13 @@ export class MjestaComponent implements OnInit {
     this.router.navigate([`/mjesto/edit/${mjesto.id}`]);
   }
 
-  navigateToDetails(mjesto: Mjesto) {
-    this.router.navigate([`/mjesto/detail/${mjesto.id}`]);
-  }
-
   deleteMjesto(mjesto: Mjesto) {
-    if (confirm()) {
-
+    if (confirm('Jese li sigurrni da želite obrisati mjesto: ' + mjesto.nazivMjesta + ' ?')) {
+      this.mjesta = this.mjesta.filter(s => s !== mjesto);
+      this.mjestoService.deleteMjesto(mjesto).subscribe(
+        () => this.toastrService.success('Uspješno ste obrisali mjesto!', 'Brisanje'),
+        () => this.toastrService.error('Došlo je do pogreške prilikom brisanja mjesta!', 'Greška')
+      );
     }
-    this.mjesta = this.mjesta.filter(s => s !== mjesto);
-    this.mjestoService.deleteMjesto(mjesto).subscribe(
-      () => this.toastrService.success('Jese li sigurrni da želite obrisati mjesto: ' + mjesto.nazivMjesta, 'Brisanje'),
-      () => this.toastrService.error('Došlo je do pogreške prilikom brisanja mjesta!', 'Greška')
-    );
   }
-
 }
