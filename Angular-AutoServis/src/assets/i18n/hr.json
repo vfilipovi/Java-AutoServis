@@ -41,18 +41,43 @@
             "opisKvara": "Detalji",
             "opisKvaraPlaceholder": "Unesite opis kvara",
             "buttonOtkazi": "Otkaži",
-            "buttonSpremi": "Spremi",
-            "ects": "Broj ECTS bodova",
-            "ectsPlaceholder": "Unesite ECTS",
-            "cancel": "Odustani",
-            "save": "Spremi"
+            "buttonSpremi": "Spremi"
         },
         "detailsForm": {
-            "studentDetails": "Detalji studenta",
-            "tuitionPaymentMessage": "Student treba platiti školarinu.",
-            "courses": "Kolegiji na kojima je student upisan",
-            "notAttendingAnyCourse": "Student nije upisao ni jedan kolegij.",
-            "back": "Povratak na pregled studenata"
+            "ID": "ID kvara",
+            "createdAt": "Datum dodavanja",
+            "opisKvara": "Detaljan opis kvara"
         }
+    },
+    "klijenti": {
+        "title": "Popis klijenata",
+        "create": "Dodaj novog klijenta",
+        "imeKlijenta": "Ime",
+        "prezimeKlijenta": "Prezime",
+        "oibKlijenta": "OIB",
+        "urediKlijenta": "Uređivanje podataka o klijentu",
+        "form": {
+            "imeKlijenta": "Naziv kvara",
+            "imeKlijentaPlaceholder": "Unesite naziv kvara",
+            "prezimeKlijenta": "Detalji",
+            "prezimeKlijentaPlaceholder": "Unesite opis kvara",
+            "oibKlijenta": "OIB",
+            "oibKlijentaPlaceholder": "Unesite OIB",
+            "oibInvalid": "OIB mora sadržavati 11 znakova",
+            "email": "E-mail klijenta",
+            "emailPlaceholder": "Unesite e-mail klijenta",
+            "brMob": "Kontakt broj",
+            "brMobPlaceholder": "Unesite broj mobitela",
+            "brMobInvalid": "Broj mobitela mora sadržavati 10 znakova",
+            "mjesto": "Odaberi mjesto",
+            "mjestoSelected": "-- Molimo odaberite mjesto --",
+            "buttonOdustani": "Odustani",
+            "buttonSpremi": "Spremi"
+        },
+      "detailsForm": {
+            "title": "Detalji klijenta",
+            "mjesto": "Mjesto klijenta",
+            "prevPage": "Povratak na prethodnu stranicu"
+      }
     }
 }
