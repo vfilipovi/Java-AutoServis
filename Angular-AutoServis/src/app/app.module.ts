@@ -19,8 +19,6 @@ import { KlijentCreateComponent } from './klijenti/klijent-create/klijent-create
 
 import { RadniciComponent } from './radnici/radnici.component';
 
-
-
 import { MjestaComponent } from './mjesta/mjesta.component';
 
 import { KvaroviComponent } from './kvarovi/kvarovi.component';
@@ -83,4 +81,4 @@ export function HttpLoaderFactory(http: HttpClient) {
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
