@@ -23,6 +23,7 @@ import { RadniciComponent } from './radnici/radnici.component';
 
 import { MjestaComponent } from './mjesta/mjesta.component';
 
+
 import { KvaroviComponent } from './kvarovi/kvarovi.component';
 import { KvarCreateComponent } from './kvarovi/kvarovi-create/kvar-create.component';
 import { KvarDetailComponent } from './kvarovi/kvarovi-detail/kvar-detail.component';
@@ -30,6 +31,13 @@ import { KvarEditComponent } from './kvarovi/kvarovi-edit/kvar-edit.component';
 import { KvarFormComponent } from './kvarovi/kvarovi-form/kvar-form.component';
 
 import { PageNotFoundComponent} from './page-not-found/page-not-found.component';
+
+import {NaloziComponent} from './nalog/nalozi.component';
+import {NalogDetailComponent} from './nalog/nalog-detail/nalog-detail.component';
+import {NalogCreateComponent} from './nalog/nalog-create/nalog-create.component';
+import {NalogEditComponent} from './nalog/nalog-edit/nalog-edit.component';
+import {NalogFormComponent} from './nalog/nalog-form/nalog-form.component';
+
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -51,7 +59,12 @@ export function HttpLoaderFactory(http: HttpClient) {
     KvarDetailComponent,
     KvarEditComponent,
     KvarFormComponent,
-    RadniciComponent,
+    NaloziComponent,
+    NalogDetailComponent,
+    NalogCreateComponent,
+    NalogEditComponent,
+    NalogFormComponent
+
   ],
   imports: [
     BrowserModule,
