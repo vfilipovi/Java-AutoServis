@@ -9,4 +9,5 @@ export class Klijent {
   brojMob: string;
   email: string;
   mjesto: Mjesto = new Mjesto();
+  createdAt: Date;
 }

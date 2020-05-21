@@ -1,5 +1,5 @@
-import { VrstaRadnogOdnosaEnum } from './../constants/vrsta-radnog-odnosa.enum';
-import { StatusRadnogOdnosaEnum } from './../constants/status-radnog-odnosa.enum';
+import { VrstaRadnogOdnosaEnum } from '../constants/vrsta-radnog-odnosa.enum';
+import { StatusRadnogOdnosaEnum } from '../constants/status-radnog-odnosa.enum';
 import { Mjesto } from '../mjesta/mjesto.model';
 
 export class Radnik {

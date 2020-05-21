@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Klijent } from '../klijent.model';
 import { KlijentService } from '../klijent.service';
-import { MjestoService } from './../../mjesta/mjesto.service';
-import { Mjesto } from './../../mjesta/mjesto.model';
+import { MjestoService } from '../../mjesta/mjesto.service';
+import { Mjesto } from '../../mjesta/mjesto.model';
 import { ToastrService } from 'ngx-toastr';
 import { delay } from '../../util/delay';
 import { Router } from '@angular/router';

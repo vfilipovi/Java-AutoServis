@@ -1,23 +1,24 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-  <h1 class="h2">Popis klijenata</h1>
+  <h1 class="h2">{{'klijenti.title' | translate }}</h1>
   <div class="btn-toolbar mb-2 mb-md-0">
     <div class="btn-group mr-2">
       <button type="button" class="btn btn-sm btn btn-outline-primary" routerLink="/klijent/create">
-        Dodaj novog klijenta</button>
+        {{'klijenti.create' | translate }}</button>
     </div>
   </div>
 </div>
 
-<table class="table mt-4">
+<table class="table table-hover mt-4">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Ime</th>
       <th scope="col">Prezime</th>
       <th scope="col">OIB</th>
-      <th scope="col" class="text-center"></th>
-      <th scope="col" class="text-center"></th>
-      <th scope="col" class="text-center"></th>
+      <th scope="col">Datum Kreiranja</th>
+      <th scope="col" class="text-center">Detalji</th>
+      <th scope="col" class="text-center">Uređivanje</th>
+      <th scope="col" class="text-center">Brisanje</th>
     </tr>
   </thead>
   <tbody>
@@ -26,6 +27,7 @@
       <td>{{klijent?.ime}}</td>
       <td>{{klijent?.prezime}}</td>
       <td>{{klijent?.oib}}</td>
+      <td>{{klijent?.createdAt | date:'d.M.yyyy'}}</td>
         <td class="text-center">
           <button type="button" class="btn btn-outline-primary" (click)="navigateToDetails(klijent)">
             <svg class="bi bi-eye" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
