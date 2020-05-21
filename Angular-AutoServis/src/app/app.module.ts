@@ -30,6 +30,8 @@ import { KvarEditComponent } from './kvarovi/kvarovi-edit/kvar-edit.component';
 import { KvarFormComponent } from './kvarovi/kvarovi-form/kvar-form.component';
 
 import { PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {RadnikFormComponent} from "./radnici/radnik-form/radnik-form.component";
+import {RadnikCreateComponent} from "./radnici/radnik-create/radnik-create.component";
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -52,6 +54,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     KvarEditComponent,
     KvarFormComponent,
     RadniciComponent,
+    RadnikFormComponent,
+    RadnikCreateComponent
   ],
   imports: [
     BrowserModule,
