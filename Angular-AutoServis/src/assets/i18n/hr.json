@@ -85,5 +85,39 @@
         "create": "Dodaj novo mjesto",
         "nazivMjesta": "Naziv mjesta"
 
+    },
+    "nalozi": {
+        "title": "Popis naloga",
+        "create": "Dodaj novi nalog",
+        "registracija": "Registracija vozila",
+        "createdAt": "Datum kreiranja",
+        "lastChanged": "Datum zadnje izmjene",
+        "details": "Detalji",
+        "edit": "Uređivanje",
+        "form": {
+            "registracija": "Registracija vozila",
+            "registracijaPlaceholder": "Unesite registraciju vozila",
+            "prioritet": "Odaberi status radnog odnosa",
+            "prioritetDropdown": "-- Molimo odaberite vrstu prioriteta --",
+            "radniSati": "Broj utrošenih radnih sati",
+            "radniSatiPlaceholder": "Unesite broj radnih sati servisa",
+            "odabirKlijenta" :"Odaberi klijenta",
+            "odabirKlijentaDropdown": "-- Molimo odaberite klijenta --",
+            "odabirRadnika": "Odaberi radnika",
+            "odabirRadnikaDropdown": "-- Molimo odaberite radnika --",
+            "odabirKvara": "Odaberi kvara",
+            "odabirKvaraDropdown": "-- Molimo odaberite kvar --",
+            "cancel": "Otkaži",
+            "save": "Spremi"
+
+        },
+        "detailsForm": {
+            "idNalog": "ID naloga: ",
+            "registracija": "Registracija vozila: ",
+            "prioritet": "Prioritet naloga: ",
+            "radnik": "Radnik",
+            "klijent": "Klijent",
+            "goBack": "Povratak na prethodnu stranicu"
+        }
     }
 }

@@ -7,15 +7,15 @@
       <div class="card-body">
         <div class="row">
           <div>
-            <label><b>ID naloga: </b></label> {{nalog.id}}
+            <label><b>{{'nalozi.detailsForm.idNalog' | translate}}</b></label> {{nalog.id}}
           </div>
           <br>
           <div>
-            <label><b>Registracija vozila: </b></label> {{nalog.registracijaVozila}}
+            <label><b>{{'nalozi.detailsForm.registracija' | translate}}</b></label> {{nalog.registracijaVozila}}
           </div>
           <br>
           <div>
-            <label><b>Prioritet naloga: </b></label> {{nalog.prioritet}}
+            <label><b>{{'nalozi.detailsForm.prioritet' | translate}}</b></label> {{nalog.prioritet}}
           </div>
           <br>
           <div>
@@ -23,11 +23,11 @@
           </div>
           <br>
           <div>
-            <label><b>Radnik: </b></label> {{nalog.radnik.imeIPrezime}}
+            <label><b>{{'nalozi.detailsForm.radnik' | translate}}</b></label> {{nalog.radnik.imeIPrezime}}
           </div>
           <br>
           <div>
-            <label><b>Klijent: : </b></label> {{nalog.klijent.imeIPrezime}}
+            <label><b>{{'nalozi.detailsForm.klijent' | translate}}</b></label> {{nalog.klijent.imeIPrezime}}
           </div>
           <br>
           </div>
@@ -37,4 +37,4 @@
   </div>
 
 
-<button type="button" class="btn btn-outline-secondary float-right" routerLink="/nalozi">Povratak na pregled naloga</button>
+<button type="button" class="btn btn-outline-secondary float-right" routerLink="/nalozi">{{'nalozi.detailsForm.goBack' | translate}}</button>
