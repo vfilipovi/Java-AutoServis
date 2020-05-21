@@ -1,50 +1,100 @@
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-  <div class="btn-toolbar mb-2 mb-md-0">
-    <div class="btn-group mr-2"></div>
-  </div>
-</div>
-
 <div class="card">
   <div class="card-body">
     <form #klijentForm="ngForm">
       <div class="form-group">
         <label for="ime">Ime</label>
-        <input [(ngModel)]="klijent.ime" type="text" class="form-control" id="ime" name="ime" placeholder="Unesite ime"
-          required>
+        <input
+          [(ngModel)]="klijent.ime"
+          type="text"
+          class="form-control"
+          id="ime"
+          name="ime"
+          placeholder="Unesite ime"
+          required
+        />
       </div>
       <div class="form-group">
         <label for="prezime">Prezime</label>
-        <input [(ngModel)]="klijent.prezime" type="text" class="form-control" id="prezime" name="prezime"
-          placeholder="Unesite ime" required>
+        <input
+          [(ngModel)]="klijent.prezime"
+          type="text"
+          class="form-control"
+          id="prezime"
+          name="prezime"
+          placeholder="Unesite ime"
+          required
+        />
       </div>
       <div class="form-group">
         <label for="oib">OIB</label>
-        <input [(ngModel)]="klijent.oib" type="text" class="form-control" id="oib" name="oib" minlength="11"
-          maxlength="11" placeholder="Unesite OIB" required #oib="ngModel">
-        <div *ngIf="!klijentForm.pristine && oib.invalid" class="invalid-feedback d-block">
+        <input
+          [(ngModel)]="klijent.oib"
+          type="text"
+          class="form-control"
+          id="oib"
+          name="oib"
+          minlength="11"
+          maxlength="11"
+          placeholder="Unesite OIB"
+          required
+          #oib="ngModel"
+        />
+        <div
+          *ngIf="!klijentForm.pristine && oib.invalid"
+          class="invalid-feedback d-block"
+        >
           OIB mora sadržavati 11 znakova.
         </div>
       </div>
       <div class="form-group">
         <label for="email">Email</label>
-        <input [(ngModel)]="klijent.email" type="email" class="form-control" id="email" name="email"
-          placeholder="Unesite email adresu" required>
+        <input
+          [(ngModel)]="klijent.email"
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="Unesite email adresu"
+          required
+        />
       </div>
       <div class="form-group">
         <label for="brojMob">Broj mobitela</label>
-        <input [(ngModel)]="klijent.brojMob" type="text" class="form-control" id="brojMob" name="brojMob" minlength="10"
-          maxlength="10" placeholder="Unesite brojMob" required #brojMob="ngModel">
-        <div *ngIf="!klijentForm.pristine && brojMob.invalid" class="invalid-feedback d-block">
+        <input
+          [(ngModel)]="klijent.brojMob"
+          type="text"
+          class="form-control"
+          id="brojMob"
+          name="brojMob"
+          minlength="10"
+          maxlength="10"
+          placeholder="Unesite brojMob"
+          required
+          #brojMob="ngModel"
+        />
+        <div
+          *ngIf="!klijentForm.pristine && brojMob.invalid"
+          class="invalid-feedback d-block"
+        >
           Broj mobitel mora sadržavati 10 znakova.
         </div>
       </div>
 
       <div class="form-group">
         <label for="mjesto">Odaberi mjesto</label>
-        <select id="mjesto" [(ngModel)]="klijent.mjesto" class="form-control" name="mjesto">
-          <option disabled selected>-- Molimo odaberite mjesto --</option>
-          <option [ngValue]="mjesto" *ngFor="let mjesto of mjesta" value="{{mjesto}}">
-            {{mjesto.nazivMjesta}}
+        <select
+          id="mjesto"
+          [(ngModel)]="klijent.mjesto"
+          class="form-control"
+          name="mjesto"
+        >
+          <option selected disabled>-- Molimo odaberite mjesto --</option>
+          <option
+            [ngValue]="mjesto"
+            *ngFor="let mjesto of mjesta"
+            value="{{ mjesto }}"
+          >
+            {{ mjesto.nazivMjesta }}
           </option>
         </select>
       </div>
@@ -52,10 +102,21 @@
       <div class="row">
         <div class="col-md-12">
           <div class="float-right">
-            <button routerLink="/klijenti" [disabled]="saving" class="btn btn-outline-secondary mr-4"
-              type="button">Odustani</button>
-            <button (click)="save()" [disabled]="!klijentForm.valid || saving" class="btn btn-success"
-              type="button">Spremi
+            <button
+              routerLink="/klijenti"
+              [disabled]="saving"
+              class="btn btn-outline-secondary mr-4"
+              type="button"
+            >
+              Odustani
+            </button>
+            <button
+              (click)="save()"
+              [disabled]="!klijentForm.valid || saving"
+              class="btn btn-success"
+              type="button"
+            >
+              Spremi
             </button>
           </div>
         </div>

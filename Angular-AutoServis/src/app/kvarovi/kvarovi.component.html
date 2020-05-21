@@ -8,12 +8,13 @@
   </div>
 </div>
 
-<table class="table mt-4">
+<table class="table table-hover mt-4">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Naziv kvara</th>
       <th scope="col">Datum Kreiranja</th>
+      <th scope="col">Datum zadnje izmjene</th>
       <th scope="col" class="text-center">Detalji</th>
       <th scope="col" class="text-center">Uređivanje</th>
     </tr>
@@ -23,6 +24,8 @@
       <th scope="row">{{i + 1}}</th>
       <td>{{kvar?.nazivKvara}}</td>
       <td>{{kvar?.createdAt | date:'d.M.yyyy'}}</td>
+      <td>{{kvar?.updatedAt | date:'d.M.yyyy'}}</td>
+
         <td class="text-center">
 
           <button type="button" class="btn btn-outline-secondary mr-2" placement="top"

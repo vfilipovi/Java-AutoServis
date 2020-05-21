@@ -1,0 +1,48 @@
+<div class="row mt-4">
+  <div class="col-md-6" *ngIf="radnik">
+    <div class="card">
+      <div class="card-header">
+        Detalji radnika
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            {{radnik.imeIPrezime}}
+          </div>
+          <div class="col-md-12">
+            {{radnik.oib}} <small id="jmbag" class="d-inline text-muted">(OIB)</small>
+          </div>
+          <div class="col-md-12">
+            {{radnik.iznosOsnovice}} <small id="ects" class="d-inline text-muted">(email)</small>
+          </div>
+          <div class="col-md-12">
+            {{radnik.koefPlace}} % <small id="ects" class="d-inline text-muted">(Broj mobitela)</small>
+          </div>
+          <div class="col-md-12">
+            {{radnik.statusRadnogOdnosa}} <small id="ects" class="d-inline text-muted">(Broj mobitela)</small>
+          </div>
+          <div class="col-md-12">
+            {{radnik.vrstaRadnogOdnosa}} <small id="ects" class="d-inline text-muted">(Broj mobitela)</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6" *ngIf="mjesto">
+    <div class="card">
+      <div class="card-header">
+        Mjesto radnika
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            {{mjesto.nazivMjesta}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button type="button" class="btn btn-outline-secondary float-right" routerLink="/radnici">Povratak na pregled klijenata</button>

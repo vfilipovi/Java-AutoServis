@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Radnik } from '../radnik.model';
-import { VrstaRadnogOdnosaEnum } from './../../constants/vrsta-radnog-odnosa.enum';
-import { StatusRadnogOdnosaEnum } from './../../constants/status-radnog-odnosa.enum';
+import { VrstaRadnogOdnosaEnum } from '../../constants/vrsta-radnog-odnosa.enum';
+import { StatusRadnogOdnosaEnum } from '../../constants/status-radnog-odnosa.enum';
 import { RadnikService } from '../radnik.service';
 import { MjestoService } from './../../mjesta/mjesto.service';
 import { Mjesto } from './../../mjesta/mjesto.model';
@@ -19,9 +19,12 @@ export class RadnikFormComponent implements OnInit {
 
   @Input() radnik: Radnik;
 
+  keys = Object.keys;
+  statusiRadnogOdnosa = StatusRadnogOdnosaEnum;
+  vrsteRadnogOdnosa = VrstaRadnogOdnosaEnum;
+  statusiRadnogOdnosaOptions = [];
+  vrsteRadnogOdnosaOptions = [];
   mjesta: Mjesto[];
-  statusRadnogOdnosa: StatusRadnogOdnosaEnum;
-  vrstaRadnogOdnosa: VrstaRadnogOdnosaEnum;
 
   saving = false;
 
@@ -33,6 +36,8 @@ export class RadnikFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.statusiRadnogOdnosaOptions = Object.keys(this.statusiRadnogOdnosa);
+    this.vrsteRadnogOdnosaOptions = Object.keys(this.vrsteRadnogOdnosa);
     this.getMjesta();
   }
 
