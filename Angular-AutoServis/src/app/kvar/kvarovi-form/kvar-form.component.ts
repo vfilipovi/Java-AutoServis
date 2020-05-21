@@ -7,7 +7,8 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-kvar-form',
-  templateUrl: './kvar-form.component.html'
+  templateUrl: './kvar-form.component.html',
+  styleUrls: ['./kvar-form.component.css']
 })
 export class KvarFormComponent implements OnInit {
 
@@ -41,6 +42,7 @@ export class KvarFormComponent implements OnInit {
     this.kvarService.addKvar(this.kvar).subscribe(
       (kvar: Kvar) => {
         this.kvar = kvar;
+        this.toastrService.toastrConfig.positionClass = 'toast-top-center';
         this.toastrService.success('Uspješno ste spremili podatke kvara!', 'Spremanje');
         delay(2000).then(() => this.router.navigate(['kvarovi']));
       },
@@ -55,7 +57,8 @@ export class KvarFormComponent implements OnInit {
     this.kvarService.updateKvar(this.kvar).subscribe(
       (kvar: Kvar) => {
         this.kvar = kvar;
-        this.toastrService.success('Uspješno ste spremili podatke kvara!', 'Spremanje');
+        this.toastrService.toastrConfig.positionClass = 'toast-top-center';
+        this.toastrService.success('Uspješno ste spremili podatke kvara!', 'Spremanje',);
         delay(2000).then(() => this.router.navigate(['kvarovi']));
       },
       () => {
