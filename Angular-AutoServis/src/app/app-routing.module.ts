@@ -12,9 +12,9 @@ import { RadnikCreateComponent} from './radnici/radnik-create/radnik-create.comp
 import { RadnikEditComponent } from './radnici/radnik-edit/radnik-edit.component';
 
 import { KvaroviComponent } from './kvarovi/kvarovi.component';
-import { KvarDetailComponent } from './kvarovi/kvar-detail/kvar-detail.component';
-import { KvarCreateComponent } from './kvarovi/kvar-create/kvar-create.component';
-import { KvarEditComponent } from './kvarovi/kvar-edit/kvar-edit.component';
+import { KvarDetailComponent } from './kvarovi/kvarovi-detail/kvar-detail.component';
+import { KvarCreateComponent } from './kvarovi/kvarovi-create/kvar-create.component';
+import { KvarEditComponent } from './kvarovi/kvarovi-edit/kvar-edit.component';
 
 import { MjestaComponent } from './mjesta/mjesta.component';
 import { MjestoCreateComponent } from './mjesta/mjesto-create/mjesto-create.component';
