@@ -1,9 +1,9 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-  <h1 class="h2">Popis kvarova</h1>
+  <h1 class="h2">{{'kvarovi.title' | translate}}</h1>
   <div class="btn-toolbar mb-2 mb-md-0">
     <div class="btn-group mr-2">
-      <button type="button" class="btn btn-sm btn btn-outline-primary" routerLink="/kvar/create">
-        Dodaj novi kvar</button>
+      <button type="button" class="btn btn-sm btn btn-outline-primary" name="create" routerLink="/kvar/create">
+        {{'kvarovi.create' | translate}}</button>
     </div>
   </div>
 </div>
@@ -12,10 +12,10 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Naziv kvara</th>
-      <th scope="col">Datum Kreiranja</th>
-      <th scope="col" class="text-center">Detalji</th>
-      <th scope="col" class="text-center">Uređivanje</th>
+      <th scope="col">{{'kvarovi.nazivKvara' | translate}}</th>
+      <th scope="col">{{'kvarovi.createdAt' | translate}}</th>
+      <th scope="col" class="text-center">{{'kvarovi.opisKvara' | translate}}</th>
+      <th scope="col" class="text-center">{{'kvarovi.edit' | translate}}</th>
     </tr>
   </thead>
   <tbody>
@@ -26,8 +26,7 @@
         <td class="text-center">
 
           <button type="button" class="btn btn-outline-secondary mr-2" placement="top"
-                  ngbPopover="{{kvar?.opisKvara}}" popoverTitle="Opis kvara:">
-            Opis kvara
+                  ngbPopover="{{kvar?.opisKvara}}" popoverTitle="{{'kvarovi.opisKvara'}}">
           </button>
           <button type="button" class="btn btn-outline-primary" (click)="navigateToDetails(kvar)">
             <svg class="bi bi-eye" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"

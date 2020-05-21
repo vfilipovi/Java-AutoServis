@@ -6,9 +6,9 @@
           <ngb-accordion [closeOthers]="true" activeIds="static-1">
             <ngb-panel id="static-1" title="{{kvar?.nazivKvara}}">
               <ng-template ngbPanelContent>
-                <p> <label><b>ID kvara: </b></label> {{kvar.id}}</p>
-                <p> <label><b>Datum dodavanja kvara: </b></label> {{kvar?.createdAt | date:'d.M.yyyy'}}</p>
-                <p><label><b>Opis kvara: </b></label> {{kvar.opisKvara}}</p>
+                <p> <label><b>{{'kvarovi.detailsForm.ID' | translate}} </b></label> {{kvar.id}}</p>
+                <p> <label><b>{{'kvarovi.detailsForm.createdAt' | translate}} </b></label> {{kvar?.createdAt | date:'d.M.yyyy'}}</p>
+                <p><label><b>{{'kvarovi.detailsForm.opisKvara' | translate}} </b></label> {{kvar.opisKvara}}</p>
               </ng-template>
             </ngb-panel>
           </ngb-accordion>
@@ -18,3 +18,4 @@
 
 
 <!--<button type="button" class="btn btn-outline-secondary float-right" routerLink="/kvarovi">{{'students.detailsForm.back' | translate}}</button>-->
+</div>
