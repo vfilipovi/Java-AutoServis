@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { LanguageEnum } from './constants/language.enum';
+
 
 @Component({
   selector: 'app-root',
@@ -8,13 +10,19 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent implements OnInit {
   title = 'Angular-AutoServis';
+  currentLanguage: string;
+  private translateService;
 
-  constructor(translate: TranslateService) {
+  constructor(private translate: TranslateService) {
     translate.setDefaultLang('hr');
-    translate.use('hr');
+    this.translateService = TranslateService;
   }
 
   ngOnInit(): void {
+  }
+
+  useLanguage(language: string) {
+      this.translate.use(language);
   }
 }
 

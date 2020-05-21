@@ -1,14 +1,14 @@
 
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-sm-3 col-md-2 mr-0" >Auto servis Jožo</a>
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0">Auto servis Jožo</a>
 
   <!--DROPDOWN Button-->
 
    <div class="d-inline-block pull-left dropdown-menu-left" ngbDropdown #myDrop="ngbDropdown" style="text-align:left !important;">
      <button class="btn btn btn-secondary mr-2 pull-right" style="text-align:left !important;" id="dropdownManual" ngbDropdownAnchor (focus)="myDrop.open()">Select Language</button>
      <div ngbDropdownMenu aria-labelledby="dropdownManual">
-       <button ngbDropdownItem>English</button>
-       <button ngbDropdownItem>Hrvatski</button>
+       <button ngbDropdownItem (click)="useLanguage('hr')">{{'language.croatian' | translate}}</button>
+       <button ngbDropdownItem (click)="useLanguage('en')">{{'language.english' | translate}}</button>
      </div>
    </div>
 
@@ -30,21 +30,9 @@
     <nav class="col-md-2 d-none d-md-block bg-light sidebar">
       <div class="sidebar-sticky">
         <ul class="nav flex-column">
-          <!--<li class="nav-item">
-            <a class="nav-link">
-              <span data-feather="home"></span>
-              Dashboard <span class="sr-only"></span>
-            </a>
-          </li>
           <li class="nav-item">
-            <a class="nav-link">
-              <span data-feather="file"></span>
-              Stanje naloga
-            </a>
-          </li>
-        -->
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/nalozi" routerLinkActive="active">
+            <a class="nav-link" routerLink="/nalozi" routerLinkActive="active" >
+              <span data-feather="shopping-cart"></span>
               Nalozi
             </a>
           </li>
