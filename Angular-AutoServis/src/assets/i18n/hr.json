@@ -1,90 +1,94 @@
 {
-    "language": {
-        "croatian": "Hrvatski",
-        "english": "Engleski"
+  "language": {
+    "selectLanguage": "Odaberite jezik",
+    "croatian": "Hrvatski",
+    "english": "Engleski"
+  },
+  "navbar": {
+    "username": "Korisničko ime",
+    "role": "Uloga",
+    "login": "Prijava",
+    "logout": "Odjava"
+  },
+  "login": {
+    "title": "Prijava",
+    "username": "Korisničko ime",
+    "password": "Lozinka",
+    "loginButton": "Prijava",
+    "loginError": "Neuspješna prijava! Provjerite podatke i pokušajte ponovno."
+  },
+  "main": {
+    "studentsLink": "Studenti"
+  },
+  "404": {
+    "pageNotFoundMessage": "Tražena stranica nije pronađena",
+    "returnToHomepage": "Povratak na početnu stranicu"
+  },
+  "403": {
+    "pageForbiddenMessage": "Nemate pravo pristupa traženoj stranici!",
+    "returnToHomepage": "Povratak na početnu stranicu"
+  },
+  "kvarovi": {
+    "title": "Popis kvarova",
+    "create": "Dodaj novi kvar",
+    "nazivKvara": "Naziv kvara",
+    "createdAt": "Datum kreiranja",
+    "opisKvara": "Detalji",
+    "edit": "Uređivanje",
+    "delete": "Brisanje",
+    "form": {
+      "nazivKvara": "Naziv kvara",
+      "nazivKvaraPlaceholder": "Unesite naziv kvara",
+      "opisKvara": "Detalji",
+      "opisKvaraPlaceholder": "Unesite opis kvara",
+      "buttonOtkazi": "Odustani",
+      "buttonSpremi": "Spremi"
     },
-    "navbar": {
-        "username": "Korisničko ime",
-        "role": "Uloga",
-        "login": "Prijava",
-        "logout": "Odjava"
+    "detailsForm": {
+      "ID": "ID kvara",
+      "createdAt": "Datum dodavanja",
+      "opisKvara": "Detaljan opis kvara"
+    }
+  },
+  "klijenti": {
+    "title": "Popis klijenata",
+    "create": "Dodaj novog klijenta",
+    "imeKlijenta": "Ime",
+    "prezimeKlijenta": "Prezime",
+    "oibKlijenta": "OIB",
+    "urediKlijenta": "Uređivanje podataka o klijentu",
+    "form": {
+      "imeKlijenta": "Naziv kvara",
+      "imeKlijentaPlaceholder": "Unesite naziv kvara",
+      "prezimeKlijenta": "Detalji",
+      "prezimeKlijentaPlaceholder": "Unesite opis kvara",
+      "oibKlijenta": "OIB",
+      "oibKlijentaPlaceholder": "Unesite OIB",
+      "oibInvalid": "OIB mora sadržavati 11 znakova",
+      "email": "E-mail klijenta",
+      "emailPlaceholder": "Unesite e-mail klijenta",
+      "brMob": "Kontakt broj",
+      "brMobPlaceholder": "Unesite broj mobitela",
+      "brMobInvalid": "Broj mobitela mora sadržavati 10 znakova",
+      "mjesto": "Odaberi mjesto",
+      "mjestoSelected": "-- Molimo odaberite mjesto --",
+      "buttonOdustani": "Odustani",
+      "buttonSpremi": "Spremi"
     },
-    "login": {
-        "title": "Prijava",
-        "username": "Korisničko ime",
-        "password": "Lozinka",
-        "loginButton": "Prijava",
-        "loginError": "Neuspješna prijava! Provjerite podatke i pokušajte ponovno."
-    },
-    "main": {
-        "studentsLink": "Studenti"
-    },
-    "404": {
-        "pageNotFoundMessage": "Tražena stranica nije pronađena",
-        "returnToHomepage": "Povratak na početnu stranicu"
-    },
-    "403": {
-        "pageForbiddenMessage": "Nemate pravo pristupa traženoj stranici!",
-        "returnToHomepage": "Povratak na početnu stranicu"
-    },
-    "kvarovi": {
-        "title": "Popis kvarova",
-        "create": "Dodaj novi kvar",
-        "nazivKvara": "Naziv kvara",
-        "createdAt": "Datum kreiranja",
-        "opisKvara": "Detalji",
-        "edit": "Uređivanje",
-        "delete": "Brisanje",
-        "form": {
-            "nazivKvara": "Naziv kvara",
-            "nazivKvaraPlaceholder": "Unesite naziv kvara",
-            "opisKvara": "Detalji",
-            "opisKvaraPlaceholder": "Unesite opis kvara",
-            "buttonOtkazi": "Otkaži",
-            "buttonSpremi": "Spremi"
-        },
-        "detailsForm": {
-            "ID": "ID kvara",
-            "createdAt": "Datum dodavanja",
-            "opisKvara": "Detaljan opis kvara"
-        }
-    },
-    "klijenti": {
-        "title": "Popis klijenata",
-        "create": "Dodaj novog klijenta",
-        "imeKlijenta": "Ime",
-        "prezimeKlijenta": "Prezime",
-        "oibKlijenta": "OIB",
-        "urediKlijenta": "Uređivanje podataka o klijentu",
-        "form": {
-            "imeKlijenta": "Naziv kvara",
-            "imeKlijentaPlaceholder": "Unesite naziv kvara",
-            "prezimeKlijenta": "Detalji",
-            "prezimeKlijentaPlaceholder": "Unesite opis kvara",
-            "oibKlijenta": "OIB",
-            "oibKlijentaPlaceholder": "Unesite OIB",
-            "oibInvalid": "OIB mora sadržavati 11 znakova",
-            "email": "E-mail klijenta",
-            "emailPlaceholder": "Unesite e-mail klijenta",
-            "brMob": "Kontakt broj",
-            "brMobPlaceholder": "Unesite broj mobitela",
-            "brMobInvalid": "Broj mobitela mora sadržavati 10 znakova",
-            "mjesto": "Odaberi mjesto",
-            "mjestoSelected": "-- Molimo odaberite mjesto --",
-            "buttonOdustani": "Odustani",
-            "buttonSpremi": "Spremi"
-        },
-      "detailsForm": {
-            "title": "Detalji klijenta",
-            "mjesto": "Mjesto klijenta",
-            "prevPage": "Povratak na prethodnu stranicu"
-      }
-    },
-    "mjesta": {
-        "title" : "Popis mjesta",
-        "create": "Dodaj novo mjesto",
-        "nazivMjesta": "Naziv mjesta"
-
+    "detailsForm": {
+      "title": "Detalji klijenta",
+      "mjesto": "Mjesto klijenta",
+      "prevPage": "Povratak na prethodnu stranicu"
+    }
+  },
+  "mjesta": {
+    "title" : "Popis mjesta",
+    "create": "Dodaj novo mjesto",
+    "nazivMjesta": "Naziv mjesta",
+    "form": {
+      "prezimeKlijentaPlaceholder": "Unesite naziv mejsta",
+      "buttonOdustani": "Odustani",
+      "buttonSpremi": "Spremi"
     },
     "nalozi": {
         "title": "Popis naloga",
@@ -120,4 +124,5 @@
             "goBack": "Povratak na prethodnu stranicu"
         }
     }
+  }
 }
