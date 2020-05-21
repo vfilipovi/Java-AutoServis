@@ -1,8 +1,8 @@
-import { KvarCreateComponent } from './kvar/kvarovi-create/kvar-create.component';
-import { KvaroviComponent } from './kvar/kvarovi.component';
+import { KvarCreateComponent } from './kvarovi/kvarovi-create/kvar-create.component';
+import { KvaroviComponent } from './kvarovi/kvarovi.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { KvarDetailComponent } from './kvar/kvarovi-detail/kvar-detail.component';
+import { KvarDetailComponent } from './kvarovi/kvarovi-detail/kvar-detail.component';
 
 import { KlijentiComponent } from './klijenti/klijenti.component';
 import { KlijentDetailComponent } from './klijenti/klijent-detail/klijent-detail.component';
@@ -11,12 +11,12 @@ import { KlijentEditComponent } from './klijenti/klijent-edit/klijent-edit.compo
 
 import { MjestaComponent } from './mjesta/mjesta.component';
 
-import { RadniciComponent} from "./radnik/radnici.component";
-import { RadnikCreateComponent} from "./radnik/radnik-create/radnik-create.component";
+import { RadniciComponent} from "./radnici/radnici.component";
+import { RadnikCreateComponent} from "./radnici/radnik-create/radnik-create.component";
 
 import { ForbiddenPageComponent } from './forbidden-page/forbidden-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import {KvarEditComponent} from "./kvar/kvarovi-edit/kvar-edit.component";
+import {KvarEditComponent} from "./kvarovi/kvarovi-edit/kvar-edit.component";
 
 const routes: Routes = [
   {
@@ -57,11 +57,11 @@ const routes: Routes = [
   },
   {
     path: 'radnici',
-    component: RadniciComponent
+    component: RadniciComponent,
   },
   {
-    path 'radnik/create',
-    component: RadnikCreateComponent
+    path: 'radnik/create',
+    component: RadnikCreateComponent,
   },
   {
     path: 'forbidden',
