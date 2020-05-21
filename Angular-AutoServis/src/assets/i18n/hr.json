@@ -124,5 +124,29 @@
             "goBack": "Povratak na prethodnu stranicu"
         }
     }
+  },
+  "radnici": {
+      "title": "Popis radnika",
+      "create": "Dodaj novog radnika",
+      "imeRadnika": "Ime",
+      "prezimeRadnika": "Prezime",
+      "oibRadnika": "OIB",
+      "details": "Detalji",
+      "edit": "Uređivanje",
+      "delete": "Brisanje",
+    "form": {
+        "imeRadnika": "Ime",
+        "imeRadnikaPlaceholder": "Unesite ime",
+        "prezimeRadnika": "Prezime",
+        "prezimeRadnikaPlaceholder": "Unesite prezime",
+        "oibRadnika": "OIB",
+        "oibRadnikaPlaceholder": "OIB mora sadržavati 11 znakova",
+        "iznosOsn": "Iznos osnovice",
+        "iznosOsnPlaceholder:": "Unesite iznos osnovice",
+        "koefPlace": "Koef. plaće",
+        "koefPlacePlaceholder": "Unesite koef. plaće"
+
+
+    }
   }
 }
