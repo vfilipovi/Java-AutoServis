@@ -79,5 +79,11 @@
             "mjesto": "Mjesto klijenta",
             "prevPage": "Povratak na prethodnu stranicu"
       }
+    },
+    "mjesta": {
+        "title" : "Popis mjesta",
+        "create": "Dodaj novo mjesto",
+        "nazivMjesta": "Naziv mjesta"
+
     }
 }
