@@ -17,16 +17,20 @@ import { KlijentDetailComponent } from './klijenti/klijent-detail/klijent-detail
 import { KlijentEditComponent } from './klijenti/klijent-edit/klijent-edit.component';
 import { KlijentCreateComponent } from './klijenti/klijent-create/klijent-create.component';
 
-import { MjestaComponent } from './mjesta/mjesta.component';
-import {KvaroviComponent} from "./kvar/kvarovi.component";
-import {KvarCreateComponent} from "./kvar/kvarovi-create/kvar-create.component";
-import {KvarDetailComponent} from "./kvar/kvarovi-detail/kvar-detail.component";
-import {KvarEditComponent} from "./kvar/kvarovi-edit/kvar-edit.component";
-import {KvarFormComponent} from "./kvar/kvarovi-form/kvar-form.component";
-import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
+import { RadniciComponent } from './radnici/radnici.component';
 
-import { RadniciComponent } from "./radnik/radnici.component";
-import {RadnikCreateComponent} from "./radnik/radnik-create/radnik-create.component";
+
+
+import { MjestaComponent } from './mjesta/mjesta.component';
+
+import { KvaroviComponent } from './kvarovi/kvarovi.component';
+import { KvarCreateComponent } from './kvarovi/kvarovi-create/kvar-create.component';
+import { KvarDetailComponent } from './kvarovi/kvarovi-detail/kvar-detail.component';
+import { KvarEditComponent } from './kvarovi/kvarovi-edit/kvar-edit.component';
+import { KvarFormComponent } from './kvarovi/kvarovi-form/kvar-form.component';
+
+import { PageNotFoundComponent} from './page-not-found/page-not-found.component';
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -48,8 +52,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     KvarEditComponent,
     KvarFormComponent,
     RadniciComponent,
-    RadnikCreateComponent
-
   ],
   imports: [
     BrowserModule,
