@@ -1,0 +1,133 @@
+<div class="card">
+  <div class="card-body">
+    <form #nalogForm="ngForm">
+      <div class="form-group">
+        <label for="registracijaVozila">Registracija vozila</label>
+        <input
+          [(ngModel)]="nalog.registracijaVozila"
+          type="text"
+          class="form-control"
+          id="registracijaVozila"
+          name="registracijaVozila"
+          placeholder="Unesite registraciju vozila"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="prioritet">Odaberi status radnog odnosa</label>
+        <select
+          id="prioritet"
+          [(ngModel)]="nalog.prioritet"
+          class="form-control"
+          name="prioritet"
+        >
+          <option disabled selected
+            >-- Molimo odaberite vrstu prioriteta --</option
+          >
+          <option
+            *ngFor="let key of prioritetiOptions"
+            [value]="key"
+            [label]="prioriteti[key]"
+          ></option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="utroseniRadniSatiServisa"
+          >Broj utrošenih radnih sati servisa</label
+        >
+        <input
+          [(ngModel)]="nalog.utroseniRadniSatiServisa"
+          type="number"
+          class="form-control"
+          id="utroseniRadniSatiServisa"
+          name="utroseniRadniSatiServisa"
+          placeholder="Unesite broj radnih sati servisa"
+          required
+          min="0"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="klijent">Odaberi klijenta</label>
+        <select
+          id="klijent"
+          [(ngModel)]="nalog.klijent"
+          class="form-control"
+          name="kljent"
+        >
+          <option disabled selected>-- Molimo odaberite klijenta --</option>
+          <option
+            [ngValue]="klijent"
+            *ngFor="let klijent of klijenti"
+            value="{{ klijent }}"
+          >
+            {{ klijent.imeIPrezime }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="radnik">Odaberi radnika</label>
+        <select
+          id="radnik"
+          [(ngModel)]="nalog.radnik"
+          class="form-control"
+          name="radnik"
+        >
+          <option disabled selected>-- Molimo odaberite radnika --</option>
+          <option
+            [ngValue]="radnik"
+            *ngFor="let radnik of radnici"
+            value="{{ radnik }}"
+          >
+            {{ radnik.imeIPrezime }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="kvar">Odaberi kvar</label>
+        <select
+          id="kvar"
+          [(ngModel)]="nalog.kvar"
+          class="form-control"
+          name="kvar"
+        >
+          <option disabled selected>-- Molimo odaberite kvar --</option>
+          <option
+            [ngValue]="kvar"
+            *ngFor="let kvar of kvarovi"
+            value="{{ kvar }}"
+          >
+            {{ kvar.nazivKvara }}
+          </option>
+        </select>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="float-right">
+            <button
+              routerLink="/kvarovi"
+              [disabled]="saving"
+              class="btn btn-outline-secondary mr-4"
+              type="button"
+            >
+              Otkaži
+            </button>
+            <button
+              (click)="save()"
+              [disabled]="!nalogForm.valid || saving"
+              class="btn btn-success"
+              type="button"
+            >
+              Spremi
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
