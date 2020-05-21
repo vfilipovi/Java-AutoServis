@@ -1,5 +1,6 @@
 {
     "language": {
+		"selectLanguage": "Odaberite jezik",
         "croatian": "Hrvatski",
         "english": "Engleski"
     },
@@ -27,34 +28,67 @@
         "pageForbiddenMessage": "Nemate pravo pristupa traženoj stranici!",
         "returnToHomepage": "Povratak na početnu stranicu"
     },
-    "students": {
-        "title": "Popis studenata",
-        "create": "Dodaj novog studenta",
-        "firstName": "Ime",
-        "lastName": "Prezime",
-        "details": "Detalji",
+    "kvarovi": {
+        "title": "Popis kvarova",
+        "create": "Dodaj novi kvar",
+        "nazivKvara": "Naziv kvara",
+        "createdAt": "Datum kreiranja",
+        "opisKvara": "Detalji",
         "edit": "Uređivanje",
         "delete": "Brisanje",
-        "createTitle": "Dodavanje novog studenta",
-        "editTitle": "Uređivanje podataka studenta",
         "form": {
-            "firstName": "Ime",
-            "firstNamePlaceholder": "Unesite ime",
-            "lastName": "Prezime",
-            "lastNamePlaceholder": "Unesite prezime",
-            "jmbagPlaceholder": "Unesite JMBAG",
-            "jmbagError": "JMBAG mora sadržavati 10 znakova.",
-            "ects": "Broj ECTS bodova",
-            "ectsPlaceholder": "Unesite ECTS",
-            "cancel": "Odustani",
-            "save": "Spremi"
+            "nazivKvara": "Naziv kvara",
+            "nazivKvaraPlaceholder": "Unesite naziv kvara",
+            "opisKvara": "Detalji",
+            "opisKvaraPlaceholder": "Unesite opis kvara",
+            "buttonOtkazi": "Odustani",
+            "buttonSpremi": "Spremi"
         },
         "detailsForm": {
-            "studentDetails": "Detalji studenta",
-            "tuitionPaymentMessage": "Student treba platiti školarinu.",
-            "courses": "Kolegiji na kojima je student upisan",
-            "notAttendingAnyCourse": "Student nije upisao ni jedan kolegij.",
-            "back": "Povratak na pregled studenata"
+            "ID": "ID kvara",
+            "createdAt": "Datum dodavanja",
+            "opisKvara": "Detaljan opis kvara"
+        }
+    },
+    "klijenti": {
+        "title": "Popis klijenata",
+        "create": "Dodaj novog klijenta",
+        "imeKlijenta": "Ime",
+        "prezimeKlijenta": "Prezime",
+        "oibKlijenta": "OIB",
+        "urediKlijenta": "Uređivanje podataka o klijentu",
+        "form": {
+            "imeKlijenta": "Naziv kvara",
+            "imeKlijentaPlaceholder": "Unesite naziv kvara",
+            "prezimeKlijenta": "Detalji",
+            "prezimeKlijentaPlaceholder": "Unesite opis kvara",
+            "oibKlijenta": "OIB",
+            "oibKlijentaPlaceholder": "Unesite OIB",
+            "oibInvalid": "OIB mora sadržavati 11 znakova",
+            "email": "E-mail klijenta",
+            "emailPlaceholder": "Unesite e-mail klijenta",
+            "brMob": "Kontakt broj",
+            "brMobPlaceholder": "Unesite broj mobitela",
+            "brMobInvalid": "Broj mobitela mora sadržavati 10 znakova",
+            "mjesto": "Odaberi mjesto",
+            "mjestoSelected": "-- Molimo odaberite mjesto --",
+            "buttonOdustani": "Odustani",
+            "buttonSpremi": "Spremi"
+        },
+      "detailsForm": {
+            "title": "Detalji klijenta",
+            "mjesto": "Mjesto klijenta",
+            "prevPage": "Povratak na prethodnu stranicu"
+      }
+    },
+    "mjesta": {
+        "title" : "Popis mjesta",
+        "create": "Dodaj novo mjesto",
+        "nazivMjesta": "Naziv mjesta",
+        "form": {
+          "prezimeKlijentaPlaceholder": "Unesite naziv mejsta",
+          "buttonOdustani": "Odustani",
+          "buttonSpremi": "Spremi"
         }
     }
 }

@@ -107,7 +107,7 @@ const routes: Routes = [
     component: MjestoCreateComponent,
   },
   {
-    path: 'mejsto/edit/:id',
+    path: 'mjesto/edit/:id',
     component: MjestoEditComponent,
   },
   {
