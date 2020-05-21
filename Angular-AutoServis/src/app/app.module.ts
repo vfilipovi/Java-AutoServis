@@ -23,6 +23,12 @@ import {KvarCreateComponent} from "./kvar/kvarovi-create/kvar-create.component";
 import {KvarDetailComponent} from "./kvar/kvarovi-detail/kvar-detail.component";
 import {KvarEditComponent} from "./kvar/kvarovi-edit/kvar-edit.component";
 import {KvarFormComponent} from "./kvar/kvarovi-form/kvar-form.component";
+import {NaloziComponent} from "./nalog/nalozi.component";
+import {NalogDetailComponent} from "./nalog/nalog-detail/nalog-detail.component";
+import {NalogCreateComponent} from "./nalog/nalog-create/nalog-create.component";
+import {NalogEditComponent} from "./nalog/nalog-edit/nalog-edit.component";
+import {NalogFormComponent} from "./nalog/nalog-form/nalog-form.component";
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -41,7 +47,12 @@ export function HttpLoaderFactory(http: HttpClient) {
     KvarCreateComponent,
     KvarDetailComponent,
     KvarEditComponent,
-    KvarFormComponent
+    KvarFormComponent,
+    NaloziComponent,
+    NalogDetailComponent,
+    NalogCreateComponent,
+    NalogEditComponent,
+    NalogFormComponent
 
   ],
   imports: [
