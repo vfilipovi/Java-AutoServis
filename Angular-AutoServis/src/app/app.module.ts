@@ -29,10 +29,10 @@ import { MjestoEditComponent } from './mjesta/mjesto-edit/mjesto-edit.component'
 import { MjestoFormComponent } from './mjesta/mjesto-form/mjesto-form.component';
 
 import { KvaroviComponent } from './kvarovi/kvarovi.component';
-import { KvarCreateComponent } from './kvarovi/kvar-create/kvar-create.component';
-import { KvarDetailComponent } from './kvarovi/kvar-detail/kvar-detail.component';
-import { KvarEditComponent } from './kvarovi/kvar-edit/kvar-edit.component';
-import { KvarFormComponent } from './kvarovi/kvar-form/kvar-form.component';
+import { KvarCreateComponent } from './kvarovi/kvarovi-create/kvar-create.component';
+import { KvarDetailComponent } from './kvarovi/kvarovi-detail/kvar-detail.component';
+import { KvarEditComponent } from './kvarovi/kvarovi-edit/kvar-edit.component';
+import { KvarFormComponent } from './kvarovi/kvarovi-form/kvar-form.component';
 
 import { NaloziComponent } from './nalozi/nalozi.component';
 import { NalogDetailComponent } from './nalozi/nalog-detail/nalog-detail.component';
