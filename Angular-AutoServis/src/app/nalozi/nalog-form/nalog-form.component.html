@@ -2,20 +2,20 @@
   <div class="card-body">
     <form #nalogForm="ngForm">
       <div class="form-group">
-        <label for="registracijaVozila">Registracija vozila</label>
+        <label for="registracijaVozila">{{'nalozi.form.registracija' | translate}}</label>
         <input
           [(ngModel)]="nalog.registracijaVozila"
           type="text"
           class="form-control"
           id="registracijaVozila"
           name="registracijaVozila"
-          placeholder="Unesite registraciju vozila"
+          placeholder="{{'nalozi.form.registracijaPlaceholder' | translate}}"
           required
         />
       </div>
 
       <div class="form-group">
-        <label for="prioritet">Odaberi status radnog odnosa</label>
+        <label for="prioritet">{{'nalozi.form.prioritet' | translate}}</label>
         <select
           id="prioritet"
           [(ngModel)]="nalog.prioritet"
@@ -23,7 +23,7 @@
           name="prioritet"
         >
           <option disabled selected
-            >-- Molimo odaberite vrstu prioriteta --</option
+            >{{'nalozi.form.prioritetDropdown' | translate}}</option
           >
           <option
             *ngFor="let key of prioritetiOptions"
@@ -35,7 +35,7 @@
 
       <div class="form-group">
         <label for="utroseniRadniSatiServisa"
-          >Broj utrošenih radnih sati servisa</label
+          >{{'nalozi.form.radniSati' | translate}}</label
         >
         <input
           [(ngModel)]="nalog.utroseniRadniSatiServisa"
@@ -43,21 +43,21 @@
           class="form-control"
           id="utroseniRadniSatiServisa"
           name="utroseniRadniSatiServisa"
-          placeholder="Unesite broj radnih sati servisa"
+          placeholder="{{'nalozi.form.radniSatiPlaceholder' | translate}}"
           required
           min="0"
         />
       </div>
 
       <div class="form-group">
-        <label for="klijent">Odaberi klijenta</label>
+        <label for="klijent">{{'nalozi.form.odabirKlijenta' | translate}}</label>
         <select
           id="klijent"
           [(ngModel)]="nalog.klijent"
           class="form-control"
           name="kljent"
         >
-          <option disabled selected>-- Molimo odaberite klijenta --</option>
+          <option disabled selected>{{'nalozi.form.odabirKlijentaDropdown' | translate}}</option>
           <option
             [ngValue]="klijent"
             *ngFor="let klijent of klijenti"
@@ -69,14 +69,14 @@
       </div>
 
       <div class="form-group">
-        <label for="radnik">Odaberi radnika</label>
+        <label for="radnik">{{'nalozi.form.odabirRadnika' | translate}}</label>
         <select
           id="radnik"
           [(ngModel)]="nalog.radnik"
           class="form-control"
           name="radnik"
         >
-          <option disabled selected>-- Molimo odaberite radnika --</option>
+          <option disabled selected>{{'nalozi.form.odabirRadnikaDropdown' | translate}}</option>
           <option
             [ngValue]="radnik"
             *ngFor="let radnik of radnici"
@@ -88,14 +88,14 @@
       </div>
 
       <div class="form-group">
-        <label for="kvar">Odaberi kvar</label>
+        <label for="kvar">{{'nalozi.form.odabirKvara' | translate}}</label>
         <select
           id="kvar"
           [(ngModel)]="nalog.kvar"
           class="form-control"
           name="kvar"
         >
-          <option disabled selected>-- Molimo odaberite kvar --</option>
+          <option disabled selected>{{'nalozi.form.odabirKvaraDropdown' | translate}}</option>
           <option
             [ngValue]="kvar"
             *ngFor="let kvar of kvarovi"
@@ -115,7 +115,7 @@
               class="btn btn-outline-secondary mr-4"
               type="button"
             >
-              Otkaži
+              {{'nalozi.form.cancel' | translate}}
             </button>
             <button
               (click)="save()"
@@ -123,7 +123,7 @@
               class="btn btn-success"
               type="button"
             >
-              Spremi
+              {{'nalozi.form.save' | translate}}
             </button>
           </div>
         </div>

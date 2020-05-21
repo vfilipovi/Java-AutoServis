@@ -1,9 +1,9 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-  <h1 class="h2">Popis naloga</h1>
+  <h1 class="h2">{{'nalozi.title' | translate}}</h1>
   <div class="btn-toolbar mb-2 mb-md-0">
     <div class="btn-group mr-2">
       <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/nalog/create">
-        Dodaj novi nalog</button>
+        {{'nalozi.create' | translate}}</button>
     </div>
   </div>
 </div>
@@ -12,11 +12,11 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Registracija vozila</th>
-      <th scope="col">Datum Kreiranja</th>
-      <th scope="col">Datum zadnje izmjene</th>
-      <th scope="col" class="text-center">Detalji</th>
-      <th scope="col" class="text-center">Uređivanje</th>
+      <th scope="col">{{'nalozi.registracija' | translate}}</th>
+      <th scope="col">{{'nalozi.createdAt' | translate}}</th>
+      <th scope="col">{{'nalozi.lastChanged' | translate}}</th>
+      <th scope="col" class="text-center">{{'nalozi.details' | translate }}</th>
+      <th scope="col" class="text-center">{{'nalozi.edit' | translate }}</th>
     </tr>
   </thead>
   <tbody>
