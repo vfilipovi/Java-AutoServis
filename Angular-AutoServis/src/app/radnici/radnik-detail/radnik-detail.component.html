@@ -2,7 +2,7 @@
   <div class="col-md-6" *ngIf="radnik">
     <div class="card">
       <div class="card-header">
-        Detalji radnika
+        {{'radnici.detailsForm.title' | translate}}
       </div>
       <div class="card-body">
         <div class="row">
@@ -10,7 +10,7 @@
             {{radnik.imeIPrezime}}
           </div>
           <div class="col-md-12">
-            {{radnik.oib}} <small id="jmbag" class="d-inline text-muted">(OIB)</small>
+            {{radnik.oib}} <small id="ects" class="d-inline text-muted">(OIB)</small>
           </div>
           <div class="col-md-12">
             {{radnik.iznosOsnovice}} <small id="ects" class="d-inline text-muted">(email)</small>
@@ -32,7 +32,7 @@
   <div class="col-md-6" *ngIf="mjesto">
     <div class="card">
       <div class="card-header">
-        Mjesto radnika
+        {{'radnici.detailsForm.mjestoRadnika' | translate}}
       </div>
       <div class="card-body">
         <div class="row">
@@ -45,4 +45,5 @@
   </div>
 </div>
 
-<button type="button" class="btn btn-outline-secondary float-right" routerLink="/radnici">Povratak na pregled klijenata</button>
+<button type="button" class="btn btn-outline-secondary float-right" routerLink="/radnici">
+  {{'radnici.detailsForm.prevPage' | translate}}</button>

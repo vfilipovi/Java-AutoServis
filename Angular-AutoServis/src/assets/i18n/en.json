@@ -1,21 +1,21 @@
 {
   "language": {
-    "selectLanguage": "Select language",
-    "croatian": "Croatian",
-    "english": "English"
+    "selectLanguage": "Odaberite jezik",
+    "croatian": "Hrvatski",
+    "english": "Engleski"
   },
   "navbar": {
-    "username": "Username",
-    "role": "Role",
-    "login": "Sign in",
-    "logout": "Sign out"
+    "username": "Korisničko ime",
+    "role": "Uloga",
+    "login": "Prijava",
+    "logout": "Odjava"
   },
   "login": {
-    "title": "Sign in",
-    "username": "Username",
-    "password": "Password",
-    "loginButton": "Sign in",
-    "loginError": "Sign in failed! Check your data and try again."
+    "title": "Prijava",
+    "username": "Korisničko ime",
+    "password": "Lozinka",
+    "loginButton": "Prijava",
+    "loginError": "Neuspješna prijava! Provjerite podatke i pokušajte ponovno."
   },
   "main": {
     "studentsLink": "Studenti"
@@ -29,25 +29,25 @@
     "returnToHomepage": "Povratak na početnu stranicu"
   },
   "kvarovi": {
-    "title": "List of breakdowns",
-    "create": "Add new breakdown",
+    "title": "List of types of breakdowns",
+    "create": "Add new type",
     "nazivKvara": "Name of breakdown",
-    "createdAt": "Date added",
+    "createdAt": "Date created",
     "opisKvara": "Details",
     "edit": "Edit",
     "delete": "Delete",
     "form": {
-      "nazivKvara": "Name of breakdown",
-      "nazivKvaraPlaceholder": "Add the name",
-      "opisKvara": "Details",
-      "opisKvaraPlaceholder": "Describe the breakdown",
-      "buttonOtkazi": "Cancel",
-      "buttonSpremi": "Save"
+      "nazivKvara": "Name of breakdown: ",
+      "nazivKvaraPlaceholder": "Enter the name of breakdown here",
+      "opisKvara": "Description: ",
+      "opisKvaraPlaceholder": "Description of a breakdown",
+      "cancel": "Cancel",
+      "save": "Save"
     },
     "detailsForm": {
-      "ID": "Breakdown ID",
-      "createdAt": "Date added",
-      "opisKvara": "Description"
+      "ID": "Breakdown ID: ",
+      "createdAt": "Date added: ",
+      "opisKvara": "Description: "
     }
   },
   "klijenti": {
@@ -55,74 +55,109 @@
     "create": "Add new client",
     "imeKlijenta": "Name",
     "prezimeKlijenta": "Surname",
-    "oibKlijenta": "OIB",
-    "urediKlijenta": "Edit details",
+    "oibKlijenta": "OIB: ",
+    "dateAdded": "Date added",
+    "details": "Details",
+    "edit": "Edit",
+    "delete": "Delete",
     "form": {
-      "imeKlijenta": "Client name",
+      "imeKlijenta": "Name: ",
       "imeKlijentaPlaceholder": "Enter client's name",
-      "prezimeKlijenta": "Surname",
+      "prezimeKlijenta": "Surname: ",
       "prezimeKlijentaPlaceholder": "Enter client's surname",
-      "oibKlijenta": "OIB",
-      "oibKlijentaPlaceholder": "Enter OIB",
-      "oibInvalid": "OIB must contain 11 characters",
-      "email": "E-mail",
-      "emailPlaceholder": "Enter e-mail adress",
-      "brMob": "Contact",
-      "brMobPlaceholder": "Add phone number",
-      "brMobInvalid": "Phone number must contain 10 characters",
-      "mjesto": "Select place",
-      "mjestoSelected": "-- Choose place from dropdown menu --",
-      "buttonOdustani": "Cancel",
-      "buttonSpremi": "Save"
+      "oibKlijenta": "OIB: ",
+      "oibKlijentaPlaceholder": "Enter client's OIB",
+      "oibInvalid": "OIB must contain 11 characters.",
+      "email": "E-mail: ",
+      "emailPlaceholder": "Enter client's e-mail",
+      "brMob": "Contact: ",
+      "brMobPlaceholder": "Enter client's phone number",
+      "brMobInvalid": "Phone number must contain 10 characters.",
+      "mjesto": "Place: ",
+      "mjestoSelected": "-- Choose place --",
+      "cancel": "Cancel",
+      "save": "Save"
     },
     "detailsForm": {
-      "title": "Client details",
-      "mjesto": "Place of client",
-      "prevPage": "Go back on previous page"
+      "title": "Info",
+      "mjesto": "Place: ",
+      "prevPage": "Go back to previous page"
     }
   },
   "mjesta": {
-    "title": "List of places",
+    "title" : "List of places",
     "create": "Add new place",
-    "nazivMjesta": "Name of place",
+    "edit": "Edit info",
+    "nazivMjesta": "Name",
+    "dateAdded": "Date added",
     "form": {
-      "prezimeKlijentaPlaceholder": "Unesite naziv mejsta",
-      "buttonOdustani": "Cancel",
-      "buttonSpremi": "Save"
-    }
-  },
+      "nazivMjesta": "Place: ",
+      "nazivMjestaPlaceholder": "Enter place name",
+      "cancel": "Cancel",
+      "save": "Save"
+
+    },
+
     "nalozi": {
-      "title": "List of orders",
-      "create": "Add new order",
-      "registracija": "License number",
+      "title": "Orders",
+      "create": "New order",
+      "registracija": "License's plate number",
       "createdAt": "Date added",
       "lastChanged": "Last changed",
       "details": "Details",
       "edit": "Edit",
       "form": {
-        "registracija": "License number",
-        "registracijaPlaceholder": "Enter license number",
-        "prioritet": "Choose the type of working contract",
-        "prioritetDropdown": "-- Choose the type of working contract --",
-        "radniSati": "Hours spent",
-        "radniSatiPlaceholder": "Number of hours spent working",
-        "odabirKlijenta" :"Choose client",
-        "odabirKlijentaDropdown": "-- Choose client --",
-        "odabirRadnika": "Choose worker",
-        "odabirRadnikaDropdown": "-- Choose worker --",
-        "odabirKvara": "Choose type of breakdown",
-        "odabirKvaraDropdown": "-- Choose breakdown --",
+        "registracija": "License's plate number: ",
+        "registracijaPlaceholder": "Enter the number from license plate",
+        "prioritet": "Priority: ",
+        "prioritetDropdown": "-- Please choose priority level --",
+        "radniSati": "Hours spent: ",
+        "radniSatiPlaceholder": "Number of working hours",
+        "odabirKlijenta" :"Client: ",
+        "odabirKlijentaDropdown": "-- Please choose your client --",
+        "odabirRadnika": "Worker: ",
+        "odabirRadnikaDropdown": "-- Please choose worker --",
+        "odabirKvara": "Breakdown type: ",
+        "odabirKvaraDropdown": "-- Type of breakdown --",
         "cancel": "Cancel",
         "save": "Save"
 
       },
       "detailsForm": {
         "idNalog": "Order ID: ",
-        "registracija": "Car license number: ",
+        "registracija": "License's plate number: ",
         "prioritet": "Order priority: ",
-        "radnik": "Worker",
-        "klijent": "Client",
-        "goBack": "Back to previous page"
+        "radnik": "Worker: ",
+        "klijent": "Client: ",
+        "goBack": "Go back to previous page"
       }
     }
-  }
+  },
+  "radnici": {
+    "title": "List of workers",
+    "create": "Add new worker",
+    "imeRadnika": "Name",
+    "prezimeRadnika": "Surname",
+    "oibRadnika": "OIB",
+    "details": "Details",
+    "edit": "Edit",
+    "delete": "Delete",
+    "form": {
+      "imeRadnika": "Name: ",
+      "imeRadnikaPlaceholder": "Enter worker's name",
+      "prezimeRadnika": "Surname: ",
+      "prezimeRadnikaPlaceholder": "Enter worker's surname",
+      "oibRadnika": "OIB: ",
+      "oibInvalid": "OIB mmust contain 11 characters.",
+      "oibRadnikaPlaceholder": "Enter worker's OIB",
+      "iznosOsn": "Min. wage: ",
+      "iznosOsnPlaceholder:": "Enter minimum salary",
+      "koefPlace": "Salary coefficient: ",
+      "koefPlacePlaceholder": "Enter salary's coefficient",
+      "detailsForm": {
+        "title": "Additional information",
+        "mjestoRadnika": "Place: ",
+        "prevPage": "Go back to previous page"
+      }
+    }
+  }}

@@ -37,93 +37,99 @@
     "edit": "Uređivanje",
     "delete": "Brisanje",
     "form": {
-      "nazivKvara": "Naziv kvara",
+      "nazivKvara": "Naziv kvara: ",
       "nazivKvaraPlaceholder": "Unesite naziv kvara",
-      "opisKvara": "Detalji",
+      "opisKvara": "Detalji: ",
       "opisKvaraPlaceholder": "Unesite opis kvara",
-      "buttonOtkazi": "Odustani",
-      "buttonSpremi": "Spremi"
+      "cancel": "Odustani",
+      "save": "Spremi"
     },
     "detailsForm": {
-      "ID": "ID kvara",
-      "createdAt": "Datum dodavanja",
-      "opisKvara": "Detaljan opis kvara"
+      "ID": "ID kvara: ",
+      "createdAt": "Datum kreiranja: ",
+      "opisKvara": "Detalji: "
     }
   },
   "klijenti": {
-    "title": "Popis klijenata",
-    "create": "Dodaj novog klijenta",
+    "title": "Lista klijenata",
+    "create": "Novi klijent",
     "imeKlijenta": "Ime",
     "prezimeKlijenta": "Prezime",
-    "oibKlijenta": "OIB",
-    "urediKlijenta": "Uređivanje podataka o klijentu",
+    "oibKlijenta": "OIB: ",
+    "dateAdded": "Datum kreiranja",
+    "details": "Detalji",
+    "edit": "Uredi",
+    "delete": "Brisanje",
     "form": {
-      "imeKlijenta": "Naziv kvara",
-      "imeKlijentaPlaceholder": "Unesite naziv kvara",
-      "prezimeKlijenta": "Detalji",
-      "prezimeKlijentaPlaceholder": "Unesite opis kvara",
-      "oibKlijenta": "OIB",
+      "imeKlijenta": "Ime klijenta: ",
+      "imeKlijentaPlaceholder": "Unesite ime klijenta",
+      "prezimeKlijenta": "Prezime klijenta: ",
+      "prezimeKlijentaPlaceholder": "Unesite prezime klijenta",
+      "oibKlijenta": "OIB: ",
       "oibKlijentaPlaceholder": "Unesite OIB",
-      "oibInvalid": "OIB mora sadržavati 11 znakova",
-      "email": "E-mail klijenta",
+      "oibInvalid": "OIB mora sadržavati 11 znakova.",
+      "email": "E-mail klijenta: ",
       "emailPlaceholder": "Unesite e-mail klijenta",
-      "brMob": "Kontakt broj",
+      "brMob": "Kontakt broj: ",
       "brMobPlaceholder": "Unesite broj mobitela",
-      "brMobInvalid": "Broj mobitela mora sadržavati 10 znakova",
-      "mjesto": "Odaberi mjesto",
+      "brMobInvalid": "Broj mobitela mora sadržavati 10 znakova.",
+      "mjesto": "Mjesto: ",
       "mjestoSelected": "-- Molimo odaberite mjesto --",
-      "buttonOdustani": "Odustani",
-      "buttonSpremi": "Spremi"
+      "cancel": "Odustani",
+      "save": "Spremi"
     },
     "detailsForm": {
-      "title": "Detalji klijenta",
-      "mjesto": "Mjesto klijenta",
+      "title": "Detaljni podaci",
+      "mjesto": "Mjesto klijenta: ",
       "prevPage": "Povratak na prethodnu stranicu"
     }
   },
   "mjesta": {
     "title" : "Popis mjesta",
     "create": "Dodaj novo mjesto",
+    "edit": "Uredi informacije",
     "nazivMjesta": "Naziv mjesta",
+    "dateAdded": "Datum kreiranja",
     "form": {
-      "prezimeKlijentaPlaceholder": "Unesite naziv mejsta",
-      "buttonOdustani": "Odustani",
-      "buttonSpremi": "Spremi"
-    
+      "nazivMjesta": "Mjesto: ",
+      "nazivMjestaPlaceholder": "Unesite naziv mjesta",
+      "cancel": "Odustani",
+      "save": "Spremi"
+
   },
 
     "nalozi": {
         "title": "Popis naloga",
         "create": "Dodaj novi nalog",
-        "registracija": "Registracija vozila",
+        "registracija": "Registracijski broj vozila",
         "createdAt": "Datum kreiranja",
         "lastChanged": "Datum zadnje izmjene",
         "details": "Detalji",
         "edit": "Uređivanje",
         "form": {
-            "registracija": "Registracija vozila",
+            "registracija": "Registracijski broj vozila: ",
             "registracijaPlaceholder": "Unesite registraciju vozila",
-            "prioritet": "Odaberi status radnog odnosa",
+            "prioritet": "Prioritet zahtjeva: ",
             "prioritetDropdown": "-- Molimo odaberite vrstu prioriteta --",
-            "radniSati": "Broj utrošenih radnih sati",
+            "radniSati": "Broj utrošenih radnih sati: ",
             "radniSatiPlaceholder": "Unesite broj radnih sati servisa",
-            "odabirKlijenta" :"Odaberi klijenta",
+            "odabirKlijenta" :"Odabir klijenta: ",
             "odabirKlijentaDropdown": "-- Molimo odaberite klijenta --",
-            "odabirRadnika": "Odaberi radnika",
+            "odabirRadnika": "Odabir radnika",
             "odabirRadnikaDropdown": "-- Molimo odaberite radnika --",
-            "odabirKvara": "Odaberi kvara",
+            "odabirKvara": "Odabir kvara: ",
             "odabirKvaraDropdown": "-- Molimo odaberite kvar --",
-            "cancel": "Otkaži",
+            "cancel": "Odustani",
             "save": "Spremi"
 
         },
         "detailsForm": {
             "idNalog": "ID naloga: ",
-            "registracija": "Registracija vozila: ",
+            "registracija": "Registracijski broj vozila: ",
             "prioritet": "Prioritet naloga: ",
-            "radnik": "Radnik",
-            "klijent": "Klijent",
-            "goBack": "Povratak na prethodnu stranicu"
+            "radnik": "Radnik: ",
+            "klijent": "Klijent: ",
+            "prevPage": "Povratak na prethodnu stranicu"
         }
     }
   },
@@ -137,18 +143,22 @@
       "edit": "Uređivanje",
       "delete": "Brisanje",
     "form": {
-        "imeRadnika": "Ime",
+        "imeRadnika": "Ime: ",
         "imeRadnikaPlaceholder": "Unesite ime",
-        "prezimeRadnika": "Prezime",
+        "prezimeRadnika": "Prezime: ",
         "prezimeRadnikaPlaceholder": "Unesite prezime",
-        "oibRadnika": "OIB",
-        "oibRadnikaPlaceholder": "OIB mora sadržavati 11 znakova",
-        "iznosOsn": "Iznos osnovice",
+        "oibRadnika": "OIB: ",
+        "oibInvalid": "OIB mora sadržavati 11 znakova.",
+        "oibRadnikaPlaceholder": "Unesite OIB",
+        "iznosOsn": "Iznos osnovice: ",
         "iznosOsnPlaceholder:": "Unesite iznos osnovice",
-        "koefPlace": "Koef. plaće",
+        "koefPlace": "Koef. plaće: ",
         "koefPlacePlaceholder": "Unesite koef. plaće"
-
-
+    },
+    "detailsForm": {
+      "title": "Detaljne informacije",
+      "mjestoRadnika": "Mjesto: ",
+      "prevPage": "Povratak na prethodnu stranicu"
     }
   }
 }

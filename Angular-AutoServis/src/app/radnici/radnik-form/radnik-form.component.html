@@ -2,31 +2,31 @@
   <div class="card-body">
     <form #radnikForm="ngForm">
       <div class="form-group">
-        <label for="ime">Ime</label>
+        <label for="ime">{{'radnici.form.imeRadnika' | translate}}</label>
         <input
           [(ngModel)]="radnik.ime"
           type="text"
           class="form-control"
           id="ime"
           name="ime"
-          placeholder="Unesite ime"
+          placeholder="{{'radnici.form.imeRadnikaPlaceholder' | translate}}"
           required
         />
       </div>
       <div class="form-group">
-        <label for="prezime">Prezime</label>
+        <label for="prezime">{{'radnici.form.prezimeRadnika' | translate }}</label>
         <input
           [(ngModel)]="radnik.prezime"
           type="text"
           class="form-control"
           id="prezime"
           name="prezime"
-          placeholder="Unesite ime"
+          placeholder="{{'radnici.form.prezimeRadnikaPlaceholder' | translate}}"
           required
         />
       </div>
       <div class="form-group">
-        <label for="oib">OIB</label>
+        <label for="oib">{{'radnici.form.oibRadnika' | translate}}</label>
         <input
           [(ngModel)]="radnik.oib"
           type="text"
@@ -35,7 +35,7 @@
           name="oib"
           minlength="11"
           maxlength="11"
-          placeholder="Unesite OIB"
+          placeholder="{{'radnici.form.oibRadnikaPlaceholder' | translate}}"
           required
           #oib="ngModel"
         />
@@ -43,31 +43,31 @@
           *ngIf="!radnikForm.pristine && oib.invalid"
           class="invalid-feedback d-block"
         >
-          OIB mora sadržavati 11 znakova.
+          {{'radnici.form.oibRadnika' | translate}}
         </div>
       </div>
       <div class="form-group">
-        <label for="iznosOsnovice">Iznos osnovice</label>
+        <label for="iznosOsnovice">{{'radnici.form.iznosOsn' | translate}}</label>
         <input
           [(ngModel)]="radnik.iznosOsnovice"
           type="text"
           class="form-control"
           id="iznosOsnovice"
           name="iznosOsnovice"
-          placeholder="Unesite iznos osnovice"
+          placeholder="{{'radnici.form.iznosOsnPlaceholder' | translate }}"
           required
           #iznosOsnovice="ngModel"
         />
       </div>
       <div class="form-group">
-        <label for="koefPlace">Iznos koef. pla</label>
+        <label for="koefPlace">{{'radnici.form.koefPlace' | translate}}</label>
         <input
           [(ngModel)]="radnik.koefPlace"
           type="text"
           class="form-control"
           id="koefPlace"
           name="koefPlace"
-          placeholder="Unesite koeficijent place"
+          placeholder="{{'radnici.form.koefPlacePlaceholder' | translate}}"
           required
           #koefPlace="ngModel"
         />
