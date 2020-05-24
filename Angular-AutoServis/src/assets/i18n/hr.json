@@ -89,7 +89,9 @@
       "prezimeKlijentaPlaceholder": "Unesite naziv mejsta",
       "buttonOdustani": "Odustani",
       "buttonSpremi": "Spremi"
-    },
+    
+  },
+
     "nalozi": {
         "title": "Popis naloga",
         "create": "Dodaj novi nalog",
