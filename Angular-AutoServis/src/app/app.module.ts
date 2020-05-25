@@ -8,6 +8,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { AuthExpiredInterceptor } from './interceptors/auth-expired.inteceptor';
 
 import { AppComponent } from './app.component';
 
@@ -40,9 +42,9 @@ import { NalogCreateComponent } from './nalozi/nalog-create/nalog-create.compone
 import { NalogEditComponent } from './nalozi/nalog-edit/nalog-edit.component';
 import { NalogFormComponent } from './nalozi/nalog-form/nalog-form.component';
 
-import { PageNotFoundComponent} from './page-not-found/page-not-found.component';
-import {ForbiddenPageComponent} from "./forbidden-page/forbidden-page.component";
-import {LoginComponent} from "./login/login.component";
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ForbiddenPageComponent } from './forbidden-page/forbidden-page.component';
+import { LoginComponent } from './login/login.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -102,7 +104,18 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     )
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthExpiredInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
