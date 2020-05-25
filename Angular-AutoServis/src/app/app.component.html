@@ -12,19 +12,35 @@
      </div>
    </div>
 
+  <!-- ne brisati-->
   <a class="col-sm-3 col-md-7 mr-0" ></a>
 
-   <ul class="navbar-nav px-3">
+   <ul class="navbar-nav px-3" *ngIf="isUserLoggedIn(); else prijaviSe">
     <li class="nav-item text-nowrap">
-      <a class="nav-link" routerLink="/login" routerLinkActive="active"  >Prijava</a>
+      <a class="nav-link">{{userService?.currentUser?.username}}</a>
     </li>
   </ul>
+
+
+  <ng-template #prijaviSe>
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" routerLink="/login" routerLinkActive="active">Prijava</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" routerLink="/login" routerLinkActive="active">‎‎‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎</a>
+      </li>
+    </ul>
+  </ng-template>
 
   <ul class="navbar-nav px-3" *ngIf="isUserLoggedIn()">
     <li class="nav-item text-nowrap">
-      <a class="nav-link cursor-pointer" id="logout" (click)="logout()">Odjava</a>
+      <a class="nav-link cursor-pointer"  routerLink="" id="logout" (click)="logout()">Odjava</a>
     </li>
   </ul>
+
 
 </nav>
 
