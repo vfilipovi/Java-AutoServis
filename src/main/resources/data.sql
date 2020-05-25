@@ -42,3 +42,4 @@ INSERT INTO NALOG(created_at, updated_at, datum_izdavanja, datum_preuzimanja, pr
 VALUES (CURRENT_TIMESTAMP, null, '2020-05-02', '2020-05-03', 'NISKI', 'ZG-4632-UH','1',4,4, 3);
 INSERT INTO NALOG(created_at, updated_at, datum_izdavanja, datum_preuzimanja, prioritet, registracija_vozila, utroseni_radni_sati_servisa, klijent_id,kvar_id,radnik_id)
 VALUES (CURRENT_TIMESTAMP, null, '2020-05-05', '2020-05-05', 'NISKI', 'RI-8573-AJ','1',5,4, 2);
+
