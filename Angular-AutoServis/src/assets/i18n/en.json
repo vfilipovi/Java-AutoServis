@@ -95,7 +95,7 @@
       "nazivMjestaPlaceholder": "Enter place name",
       "cancel": "Cancel",
       "save": "Save"
-
+        }
     },
 
     "nalozi": {
@@ -131,7 +131,6 @@
         "klijent": "Client: ",
         "goBack": "Go back to previous page"
       }
-    }
   },
   "radnici": {
     "title": "List of workers",

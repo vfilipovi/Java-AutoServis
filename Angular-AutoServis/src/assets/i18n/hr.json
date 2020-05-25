@@ -96,8 +96,8 @@
       "cancel": "Odustani",
       "save": "Spremi"
 
+    }
   },
-
     "nalozi": {
         "title": "Popis naloga",
         "create": "Dodaj novi nalog",
@@ -131,7 +131,7 @@
             "klijent": "Klijent: ",
             "prevPage": "Povratak na prethodnu stranicu"
         }
-    }
+
   },
   "radnici": {
       "title": "Popis radnika",
