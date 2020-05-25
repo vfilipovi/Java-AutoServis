@@ -36,7 +36,7 @@ export class RadniciComponent implements OnInit{
   }
 
   deleteRadnik(radnik: Radnik) {
-    if (confirm('Jese li sigurrni da želite obrisati radnika: ' + radnik.imeIPrezime + ' ?')) {
+    if (confirm('Jese li sigurni da želite obrisati radnika: ' + radnik.imeIPrezime + ' ?')) {
       this.radnici = this.radnici.filter(s => s !== radnik);
       this.radnikService.deleteRadnik(radnik).subscribe(
         () => this.toastrService.success('Uspješno ste obrisali radnika!', 'Brisanje'),

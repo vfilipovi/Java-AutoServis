@@ -1,9 +1,9 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-  <h1 class="h2">Popis radnika</h1>
+  <h1 class="h2">{{'radnici.title' | translate}}</h1>
   <div class="btn-toolbar mb-2 mb-md-0">
     <div class="btn-group mr-2">
       <button type="button" class="btn btn-sm btn btn-outline-primary" routerLink="/radnik/create">
-        Dodaj novog radnika</button>
+        {{'radnici.create' | translate}}</button>
     </div>
   </div>
 </div>
@@ -12,12 +12,12 @@
   <thead>
   <tr>
     <th scope="col">#</th>
-    <th scope="col">Ime</th>
-    <th scope="col">Prezime</th>
-    <th scope="col">OIB</th>
-    <th scope="col" class="text-center">Detalji</th>
-    <th scope="col" class="text-center">Uređivanje</th>
-    <th scope="col" class="text-center">Brisanje</th>
+    <th scope="col">{{'radnici.imeRadnika' | translate}}</th>
+    <th scope="col">{{'radnici.prezimeRadnika' | translate}}</th>
+    <th scope="col">{{'radnici.oibRadnika' | translate}}</th>
+    <th scope="col" class="text-center">{{'radnici.details' | translate}}</th>
+    <th scope="col" class="text-center">{{'radnici.edit' | translate}}</th>
+    <th scope="col" class="text-center">{{'radnici.delete' | translate}}</th>
   </tr>
   </thead>
   <tbody>
