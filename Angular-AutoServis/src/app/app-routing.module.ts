@@ -27,6 +27,7 @@ import { NalogEditComponent } from './nalozi/nalog-edit/nalog-edit.component';
 
 import { ForbiddenPageComponent } from './forbidden-page/forbidden-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {LoginComponent} from "./login/login.component";
 
 const routes: Routes = [
   {
@@ -113,6 +114,10 @@ const routes: Routes = [
   {
     path: 'forbidden',
     component: ForbiddenPageComponent
+  },
+  {
+    path: 'prijava',
+    component: LoginComponent
   },
   {
     path: '**', component: PageNotFoundComponent

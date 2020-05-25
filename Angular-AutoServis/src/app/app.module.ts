@@ -42,6 +42,7 @@ import { NalogFormComponent } from './nalozi/nalog-form/nalog-form.component';
 
 import { PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {ForbiddenPageComponent} from "./forbidden-page/forbidden-page.component";
+import {LoginComponent} from "./login/login.component";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -75,7 +76,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     NalogCreateComponent,
     NalogEditComponent,
     NalogFormComponent,
-    ForbiddenPageComponent
+    ForbiddenPageComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
