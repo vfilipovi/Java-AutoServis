@@ -143,22 +143,29 @@
       "edit": "Uređivanje",
       "delete": "Brisanje",
     "form": {
-        "imeRadnika": "Ime: ",
-        "imeRadnikaPlaceholder": "Unesite ime",
-        "prezimeRadnika": "Prezime: ",
-        "prezimeRadnikaPlaceholder": "Unesite prezime",
-        "oibRadnika": "OIB: ",
-        "oibInvalid": "OIB mora sadržavati 11 znakova.",
-        "oibRadnikaPlaceholder": "Unesite OIB",
-        "iznosOsn": "Iznos osnovice: ",
-        "iznosOsnPlaceholder:": "Unesite iznos osnovice",
-        "koefPlace": "Koef. plaće: ",
-        "koefPlacePlaceholder": "Unesite koef. plaće"
-    },
+      "imeRadnika": "Ime: ",
+      "imeRadnikaPlaceholder": "Unesi ime radnika",
+      "prezimeRadnika": "Prezime: ",
+      "prezimeRadnikaPlaceholder": "Unesi prezime radnika",
+      "oibRadnika": "OIB: ",
+      "oibInvalid": "OIB mora sadržavati 11 znakova.",
+      "oibRadnikaPlaceholder": "Unesite radnikov OIB",
+      "iznosOsn": "Iznos osnovice: ",
+      "iznosOsnPlaceholder:": "Osnovica plaće radnika",
+      "koefPlace": "Koeficijent plaće: ",
+      "koefPlacePlaceholder": "Unesite koeficijent plaće radnika",
+      "status": "Status posla: ",
+      "statusDropdown": "-- statusi --",
+      "vrsta": "Pozicija: ",
+      "vrstaDropdown": "-- Poslovna pozicija --",
+      "mjesto": "Mjesto: ",
+      "mjestoDropdown": "-- Odabir mjesta --",
+      "cancel": "Odustani",
+      "save": "Spremi",
     "detailsForm": {
       "title": "Detaljne informacije",
       "mjestoRadnika": "Mjesto: ",
       "prevPage": "Povratak na prethodnu stranicu"
     }
   }
-}
+}}

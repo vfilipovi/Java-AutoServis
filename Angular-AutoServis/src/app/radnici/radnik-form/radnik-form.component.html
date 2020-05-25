@@ -73,7 +73,7 @@
         />
       </div>
       <div class="form-group">
-        <label for="statusRadnogOdnosa">Odaberi status radnog odnosa</label>
+        <label for="statusRadnogOdnosa">{{'radnici.form.status' | translate}}</label>
         <select
           id="statusRadnogOdnosa"
           [(ngModel)]="radnik.statusRadnogOdnosa"
@@ -81,7 +81,7 @@
           name="statusRadnogOdnosa"
         >
           <option disabled selected
-            >-- Molimo odaberite vrstu radnog osnosa --</option
+            >{{'radnici.form.statusDropdown' | translate}}</option
           >
           <option
             *ngFor="let key of statusiRadnogOdnosaOptions"
@@ -91,7 +91,7 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="vrstaRadnogOdnosa">Odaberi vrste radnog odnosa</label>
+        <label for="vrstaRadnogOdnosa">{{'radnici.form.vrsta' | translate}}</label>
         <select
           id="vrstaRadnogOdnosa"
           [(ngModel)]="radnik.vrstaRadnogOdnosa"
@@ -99,7 +99,7 @@
           name="vrstaRadnogOdnosa"
         >
           <option disabled selected
-            >-- Molimo odaberite vrstu radnog osnosa --</option
+            >{{'radnici.form.vrstaDropdown' | translate}}</option
           >
           <option
             *ngFor="let key of vrsteRadnogOdnosaOptions"
@@ -111,14 +111,14 @@
       -->
 
       <div class="form-group">
-        <label for="mjesto">Odaberi mjesto</label>
+        <label for="mjesto">{{'radnici.form.mjesto' | translate}}</label>
         <select
           id="mjesto"
           [(ngModel)]="radnik.mjesto"
           class="form-control"
           name="mjesto"
         >
-          <option disabled selected>-- Molimo odaberite mjesto --</option>
+          <option disabled selected>{{'radnici.form.mjestoDropdown' | translate}}</option>
           <option
             [ngValue]="mjesto"
             *ngFor="let mjesto of mjesta"
@@ -138,7 +138,7 @@
               class="btn btn-outline-secondary mr-4"
               type="button"
             >
-              Odustani
+              {{'radnici.form.cancel' | translate}}
             </button>
             <button
               (click)="save()"
@@ -146,7 +146,7 @@
               class="btn btn-success"
               type="button"
             >
-              Spremi
+              {{'radnici.form.save' | translate}}
             </button>
           </div>
         </div>
