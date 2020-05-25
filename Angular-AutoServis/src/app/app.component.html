@@ -20,9 +20,9 @@
     </li>
   </ul>
 
-  <ul class="navbar-nav px-3">
+  <ul class="navbar-nav px-3" *ngIf="isUserLoggedIn()">
     <li class="nav-item text-nowrap">
-      <a class="nav-link" >Odjava</a> <!--Napravit odjavu?-->
+      <a class="nav-link cursor-pointer" id="logout" (click)="logout()">Odjava</a>
     </li>
   </ul>
 
