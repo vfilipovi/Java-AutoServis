@@ -2,7 +2,7 @@
   <h1 class="h2">{{'kvarovi.title' | translate}}</h1>
   <div class="btn-toolbar mb-2 mb-md-0">
     <div class="btn-group mr-2">
-      <button type="button" class="btn btn-sm btn btn-outline-primary" name="create" routerLink="/kvar/create">
+      <button type="button" class="btn btn-sm btn btn-outline-primary" name="create" routerLink="/kvar/create" *ngIf="userService.isRoleAdmin()">
         {{'kvarovi.create' | translate}}</button>
     </div>
   </div>
@@ -14,8 +14,11 @@
       <th scope="col">#</th>
       <th scope="col">{{'kvarovi.nazivKvara' | translate}}</th>
       <th scope="col">{{'kvarovi.createdAt' | translate}}</th>
-      <th scope="col" class="text-center">{{'kvarovi.opisKvara' | translate}}</th>
-      <th scope="col" class="text-center">{{'kvarovi.edit' | translate}}</th>
+
+      <ng-container *ngIf="userService.isRoleAdmin()">
+        <th scope="col" class="text-center">{{'kvarovi.opisKvara' | translate}}</th>
+        <th scope="col" class="text-center">{{'kvarovi.edit' | translate}}</th>
+      </ng-container>
     </tr>
   </thead>
   <tbody>

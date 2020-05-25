@@ -28,11 +28,12 @@ import { NalogEditComponent } from './nalozi/nalog-edit/nalog-edit.component';
 import { ForbiddenPageComponent } from './forbidden-page/forbidden-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {LoginComponent} from "./login/login.component";
+import {AuthGuardService} from "./guards/auth-guard.service";
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/nalozi',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   {
@@ -85,7 +86,8 @@ const routes: Routes = [
   },
   {
     path: 'nalozi',
-    component: NaloziComponent
+    component: NaloziComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'nalog/detail/:id',
@@ -116,7 +118,7 @@ const routes: Routes = [
     component: ForbiddenPageComponent
   },
   {
-    path: 'prijava',
+    path: 'login',
     component: LoginComponent
   },
   {
