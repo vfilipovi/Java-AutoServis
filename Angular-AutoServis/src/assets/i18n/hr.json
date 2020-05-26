@@ -5,8 +5,6 @@
     "english": "Engleski"
   },
   "navbar": {
-    "username": "Korisničko ime",
-    "role": "Uloga",
     "login": "Prijava",
     "logout": "Odjava"
   },

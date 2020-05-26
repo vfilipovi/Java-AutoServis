@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { UserCredentials } from './user-credentials.model';
 import { HttpClient } from '@angular/common/http';
-import { SERVER_API_URL } from '../constants/app.constants';
+import { SERVER_API_URL } from '../../constants/app.constants';
 import { Observable } from 'rxjs';
 import { JwtToken } from './jwt-token.model';
 

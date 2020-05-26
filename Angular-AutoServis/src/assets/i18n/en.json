@@ -5,10 +5,8 @@
     "english": "Engleski"
   },
   "navbar": {
-    "username": "Korisničko ime",
-    "role": "Uloga",
-    "login": "Prijava",
-    "logout": "Odjava"
+    "login": "Sign in",
+    "logout": "Sign out"
   },
   "login": {
     "title": "Prijava",

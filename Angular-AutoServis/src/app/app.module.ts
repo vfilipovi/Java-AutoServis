@@ -13,6 +13,10 @@ import { AuthExpiredInterceptor } from './interceptors/auth-expired.inteceptor';
 
 import { AppComponent } from './app.component';
 
+import { LayoutComponent } from './shared/layout/layout.component';
+import { NavbarComponent } from './shared/layout/navbar/navbar.component';
+import { SidebarComponent } from './shared/layout/sidebar/sidebar.component';
+
 import { KlijentiComponent } from './klijenti/klijenti.component';
 import { KlijentFormComponent } from './klijenti/klijent-form/klijent-form.component';
 import { KlijentDetailComponent } from './klijenti/klijent-detail/klijent-detail.component';
@@ -43,8 +47,8 @@ import { NalogEditComponent } from './nalozi/nalog-edit/nalog-edit.component';
 import { NalogFormComponent } from './nalozi/nalog-form/nalog-form.component';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ForbiddenPageComponent } from './forbidden-page/forbidden-page.component';
-import { LoginComponent } from './login/login.component';
+import { ForbiddenPageComponent } from './shared/forbidden-page/forbidden-page.component';
+import { LoginComponent } from './shared/login/login.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -53,7 +57,9 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent,
+    LayoutComponent,
+    NavbarComponent,
+    SidebarComponent,
     KlijentiComponent,
     KlijentFormComponent,
     KlijentCreateComponent,
@@ -79,7 +85,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     NalogEditComponent,
     NalogFormComponent,
     ForbiddenPageComponent,
-    LoginComponent
+    LoginComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

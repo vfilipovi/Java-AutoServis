@@ -3,8 +3,8 @@ import { LoginService } from './login.service';
 import { UserCredentials } from './user-credentials.model';
 import { Router } from '@angular/router';
 import { JwtToken } from './jwt-token.model';
-import { UserService } from '../user/user.service';
-import { User } from '../user/user.model';
+import { UserService } from '../../user/user.service';
+import { User } from '../../user/user.model';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private loginService: LoginService,
     private router: Router,
-    private userService: UserService
+    private userService: UserService,
   ) {
   }
 
