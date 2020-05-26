@@ -31,4 +31,13 @@ public class KvarService {
             throw new NotFoundException("Kvar s ID-em '" + kvarId + "' ne postoji.");
         kvarRepository.deleteById(kvarId);
     }
+
+    public Optional<Kvar> findByNaziv(String nazivKvara)
+    {
+        if (kvarRepository.findKvarByNazivKvara(nazivKvara).isEmpty())
+            throw new NotFoundException("Kvar s nazivom '" + nazivKvara + "' ne postoji.");
+
+
+        return kvarRepository.findKvarByNazivKvara(nazivKvara);
+    }
 }
