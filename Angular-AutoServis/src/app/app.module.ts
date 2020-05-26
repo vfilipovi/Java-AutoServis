@@ -8,8 +8,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { AuthExpiredInterceptor } from './interceptors/auth-expired.inteceptor';
 
 import { AppComponent } from './app.component';
+
+import { LayoutComponent } from './shared/layout/layout.component';
+import { NavbarComponent } from './shared/layout/navbar/navbar.component';
+import { SidebarComponent } from './shared/layout/sidebar/sidebar.component';
 
 import { KlijentiComponent } from './klijenti/klijenti.component';
 import { KlijentFormComponent } from './klijenti/klijent-form/klijent-form.component';
@@ -40,7 +46,9 @@ import { NalogCreateComponent } from './nalozi/nalog-create/nalog-create.compone
 import { NalogEditComponent } from './nalozi/nalog-edit/nalog-edit.component';
 import { NalogFormComponent } from './nalozi/nalog-form/nalog-form.component';
 
-import { PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ForbiddenPageComponent } from './shared/forbidden-page/forbidden-page.component';
+import { LoginComponent } from './shared/login/login.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -49,7 +57,9 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent,
+    LayoutComponent,
+    NavbarComponent,
+    SidebarComponent,
     KlijentiComponent,
     KlijentFormComponent,
     KlijentCreateComponent,
@@ -73,7 +83,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     NalogDetailComponent,
     NalogCreateComponent,
     NalogEditComponent,
-    NalogFormComponent
+    NalogFormComponent,
+    ForbiddenPageComponent,
+    LoginComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,7 +111,18 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     )
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthExpiredInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

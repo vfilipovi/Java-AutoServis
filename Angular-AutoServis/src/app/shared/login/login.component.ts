@@ -3,8 +3,8 @@ import { LoginService } from './login.service';
 import { UserCredentials } from './user-credentials.model';
 import { Router } from '@angular/router';
 import { JwtToken } from './jwt-token.model';
-import { UserService } from '../user/user.service';
-import { User } from '../user/user.model';
+import { UserService } from '../../user/user.service';
+import { User } from '../../user/user.model';
 
 @Component({
   selector: 'app-login',
@@ -20,13 +20,14 @@ export class LoginComponent implements OnInit {
   constructor(
     private loginService: LoginService,
     private router: Router,
-    private userService: UserService
+    private userService: UserService,
   ) {
   }
 
   ngOnInit(): void {
     this.userCredentials = new UserCredentials();
     // provjeriti da li je vec ulogiran
+
   }
 
 
@@ -43,7 +44,7 @@ export class LoginComponent implements OnInit {
   successfulLogin(jwtToken: JwtToken) {
     localStorage.setItem('token', jwtToken.token); // store token value to localstorage
     this.userService.getCurrentUser().subscribe((currentUser: User) => this.userService.currentUser = currentUser);
-    this.router.navigate(['/']);
+    this.router.navigate(['/nalozi']);
   }
 
 }

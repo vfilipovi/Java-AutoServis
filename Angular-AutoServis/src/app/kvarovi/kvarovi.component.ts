@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Kvar } from './kvar.model';
 import { KvarService} from './kvar.service';
-import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { UserService } from '../user/user.service';
 
 @Component({
-  selector: 'app-kvarovi',                     //popravi
+  selector: 'app-kvarovi',
   templateUrl: './kvarovi.component.html'
 })
 export class KvaroviComponent implements OnInit {
@@ -16,7 +15,6 @@ export class KvaroviComponent implements OnInit {
   constructor(
     private kvarService: KvarService,
     private router: Router,
-    private toastrService: ToastrService,
     public userService: UserService
     ) { }
 

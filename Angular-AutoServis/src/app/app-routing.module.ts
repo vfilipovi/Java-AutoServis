@@ -25,94 +25,119 @@ import { NalogDetailComponent } from './nalozi/nalog-detail/nalog-detail.compone
 import { NalogCreateComponent } from './nalozi/nalog-create/nalog-create.component';
 import { NalogEditComponent } from './nalozi/nalog-edit/nalog-edit.component';
 
-import { ForbiddenPageComponent } from './forbidden-page/forbidden-page.component';
+import { ForbiddenPageComponent } from './shared/forbidden-page/forbidden-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {LoginComponent} from './shared/login/login.component';
+import {AuthGuardService} from './guards/auth-guard.service';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/klijenti',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   {
     path: 'klijenti',
     component: KlijentiComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'klijent/detail/:id',
     component: KlijentDetailComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'klijent/create',
-    component: KlijentCreateComponent
+    component: KlijentCreateComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'klijent/edit/:id',
     component: KlijentEditComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'radnici',
     component: RadniciComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'radnik/detail/:id',
     component: RadnikDetailComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'radnik/create',
-    component: RadnikCreateComponent
+    component: RadnikCreateComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'radnik/edit/:id',
     component: RadnikEditComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'kvarovi',
     component: KvaroviComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'kvar/detail/:id',
     component: KvarDetailComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'kvar/create',
-    component: KvarCreateComponent
+    component: KvarCreateComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'kvar/edit/:id',
     component: KvarEditComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'nalozi',
-    component: NaloziComponent
+    component: NaloziComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'nalog/detail/:id',
-    component: NalogDetailComponent
+    component: NalogDetailComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'nalog/create',
-    component: NalogCreateComponent
+    component: NalogCreateComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'nalog/edit/:id',
-    component: NalogEditComponent
+    component: NalogEditComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'mjesta',
     component: MjestaComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'mjesto/create',
     component: MjestoCreateComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'mjesto/edit/:id',
     component: MjestoEditComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'forbidden',
     component: ForbiddenPageComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: '**', component: PageNotFoundComponent

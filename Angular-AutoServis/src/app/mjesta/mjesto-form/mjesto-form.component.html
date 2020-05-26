@@ -2,14 +2,14 @@
   <div class="card-body">
     <form #mjestoForm="ngForm">
       <div class="form-group">
-        <b><label for="nazivKvara">Naziv Mjesta</label></b>
+        <b><label for="nazivMjesta">{{'mjesta.form.nazivMjesta' | translate}}</label></b>
         <input
           [(ngModel)]="mjesto.nazivMjesta"
           type="text"
           class="form-control"
           id="nazivMjesta"
           name="nazivMjesta"
-          placeholder="Unesite naziv mjesta"
+          placeholder="{{'mjesta.form.nazivMjestaPlaceholder' | translate}}"
           required
         />
       </div>
@@ -23,7 +23,7 @@
               class="btn btn-outline-secondary mr-4"
               type="button"
             >
-              Otkaži
+              {{'mjesta.form.cancel' | translate}}
             </button>
             <button
               (click)="save()"
@@ -31,7 +31,7 @@
               class="btn btn-success"
               type="button"
             >
-              Spremi
+              {{'mjesta.form.save' | translate }}
             </button>
           </div>
         </div>

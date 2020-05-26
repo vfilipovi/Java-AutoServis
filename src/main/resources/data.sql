@@ -3,11 +3,11 @@ INSERT INTO MJESTO(created_at, updated_at, naziv_mjesta) VALUES (CURRENT_TIMESTA
 INSERT INTO MJESTO(created_at, updated_at, naziv_mjesta) VALUES (CURRENT_TIMESTAMP, null, 'Split');
 INSERT INTO MJESTO(created_at, updated_at, naziv_mjesta) VALUES (CURRENT_TIMESTAMP, null, 'Osijek');
 
-INSERT INTO KVAR(created_at, updated_at, naziv_kvara, opis_kvara) VALUES (CURRENT_TIMESTAMP, null, 'Zamjena motora','Opsežan popravak');
+INSERT INTO KVAR(created_at, updated_at, naziv_kvara, opis_kvara) VALUES (CURRENT_TIMESTAMP, null, 'Zamjena motora','Opsezan popravak');
 INSERT INTO KVAR(created_at, updated_at, naziv_kvara, opis_kvara) VALUES (CURRENT_TIMESTAMP, null, 'Zamjena ulja Peugeot','brzi serivs ulja Peugeot');
 INSERT INTO KVAR(created_at, updated_at, naziv_kvara, opis_kvara) VALUES (CURRENT_TIMESTAMP, null, 'Zamjena ulja Renault','brzi serivs ulja Renault');
 INSERT INTO KVAR(created_at, updated_at, naziv_kvara, opis_kvara) VALUES (CURRENT_TIMESTAMP, null, 'Zamjena guma ALU felge','zamjena ALU felgi ili zamjena guma na ALU felgama');
-INSERT INTO KVAR(created_at, updated_at, naziv_kvara, opis_kvara) VALUES (CURRENT_TIMESTAMP, null, 'Zamjena guma celične felge','zamjena guma na čeličnim felgama');
+INSERT INTO KVAR(created_at, updated_at, naziv_kvara, opis_kvara) VALUES (CURRENT_TIMESTAMP, null, 'Zamjena guma celicne felge','zamjena guma na celicnim felgama');
 INSERT INTO KVAR(created_at, updated_at, naziv_kvara, opis_kvara) VALUES (CURRENT_TIMESTAMP, null, 'Promjena svjetala','Zamjena prednjih ili stražnijh svjetala');
 
 INSERT INTO KLIJENT(created_at, updated_at, ime, oib, prezime, broj_mob, email, mjesto_id)
@@ -42,3 +42,35 @@ INSERT INTO NALOG(created_at, updated_at, datum_izdavanja, datum_preuzimanja, pr
 VALUES (CURRENT_TIMESTAMP, null, '2020-05-02', '2020-05-03', 'NISKI', 'ZG-4632-UH','1',4,4, 3);
 INSERT INTO NALOG(created_at, updated_at, datum_izdavanja, datum_preuzimanja, prioritet, registracija_vozila, utroseni_radni_sati_servisa, klijent_id,kvar_id,radnik_id)
 VALUES (CURRENT_TIMESTAMP, null, '2020-05-05', '2020-05-05', 'NISKI', 'RI-8573-AJ','1',5,4, 2);
+
+create table if not exists user (
+id identity,
+username varchar(100) not null,
+password varchar(250) not null,
+first_name varchar(250) not null,
+last_name varchar(250) not null
+);
+create table if not exists authority (
+id identity,
+name varchar(100) not null
+);
+create table if not exists user_authority (
+user_id bigint not null,
+authority_id bigint not null,
+constraint fk_user foreign key (user_id) references user(id),
+constraint fk_authority foreign key (authority_id) references authority(id)
+);
+
+insert into user (id, username, password, first_name, last_name)
+values (1, 'admin', '$2a$10$TYExkmI7uVXXVadrdTTa0OQTOorVV32jTjK.Py2BPQjEojbAx96yy', 'admin', 'admin');
+insert into user (id, username, password, first_name, last_name)
+values (2, 'user', '$2a$10$TYExkmI7uVXXVadrdTTa0OQTOorVV32jTjK.Py2BPQjEojbAx96yy', 'user', 'user');
+insert into authority (id, name)
+values (1, 'ROLE_ADMIN');
+insert into authority (id, name)
+values (2, 'ROLE_USER');
+insert into user_authority (user_id, authority_id)
+values (1, 1);
+insert into user_authority (user_id, authority_id)
+values (2, 2);
+

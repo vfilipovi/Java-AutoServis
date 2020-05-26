@@ -2,31 +2,31 @@
   <div class="card-body">
     <form #klijentForm="ngForm">
       <div class="form-group">
-        <label for="ime">Ime</label>
+        <label for="ime">{{'klijenti.form.imeKlijenta' | translate}}</label>
         <input
           [(ngModel)]="klijent.ime"
           type="text"
           class="form-control"
           id="ime"
           name="ime"
-          placeholder="Unesite ime"
+          placeholder="{{'klijenti.form.imeKlijentaPlaceholder' | translate}}"
           required
         />
       </div>
       <div class="form-group">
-        <label for="prezime">Prezime</label>
+        <label for="prezime">{{'klijenti.form.prezimeKlijenta' | translate}}</label>
         <input
           [(ngModel)]="klijent.prezime"
           type="text"
           class="form-control"
           id="prezime"
           name="prezime"
-          placeholder="Unesite ime"
+          placeholder="{{'klijenti.form.prezimeKlijentaPlaceholder' | translate}}"
           required
         />
       </div>
       <div class="form-group">
-        <label for="oib">OIB</label>
+        <label for="oib">{{'klijenti.form.oibKlijenta' | translate}}</label>
         <input
           [(ngModel)]="klijent.oib"
           type="text"
@@ -35,7 +35,7 @@
           name="oib"
           minlength="11"
           maxlength="11"
-          placeholder="Unesite OIB"
+          placeholder="{{'klijenti.form.oibKlijentaPlaceholder' | translate}}"
           required
           #oib="ngModel"
         />
@@ -43,23 +43,23 @@
           *ngIf="!klijentForm.pristine && oib.invalid"
           class="invalid-feedback d-block"
         >
-          OIB mora sadržavati 11 znakova.
+          {{'klijenti.form.oibInvalid' | translate}}
         </div>
       </div>
       <div class="form-group">
-        <label for="email">Email</label>
+        <label for="email">{{'klijenti.form.email' | translate}}</label>
         <input
           [(ngModel)]="klijent.email"
           type="email"
           class="form-control"
           id="email"
           name="email"
-          placeholder="Unesite email adresu"
+          placeholder="{{'klijenti.form.emailPlaceholder' | translate}}"
           required
         />
       </div>
       <div class="form-group">
-        <label for="brojMob">Broj mobitela</label>
+        <label for="brojMob">{{'klijenti.form.brMob' | translate}}</label>
         <input
           [(ngModel)]="klijent.brojMob"
           type="text"
@@ -68,7 +68,7 @@
           name="brojMob"
           minlength="10"
           maxlength="10"
-          placeholder="Unesite brojMob"
+          placeholder="{{'klijenti.form.brMobPlaceholder' | translate}}"
           required
           #brojMob="ngModel"
         />
@@ -76,19 +76,19 @@
           *ngIf="!klijentForm.pristine && brojMob.invalid"
           class="invalid-feedback d-block"
         >
-          Broj mobitel mora sadržavati 10 znakova.
+          {{'klijenti.form.brMobInvalid' | translate}}
         </div>
       </div>
 
       <div class="form-group">
-        <label for="mjesto">Odaberi mjesto</label>
+        <label for="mjesto">{{'klijenti.form.mjesto' | translate}}</label>
         <select
           id="mjesto"
           [(ngModel)]="klijent.mjesto"
           class="form-control"
           name="mjesto"
         >
-          <option selected disabled>-- Molimo odaberite mjesto --</option>
+          <option selected disabled>{{'klijenti.form.mjestoSelected' | translate}}</option>
           <option
             [ngValue]="mjesto"
             *ngFor="let mjesto of mjesta"
@@ -107,7 +107,7 @@
               class="btn btn-outline-secondary mr-4"
               type="button"
             >
-              Odustani
+              {{'klijenti.form.cancel' | translate }}
             </button>
             <button
               (click)="save()"
@@ -115,7 +115,7 @@
               class="btn btn-success"
               type="button"
             >
-              Spremi
+              {{'klijenti.form.save' | translate}}
             </button>
           </div>
         </div>

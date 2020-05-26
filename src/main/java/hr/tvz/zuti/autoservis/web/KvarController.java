@@ -8,6 +8,7 @@ import hr.tvz.zuti.autoservis.services.MapValidationErrorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
@@ -24,6 +25,7 @@ public class KvarController {
     @Autowired
     private MapValidationErrorService mapValidationErrorService;
 
+    @Secured("ROLE_ADMIN")
     @PostMapping("")
     public ResponseEntity<?> createNewKvar(@Valid @RequestBody Kvar _kvar, BindingResult result) {
 
@@ -48,6 +50,7 @@ public class KvarController {
         return kvarService.findAllKvarovi();
     }
 
+    @Secured("ROLE_ADMIN")
     @PutMapping("/{kvarId}")
     public ResponseEntity<?> updateKvarById(@Valid @RequestBody Kvar _kvar, @PathVariable Integer kvarId, BindingResult result) {
 

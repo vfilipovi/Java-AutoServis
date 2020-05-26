@@ -1,0 +1,44 @@
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0">Auto servis Jožo</a>
+
+  <!--DROPDOWN Button-->
+
+   <div class="d-inline-block pull-left dropdown-menu-left" ngbDropdown #myDrop="ngbDropdown" style="text-align:left !important;">
+     <button class="btn btn btn-secondary mr-2 pull-right" style="text-align:left !important;" id="dropdownManual" ngbDropdownAnchor (focus)="myDrop.open()">Select Language</button>
+     <div ngbDropdownMenu aria-labelledby="dropdownManual">
+       <button ngbDropdownItem (click)="useLanguage('hr')">{{'language.croatian' | translate}}</button>
+       <button ngbDropdownItem (click)="useLanguage('en')">{{'language.english' | translate}}</button>
+     </div>
+   </div>
+
+  <!-- ne brisati-->
+  <a class="col-sm-3 col-md-7 mr-0" ></a>
+
+   <ul class="navbar-nav px-3" *ngIf="isUserLoggedIn(); else prijaviSe">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link">{{userService?.currentUser?.username}}</a>
+    </li>
+  </ul>
+
+
+  <ng-template #prijaviSe>
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" routerLink="/login" routerLinkActive="active">Prijava</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" routerLink="/login" routerLinkActive="active">‎‎‎</a>
+      </li>
+    </ul>
+  </ng-template>
+
+  <ul class="navbar-nav px-3" *ngIf="isUserLoggedIn()">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link cursor-pointer"  routerLink="" id="logout" (click)="logout()">Odjava</a>
+    </li>
+  </ul>
+
+
+</nav>

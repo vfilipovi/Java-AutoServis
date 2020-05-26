@@ -10,7 +10,7 @@
   <div class="card-body">
     <form #kvarForm="ngForm">
       <div class="form-group">
-        <b><label for="nazivKvara">{{'kvarovi.nazivKvara' | translate}}</label></b>
+        <b><label for="nazivKvara">{{'kvarovi.form.nazivKvara' | translate}}</label></b>
         <input
           [(ngModel)]="kvar.nazivKvara"
           type="text"
@@ -43,7 +43,7 @@
               class="btn btn-outline-secondary mr-4"
               type="button"
             >
-              {{'kvarovi.form.buttonOtkazi' | translate}}
+              {{'kvarovi.form.cancel' | translate}}
             </button>
             <button
               (click)="save()"
@@ -51,7 +51,7 @@
               class="btn btn-success"
               type="button"
             >
-              {{'kvarovi.form.buttonSpremi' | translate}}
+              {{'kvarovi.form.save' | translate}}
             </button>
           </div>
         </div>

@@ -12,7 +12,7 @@ export class UserService {
 
   currentUser: User;
 
-  private usersUrl = `${SERVER_API_URL}/api/user`;
+  private usersUrl = `${SERVER_API_URL}/user`;
 
   constructor(private http: HttpClient) { }
 
