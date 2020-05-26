@@ -45,6 +45,15 @@ public class KvarController {
         return new ResponseEntity<>(kvar, HttpStatus.OK);
     }
 
+    @GetMapping(params = "nazivKvara")
+    public ResponseEntity<?> getKvarByNaziv(@RequestParam String nazivKvara) {
+
+        Optional<Kvar> kvar = kvarService.findByNaziv(nazivKvara);
+
+        return new ResponseEntity<>(kvar, HttpStatus.OK);
+    }
+
+
     @GetMapping("")
     public Iterable<Kvar> getAllKvarovi() {
         return kvarService.findAllKvarovi();
@@ -67,4 +76,7 @@ public class KvarController {
 
         return new ResponseEntity<>(updatedKvar, HttpStatus.OK);
     }
+
+
+
 }
