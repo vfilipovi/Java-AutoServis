@@ -37,7 +37,6 @@ public class KvarService {
         if (kvarRepository.findKvarByNazivKvara(nazivKvara).isEmpty())
             throw new NotFoundException("Kvar s nazivom '" + nazivKvara + "' ne postoji.");
 
-
         return kvarRepository.findKvarByNazivKvara(nazivKvara);
     }
 }
