@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -72,7 +73,6 @@ public class KvarServiceTest {
     }
 
     @Test
-
         void findKvarById(){
 
         final Kvar kvar = new Kvar();
@@ -82,13 +82,13 @@ public class KvarServiceTest {
         kvar.setOpisKvara("Prednje slaklo");
 
         //lenient().when(findKvarById().)
+        Mockito.lenient().when(kvarRepository.findById(id)).thenReturn(Optional.of(kvar));
 
         //when(kvarRepository.findById(id)).thenReturn(Optional.of(kvar));
 
         given(kvarRepository.save(kvar)).willReturn(kvar);
 
         final Optional<Kvar> ocekivano = kvarService.findKvarById(id);
-
 
         assertThat(ocekivano).isNotNull();
     }
