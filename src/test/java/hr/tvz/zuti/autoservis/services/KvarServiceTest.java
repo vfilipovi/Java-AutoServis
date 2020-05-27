@@ -20,6 +20,9 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -32,7 +35,7 @@ import static org.mockito.Mockito.*;
 // so dont need to declare MockitoAnnotations.initMocks(this).
 //https://medium.com/backend-habit/integrate-junit-and-mockito-unit-testing-for-service-layer-a0a5a811c58a
 @ExtendWith(MockitoExtension.class)
-//@MockitoSettings(strictness = Strictness.LENIENT)
+@MockitoSettings(strictness = Strictness.LENIENT)
 public class KvarServiceTest {
     private static Logger logger = LoggerFactory.getLogger(KvarServiceTest.class);
 
@@ -44,7 +47,7 @@ public class KvarServiceTest {
 
 
     @Test
-        void trebaSpremitiKvar(){
+        void test_trebaSpremitiKvar(){
         final Kvar kvar = new Kvar();
         kvar.setNazivKvara("Zamjena ekrana");
         kvar.setOpisKvara("Zamjena 12inch LCD ekrana");
@@ -56,10 +59,12 @@ public class KvarServiceTest {
         assertThat(savedKvar).isNotNull();
 
         verify(kvarRepository).save(any(Kvar.class));
+
+
     }
 
     @Test
-        void updateKvar(){
+        void test_updateKvar(){
         final Kvar kvar = new Kvar();
         kvar.setNazivKvara("Zamjena ekrana");
         kvar.setOpisKvara("Zamjena 12inch LCD ekrana");
@@ -74,63 +79,21 @@ public class KvarServiceTest {
     }
 
     @Test
-    public void testGetKvarById(){
+    public void test_GetKvarById(){
         Kvar kvar = new Kvar();
-        int id = 25;
+        int id = 15;
         kvar.setId(id);
         kvar.setNazivKvara("Zamjena stakla na prozoru");
         kvar.setOpisKvara("Prednje slaklo");
-
-        //given(kvarRepository.findById(id)).willReturn(Optional.of(kvar));
-        given(kvarRepository.save(kvar)).willReturn(kvar);
-
-        final Kvar saveKvar = kvarService.saveOrUpdateKvar(kvar);
-
-        //final Optional<Kvar> ocekivano = kvarService.findKvarById(id);
-
-
-
-        assertThat(saveKvar).isNotNull();
-
-
-        /*
-        System.out.println("prije");
-
-        for (Kvar k : ocekivano){
-            System.out.println(k.getId() + "   " + k.getNazivKvara());
-        }
-
-        System.out.println("poslje");
-        //final Optional<Kvar> ocekivano = kvarService.findByNaziv("Zamjena stakla na prozoru");
-
-        assertThat(ocekivano).isNotNull();
-        */
-
-    }
-
-    /*@Test
-        void findKvarById(){
-
-        final Kvar kvar = new Kvar();
-        final int id = 25;
-        kvar.setId(id);
-        kvar.setNazivKvara("Zamjena stakla");
-        kvar.setOpisKvara("Prednje slaklo");
-
-        //lenient().when(findKvarById().)
-        Mockito.lenient().when(kvarRepository.findById(id)).thenReturn(Optional.of(kvar));
-
-        //when(kvarRepository.findById(id)).thenReturn(Optional.of(kvar));
-        given(kvarRepository.save(kvar)).willReturn(kvar);
 
         final Optional<Kvar> ocekivano = kvarService.findKvarById(id);
 
         assertThat(ocekivano).isNotNull();
     }
-*/
+
 
     @Test
-        void trebaVratitiSveKvarove(){
+        void test_trebaVratitiSveKvarove(){
         List<Kvar> data = new ArrayList<>();
         Kvar kvar1 = new Kvar();
         kvar1.setId(12);
@@ -148,6 +111,12 @@ public class KvarServiceTest {
         Iterable<Kvar> ocekivano = kvarService.findAllKvarovi();
 
         assertEquals(ocekivano,data);
+
+        List<Kvar> result = StreamSupport.stream(ocekivano.spliterator(), false)
+                .collect(Collectors.toList());
+
+        //System.out.println(result.get(0).getId() + "  " + result.get(0).getNazivKvara());
+        //System.out.println(result.get(1).getId() + "  " + result.get(1).getNazivKvara());
     }
 
 
