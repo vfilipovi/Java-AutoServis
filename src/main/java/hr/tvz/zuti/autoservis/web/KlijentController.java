@@ -35,6 +35,7 @@ public class KlijentController {
         return new ResponseEntity<>(klijent, HttpStatus.CREATED);
     }
 
+    @Secured("ROLE_ADMIN")
     @GetMapping("/{klijentId}")
     public ResponseEntity<?> getKlijentById(@PathVariable Integer klijentId) {
 

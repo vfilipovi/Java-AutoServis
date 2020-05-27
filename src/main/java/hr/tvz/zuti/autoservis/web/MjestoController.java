@@ -35,6 +35,7 @@ public class MjestoController {
         return new ResponseEntity<>(mjesto, HttpStatus.CREATED);
     }
 
+    @Secured("ROLE_ADMIN")
     @GetMapping("/{mjestoId}")
     public ResponseEntity<Optional<Mjesto>> getMjestoById(@PathVariable Integer mjestoId) {
 

@@ -35,6 +35,7 @@ public class NalogController {
         return new ResponseEntity<>(nalog, HttpStatus.CREATED);
     }
 
+    @Secured("ROLE_ADMIN")
     @GetMapping("/{nalogId}")
     public ResponseEntity<Optional<Nalog>> getNalogById(@PathVariable Integer nalogId) {
 
