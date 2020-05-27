@@ -6,6 +6,7 @@ import hr.tvz.zuti.autoservis.services.MapValidationErrorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
@@ -22,7 +23,7 @@ public class KlijentController {
     @Autowired
     private MapValidationErrorService mapValidationErrorService;
 
-    @CrossOrigin
+    @Secured("ROLE_ADMIN")
     @PostMapping("")
     public ResponseEntity<?> createNewKlijent(@Valid @RequestBody Klijent _klijent, BindingResult result) {
 
@@ -34,7 +35,6 @@ public class KlijentController {
         return new ResponseEntity<>(klijent, HttpStatus.CREATED);
     }
 
-    @CrossOrigin
     @GetMapping("/{klijentId}")
     public ResponseEntity<?> getKlijentById(@PathVariable Integer klijentId) {
 
@@ -43,11 +43,10 @@ public class KlijentController {
         return new ResponseEntity<>(klijent, HttpStatus.OK);
     }
 
-    @CrossOrigin
     @GetMapping("")
     public Iterable<Klijent> getAllKlijenti() { return klijentService.findAllKlijenti(); }
 
-    @CrossOrigin
+    @Secured("ROLE_ADMIN")
     @PutMapping("/{klijentId}")
     public ResponseEntity<?> updateKlijentById(@Valid @RequestBody Klijent _klijent, @PathVariable Integer klijentId, BindingResult result) {
 
@@ -68,6 +67,7 @@ public class KlijentController {
         return new ResponseEntity<>(updatedKlijent, HttpStatus.OK);
     }
 
+    @Secured("ROLE_ADMIN")
     @DeleteMapping("/{klijentId}")
     public  ResponseEntity<?> deleteKlijent(@PathVariable Integer klijentId) {
 

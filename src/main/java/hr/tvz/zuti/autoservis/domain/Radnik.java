@@ -11,9 +11,7 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 public class Radnik extends OsobaBase {
-    @NonNull
     private double iznosOsnovice;
-    @NonNull
     private double koefPlace;
     @NonNull
     @Enumerated(EnumType.STRING)
