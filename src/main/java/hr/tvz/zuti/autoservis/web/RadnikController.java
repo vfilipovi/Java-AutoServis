@@ -36,6 +36,7 @@ public class RadnikController {
         return new ResponseEntity<>(radnik, HttpStatus.CREATED);
     }
 
+    @Secured("ROLE_ADMIN")
     @GetMapping("/{radnikId}")
     public ResponseEntity<Optional<Radnik>> getRadnikById(@PathVariable Integer radnikId) {
 

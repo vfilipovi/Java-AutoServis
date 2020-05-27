@@ -1,7 +1,6 @@
 package hr.tvz.zuti.autoservis.web;
 
 
-import hr.tvz.zuti.autoservis.domain.Klijent;
 import hr.tvz.zuti.autoservis.domain.Kvar;
 import hr.tvz.zuti.autoservis.services.KvarService;
 import hr.tvz.zuti.autoservis.services.MapValidationErrorService;
@@ -37,6 +36,7 @@ public class KvarController {
         return new ResponseEntity<>(kvar, HttpStatus.CREATED);
     }
 
+    @Secured("ROLE_ADMIN")
     @GetMapping("/{kvarId}")
     public ResponseEntity<?> getKvarById(@PathVariable Integer kvarId) {
 
