@@ -6,6 +6,7 @@ import hr.tvz.zuti.autoservis.services.MjestoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
@@ -22,6 +23,7 @@ public class MjestoController {
     @Autowired
     private MapValidationErrorService mapValidationErrorService;
 
+    @Secured("ROLE_ADMIN")
     @PostMapping("")
     public ResponseEntity<?> createNewMjesto(@Valid @RequestBody Mjesto _mjesto, BindingResult result) {
 
@@ -44,6 +46,7 @@ public class MjestoController {
     @GetMapping("")
     public Iterable<Mjesto> getAllMjesta() { return mjestoService.findAllMjesta(); }
 
+    @Secured("ROLE_ADMIN")
     @PutMapping("/{mjestoId}")
     public ResponseEntity<?> updateMjestoById(@Valid @RequestBody Mjesto _mjesto, @PathVariable Integer mjestoId, BindingResult result) {
 
@@ -60,6 +63,7 @@ public class MjestoController {
         return new ResponseEntity<>(updatedMjesto, HttpStatus.OK);
     }
 
+    @Secured("ROLE_ADMIN")
     @DeleteMapping("/{mjestoId}")
     public ResponseEntity<?> deleteMjesto(@PathVariable Integer mjestoId) {
 

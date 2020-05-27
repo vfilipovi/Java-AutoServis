@@ -47,6 +47,7 @@ public class MjestoControllerTest {
                         .accept(MediaType.APPLICATION_JSON)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(json)
+                        .characterEncoding("utf-8")
         )
                 .andExpect(status().isCreated())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
@@ -60,6 +61,7 @@ public class MjestoControllerTest {
 
         this.mockMvc.perform(
                 get("/api/v1/mjesta/{mjestoId}", TEST_ID)
+                        .characterEncoding("utf-8")
                         .with(user("admin")
                                 .password("test")
                                 .roles("ADMIN")
@@ -76,6 +78,7 @@ public class MjestoControllerTest {
     void getAllMjesta() throws Exception {
         this.mockMvc.perform(
                 get("/api/v1/mjesta")
+                        .characterEncoding("utf-8")
                         .with(user("admin")
                                 .password("test")
                                 .roles("ADMIN")
@@ -107,6 +110,7 @@ public class MjestoControllerTest {
                 .with(csrf())
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(json)
+                .characterEncoding("utf-8")
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(TEST_ID))

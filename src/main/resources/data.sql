@@ -21,7 +21,8 @@ INSERT INTO KLIJENT(created_at, updated_at, ime, oib, prezime, broj_mob, email, 
 VALUES (CURRENT_TIMESTAMP, null, 'Karlo', '25144572171', 'Horvat', '0999875567', 'khorvat@tvz.hr', 3);
 INSERT INTO KLIJENT(created_at, updated_at, ime, oib, prezime, broj_mob, email, mjesto_id)
 VALUES (CURRENT_TIMESTAMP, null, 'Danijel', '18493404214', 'Bauman', '0953454164', 'dbauman@tvz.hr', 4);
-
+INSERT INTO KLIJENT(created_at, updated_at, ime, oib, prezime, broj_mob, email, mjesto_id)
+VALUES (CURRENT_TIMESTAMP, null, 'Danijel za brisanje', '18493404412', 'Bauman', '0953454164', 'dbauman@tvz.hr', 4);
 
 
 INSERT INTO RADNIK(created_at, updated_at, ime, oib, prezime, iznos_osnovice, koef_place, status_radnog_odnosa,vrsta_radnog_odnosa,mjesto_id)

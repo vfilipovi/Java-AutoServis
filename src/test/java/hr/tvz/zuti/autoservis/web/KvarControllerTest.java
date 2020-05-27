@@ -48,6 +48,7 @@ public class KvarControllerTest {
                         .accept(MediaType.APPLICATION_JSON)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(json)
+                        .characterEncoding("utf-8")
         )
                 .andExpect(status().isCreated())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
@@ -63,6 +64,7 @@ public class KvarControllerTest {
 
         this.mockMvc.perform(
                 get("/api/v1/kvarovi/{kvarId}", TEST_ID)
+                        .characterEncoding("utf-8")
                         .with(user("admin")
                                 .password("test")
                                 .roles("ADMIN")
@@ -80,6 +82,7 @@ public class KvarControllerTest {
     void getAllKvarovi() throws Exception {
         this.mockMvc.perform(
                 get("/api/v1/kvarovi")
+                        .characterEncoding("utf-8")
                         .with(user("admin")
                                 .password("test")
                                 .roles("ADMIN")
@@ -114,6 +117,7 @@ public class KvarControllerTest {
                 .with(csrf())
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(json)
+                .characterEncoding("utf-8")
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(TEST_ID))

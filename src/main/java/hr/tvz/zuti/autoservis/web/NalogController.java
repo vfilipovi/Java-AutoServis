@@ -6,6 +6,7 @@ import hr.tvz.zuti.autoservis.services.NalogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
@@ -22,6 +23,7 @@ public class NalogController {
     @Autowired
     private MapValidationErrorService mapValidationErrorService;
 
+    @Secured("ROLE_ADMIN")
     @PostMapping("")
     public ResponseEntity<?> createNewNalog(@Valid @RequestBody Nalog _nalog, BindingResult result) {
 
@@ -44,6 +46,7 @@ public class NalogController {
     @GetMapping("")
     public Iterable<Nalog> getAllNalozi() { return nalogService.findAllMjesta(); }
 
+    @Secured("ROLE_ADMIN")
     @PutMapping("/{nalogId}")
     public ResponseEntity<?> updateNalogById(@Valid @RequestBody Nalog _nalog, @PathVariable Integer nalogId, BindingResult result) {
 

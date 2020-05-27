@@ -1,6 +1,5 @@
 package hr.tvz.zuti.autoservis.web;
 
-import hr.tvz.zuti.autoservis.domain.Klijent;
 import hr.tvz.zuti.autoservis.domain.Radnik;
 import hr.tvz.zuti.autoservis.services.RadnikService;
 import hr.tvz.zuti.autoservis.services.MapValidationErrorService;
@@ -8,6 +7,7 @@ import hr.tvz.zuti.autoservis.services.MapValidationErrorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
@@ -24,6 +24,7 @@ public class RadnikController {
     @Autowired
     private MapValidationErrorService mapValidationErrorService;
 
+    @Secured("ROLE_ADMIN")
     @PostMapping("")
     public ResponseEntity<?> createNewRadnik(@Valid @RequestBody Radnik _radnik, BindingResult result) {
 
@@ -46,6 +47,7 @@ public class RadnikController {
     @GetMapping("")
     public Iterable<Radnik> getAllRadnci() { return radnikService.findAllRadnici(); }
 
+    @Secured("ROLE_ADMIN")
     @PutMapping("/{radnikId}")
     public ResponseEntity<?> updateRadnikById(@Valid @RequestBody Radnik _radnik, @PathVariable Integer radnikId, BindingResult result) {
 
@@ -68,6 +70,7 @@ public class RadnikController {
         return new ResponseEntity<>(updatedRadnik, HttpStatus.OK);
     }
 
+    @Secured("ROLE_ADMIN")
     @DeleteMapping("/{radnikId}")
     public  ResponseEntity<?> deleteRadnik(@PathVariable Integer radnikId) {
 
