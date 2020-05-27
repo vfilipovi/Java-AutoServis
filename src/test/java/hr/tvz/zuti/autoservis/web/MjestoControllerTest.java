@@ -1,7 +1,7 @@
 package hr.tvz.zuti.autoservis.web;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import hr.tvz.zuti.autoservis.domain.Kvar;
+import hr.tvz.zuti.autoservis.domain.Mjesto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -17,29 +17,28 @@ import static org.springframework.security.test.web.servlet.request.SecurityMock
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class KvarControllerTest {
+public class MjestoControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    void createNewKvar() throws Exception {
+    void createNewMjesto() throws Exception {
 
-        String TEST_NAZIV_KVARA = "Promjena mjenjaca";
-        String TEST_OPIS_KVARA = "Kvar mjenjaca";
+        String TEST_NAZIV_MJESTA = "Testno mjesto";
 
-        Kvar kvar = new Kvar();
-        kvar.setNazivKvara(TEST_NAZIV_KVARA);
-        kvar.setOpisKvara(TEST_OPIS_KVARA);
+        Mjesto mjesto = new Mjesto();
+        mjesto.setNazivMjesta(TEST_NAZIV_MJESTA);
 
         ObjectMapper objectMapper = new ObjectMapper();
-        String json = objectMapper.writeValueAsString(kvar);
+        String json = objectMapper.writeValueAsString(mjesto);
 
         this.mockMvc.perform(
-                post("/api/v1/kvarovi")
+                post("/api/v1/mjesta")
                         .with(user("admin")
                                 .password("test")
                                 .roles("ADMIN")
@@ -51,18 +50,16 @@ public class KvarControllerTest {
         )
                 .andExpect(status().isCreated())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$.nazivKvara").value(TEST_NAZIV_KVARA))
-                .andExpect(jsonPath("$.opisKvara").value(TEST_OPIS_KVARA));
+                .andExpect(jsonPath("$.nazivMjesta").value(TEST_NAZIV_MJESTA));
     }
 
     @Test
-    void getKvarById() throws Exception {
-        int TEST_ID = 2;
-        String TEST_NAZIV_KVARA = "Zamjena ulja Peugeot";
-        String TEST_OPIS_KVARA = "brzi serivs ulja Peugeot";
+    void getMjestoById() throws Exception {
+        int TEST_ID = 1;
+        String TEST_NAZIV_MJESTA = "Zagreb";
 
         this.mockMvc.perform(
-                get("/api/v1/kvarovi/{kvarId}", TEST_ID)
+                get("/api/v1/mjesta/{mjestoId}", TEST_ID)
                         .with(user("admin")
                                 .password("test")
                                 .roles("ADMIN")
@@ -72,14 +69,13 @@ public class KvarControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.id").value(TEST_ID))
-                .andExpect(jsonPath("$.nazivKvara").value(TEST_NAZIV_KVARA))
-                .andExpect(jsonPath("$.opisKvara").value(TEST_OPIS_KVARA));
+                .andExpect(jsonPath("$.nazivMjesta").value(TEST_NAZIV_MJESTA));
     }
 
     @Test
-    void getAllKvarovi() throws Exception {
+    void getAllMjesta() throws Exception {
         this.mockMvc.perform(
-                get("/api/v1/kvarovi")
+                get("/api/v1/mjesta")
                         .with(user("admin")
                                 .password("test")
                                 .roles("ADMIN")
@@ -88,25 +84,22 @@ public class KvarControllerTest {
         )
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$", hasSize(7))); // 6 + 1 SA NOVIM KVAROM
+                .andExpect(jsonPath("$", hasSize(4))); // 5 + 1 SA NOVIM KVAROM
     }
 
     @Test
-    void updateKvarById() throws Exception
-    {
-        int TEST_ID = 1;
-        String TEST_UPDATE_NAZIV_KVARA = "Zamjena turbo motora";
-        String TEST_UPDATE_OPIS_KVARA = "Opsežan popravak";
+    void updateMjestoById() throws Exception {
+        int TEST_ID = 3;
+        String TEST_UPDATE_NAZIV_MJESTA = "Split update test";
 
-        Kvar updatedKvar = new Kvar();
-        updatedKvar.setNazivKvara(TEST_UPDATE_NAZIV_KVARA);
-        updatedKvar.setOpisKvara(TEST_UPDATE_OPIS_KVARA);
+        Mjesto updatedMjesto = new Mjesto();
+        updatedMjesto.setNazivMjesta(TEST_UPDATE_NAZIV_MJESTA);
 
         ObjectMapper objectMapper = new ObjectMapper();
-        String json = objectMapper.writeValueAsString(updatedKvar);
+        String json = objectMapper.writeValueAsString(updatedMjesto);
 
         this.mockMvc.perform(MockMvcRequestBuilders
-                .put("/api/v1/kvarovi/{kvarId}", TEST_ID)
+                .put("/api/v1/mjesta/{mjestoId}", TEST_ID)
                 .with(user("admin")
                         .password("test")
                         .roles("ADMIN")
@@ -117,7 +110,21 @@ public class KvarControllerTest {
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(TEST_ID))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.nazivKvara").value(TEST_UPDATE_NAZIV_KVARA))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.opisKvara").value(TEST_UPDATE_OPIS_KVARA));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.nazivMjesta").value(TEST_UPDATE_NAZIV_MJESTA));
+    }
+
+    @Test
+    void deleteMjestoById() throws Exception {
+        int TEST_ID = 5;
+
+        this.mockMvc.perform(MockMvcRequestBuilders
+                .delete("/api/v1/mjesta/{mjestoId}", TEST_ID)
+                        .with(user("admin")
+                                .password("test")
+                                .roles("ADMIN")
+                        )
+                        .with(csrf())
+        )
+                .andExpect(status().isNoContent());
     }
 }

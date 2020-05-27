@@ -2,6 +2,7 @@ INSERT INTO MJESTO(created_at, updated_at, naziv_mjesta) VALUES (CURRENT_TIMESTA
 INSERT INTO MJESTO(created_at, updated_at, naziv_mjesta) VALUES (CURRENT_TIMESTAMP, null, 'Rijeka');
 INSERT INTO MJESTO(created_at, updated_at, naziv_mjesta) VALUES (CURRENT_TIMESTAMP, null, 'Split');
 INSERT INTO MJESTO(created_at, updated_at, naziv_mjesta) VALUES (CURRENT_TIMESTAMP, null, 'Osijek');
+INSERT INTO MJESTO(created_at, updated_at, naziv_mjesta) VALUES (CURRENT_TIMESTAMP, null, 'Novi Zagreb');
 
 INSERT INTO KVAR(created_at, updated_at, naziv_kvara, opis_kvara) VALUES (CURRENT_TIMESTAMP, null, 'Zamjena motora','Opsezan popravak');
 INSERT INTO KVAR(created_at, updated_at, naziv_kvara, opis_kvara) VALUES (CURRENT_TIMESTAMP, null, 'Zamjena ulja Peugeot','brzi serivs ulja Peugeot');

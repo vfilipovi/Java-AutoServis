@@ -26,7 +26,7 @@ import { NalogCreateComponent } from './nalozi/nalog-create/nalog-create.compone
 import { NalogEditComponent } from './nalozi/nalog-edit/nalog-edit.component';
 
 import { ForbiddenPageComponent } from './shared/forbidden-page/forbidden-page.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import {LoginComponent} from './shared/login/login.component';
 import {AuthGuardService} from './guards/auth-guard.service';
 
