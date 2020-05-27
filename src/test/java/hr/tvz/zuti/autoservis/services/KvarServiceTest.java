@@ -14,6 +14,10 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.quality.Strictness;
 import org.mockito.stubbing.LenientStubber;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
@@ -77,7 +81,7 @@ public class KvarServiceTest {
         kvar.setOpisKvara("Prednje slaklo");
 
         //lenient().when(findKvarById().)
-        Mockito.lenient().when(kvarRepository.findById(id)).thenReturn(Optional.of(kvar));
+        //Mockito.lenient().when(kvarRepository.findById(id)).thenReturn(Optional.of(kvar));
 
         //when(kvarRepository.findById(id)).thenReturn(Optional.of(kvar));
 
