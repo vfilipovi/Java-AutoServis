@@ -3,7 +3,7 @@ import { Mjesto } from './mjesto.model';
 import { MjestoService} from './mjesto.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
-// import { UserService } from '../user/user.service';
+import { UserService } from '../user/user.service';
 
 @Component({
   selector: 'app-mjesta',
@@ -17,7 +17,7 @@ export class MjestaComponent implements OnInit {
     private mjestoService: MjestoService,
     private router: Router,
     private toastrService: ToastrService,
-    // public userService: UserService
+    public userService: UserService
     ) { }
 
   ngOnInit(): void {

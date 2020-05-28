@@ -3,7 +3,7 @@ import { Klijent } from './klijent.model';
 import { KlijentService} from './klijent.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
-// import { UserService } from '../user/user.service';
+import { UserService } from '../user/user.service';
 
 @Component({
   selector: 'app-klijenti',
@@ -17,7 +17,7 @@ export class KlijentiComponent implements OnInit {
     private klijentService: KlijentService,
     private router: Router,
     private toastrService: ToastrService,
-    // public userService: UserService
+    public userService: UserService
     ) { }
 
   ngOnInit(): void {
