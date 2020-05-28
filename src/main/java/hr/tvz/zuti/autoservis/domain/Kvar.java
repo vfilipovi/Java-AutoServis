@@ -16,4 +16,9 @@ public class Kvar extends EntityBase {
     @NonNull
     @NotBlank(message = "Polje 'Opis kvara' mora biti ispunjeno.")
     private String opisKvara;
+
+    @Override
+    public String toString(){
+        return "Naziv kvara: " + this.getNazivKvara()+ ". Opis kvara: " + this.getOpisKvara();
+    }
 }

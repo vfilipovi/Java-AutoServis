@@ -44,4 +44,9 @@ public class Nalog extends EntityBase {
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name="kvar_id")
     private Kvar kvar;
+
+    @Override
+    public String toString(){
+        return "Nalog za: " + registracijaVozila + ", prioriteta: " + prioritet + " .";
+    }
 }

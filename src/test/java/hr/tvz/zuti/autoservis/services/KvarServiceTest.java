@@ -2,17 +2,15 @@ package hr.tvz.zuti.autoservis.services;
 
 import hr.tvz.zuti.autoservis.domain.Kvar;
 import hr.tvz.zuti.autoservis.repositories.KvarRepository;
-import org.junit.Rule;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnit;
-import org.mockito.junit.MockitoRule;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.mockito.quality.Strictness;
-import org.mockito.stubbing.LenientStubber;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -33,8 +31,8 @@ public class KvarServiceTest {
     @InjectMocks
     private KvarService kvarService;
 
-    @Rule
-    MockitoRule mockito = MockitoJUnit.rule().strictness(Strictness.LENIENT);
+
+    //MockitoRule mockito = MockitoJUnit.rule().strictness(Strictness.LENIENT);
     
 
     @Test
@@ -42,7 +40,7 @@ public class KvarServiceTest {
         final Kvar kvar = new Kvar();
         kvar.setNazivKvara("Zamjena ekrana");
         kvar.setOpisKvara("Zamjena 12inch LCD ekrana");
-        
+
         given(kvarRepository.save(kvar)).willAnswer(invocation -> invocation.getArgument(0));
 
         Kvar savedKvar = kvarService.saveOrUpdateKvar(kvar);

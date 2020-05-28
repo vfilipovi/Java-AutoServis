@@ -45,7 +45,7 @@ public class NalogController {
     }
 
     @GetMapping("")
-    public Iterable<Nalog> getAllNalozi() { return nalogService.findAllMjesta(); }
+    public Iterable<Nalog> getAllNalozi() { return nalogService.findAllNalozi(); }
 
     @Secured("ROLE_ADMIN")
     @PutMapping("/{nalogId}")

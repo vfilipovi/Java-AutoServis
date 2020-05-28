@@ -27,4 +27,9 @@ public class Klijent extends OsobaBase {
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name="mjesto_id")
     private Mjesto mjesto;
+
+    @Override
+    public String toString(){
+        return "Rlijent: " + super.getImeIPrezime();
+    }
 }
