@@ -19,7 +19,7 @@ public class KvarSchedulerConfig {
     @Bean
     public SimpleTrigger kvaroviPrintTrigger() {
         SimpleScheduleBuilder scheduleBuilder = SimpleScheduleBuilder.simpleSchedule()
-                .withIntervalInSeconds(5).repeatForever();
+                .withIntervalInSeconds(10).repeatForever();
 
         return TriggerBuilder.newTrigger().forJob(kvaroviPrintJobDetail())
                 .withIdentity(KVAR_PRINT_TRIGGER).withSchedule(scheduleBuilder).build();

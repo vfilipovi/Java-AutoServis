@@ -34,14 +34,15 @@ public class KvarPrintJob extends QuartzJobBean {
         if(!kvaroviLista.isEmpty()){
             log.info("++++++++++++++++++++++++++++++");
             log.info("------------------------------");
+            log.info("                               ");
             log.info("Ovo su trenutni kvarovi: ");
             log.info("------------------------------");
             kvaroviLista.forEach(
-                    klijent -> log.info(klijent.toString())
+                    kvar -> log.info(kvar.toString())
             );
             log.info("------------------------------");
         } else {
-            log.info("Trenutno nema kavrova.");
+            log.info("Trenutno nema kvarova.");
             log.info("------------------------------");
         }
 
