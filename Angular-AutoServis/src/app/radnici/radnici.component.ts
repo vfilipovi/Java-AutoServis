@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { UserService } from '../user/user.service';
 
 import {Radnik} from './radnik.model';
 import {RadnikService} from './radnik.service';
@@ -16,7 +17,8 @@ export class RadniciComponent implements OnInit{
   constructor(
     private radnikService: RadnikService,
     private router: Router,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    public userService: UserService
   ) { }
 
   ngOnInit(): void{
