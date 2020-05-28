@@ -23,4 +23,8 @@ public class Radnik extends OsobaBase {
     @JoinColumn(name="mjesto_id")
     private Mjesto mjesto;
 
+    @Override
+    public String toString(){
+        return "Radnik: " + super.getImeIPrezime();
+    }
 }

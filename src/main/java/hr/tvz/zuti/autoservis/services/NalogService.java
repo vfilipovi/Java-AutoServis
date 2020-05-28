@@ -22,5 +22,5 @@ public class NalogService {
       return nalogRepository.findById(nalogId);
     }
 
-    public Iterable<Nalog> findAllMjesta() { return nalogRepository.findAll(); }
+    public Iterable<Nalog> findAllNalozi() { return nalogRepository.findAll(); }
 }

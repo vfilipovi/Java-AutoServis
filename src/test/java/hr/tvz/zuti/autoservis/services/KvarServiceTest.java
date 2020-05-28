@@ -7,8 +7,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnit;
-import org.mockito.junit.MockitoRule;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.quality.Strictness;
@@ -51,7 +49,7 @@ public class KvarServiceTest {
         final Kvar kvar = new Kvar();
         kvar.setNazivKvara("Zamjena ekrana");
         kvar.setOpisKvara("Zamjena 12inch LCD ekrana");
-        
+
         given(kvarRepository.save(kvar)).willAnswer(invocation -> invocation.getArgument(0));
 
         Kvar savedKvar = kvarService.saveOrUpdateKvar(kvar);

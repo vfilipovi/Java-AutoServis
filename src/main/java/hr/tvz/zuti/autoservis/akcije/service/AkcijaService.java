@@ -1,7 +1,7 @@
-package hr.tvz.zuti.autoservis.jobs.service;
+package hr.tvz.zuti.autoservis.akcije.service;
 
-import hr.tvz.zuti.autoservis.jobs.domain.Akcija;
-import hr.tvz.zuti.autoservis.jobs.domain.OglasiVrstuMotora;
+import hr.tvz.zuti.autoservis.akcije.domain.Akcija;
+import hr.tvz.zuti.autoservis.akcije.domain.OglasiVrstuMotora;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

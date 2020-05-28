@@ -1,6 +1,6 @@
-package hr.tvz.zuti.autoservis.jobs.web;
+package hr.tvz.zuti.autoservis.akcije.web;
 
-import hr.tvz.zuti.autoservis.jobs.service.AkcijaService;
+import hr.tvz.zuti.autoservis.akcije.service.AkcijaService;
 import hr.tvz.zuti.autoservis.services.MapValidationErrorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
