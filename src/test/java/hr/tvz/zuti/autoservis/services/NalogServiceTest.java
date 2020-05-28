@@ -1,5 +1,11 @@
 package hr.tvz.zuti.autoservis.services;
+import hr.tvz.zuti.autoservis.domain.Klijent;
+import hr.tvz.zuti.autoservis.domain.Kvar;
 import hr.tvz.zuti.autoservis.domain.Nalog;
+import hr.tvz.zuti.autoservis.domain.Radnik;
+import hr.tvz.zuti.autoservis.domain.enumerations.Prioritet;
+import hr.tvz.zuti.autoservis.domain.enumerations.StatusRadnogOdnosa;
+import hr.tvz.zuti.autoservis.domain.enumerations.VrstaRadnogOdnosa;
 import hr.tvz.zuti.autoservis.repositories.NalogRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -44,4 +50,88 @@ public class NalogServiceTest {
     @InjectMocks
     private NalogService nalogService;
 
+    @Test
+    void test_saveNalog(){
+        final Nalog nalog = new Nalog();
+        Prioritet prioritet = Prioritet.SREDNJI;
+        String priority =prioritet.toString();
+        Klijent klijent = new Klijent();
+        Kvar kvar = new Kvar();
+        Radnik radnik = new Radnik();
+        kvar.setNazivKvara("Zamjena ekrana");
+        kvar.setOpisKvara("Zamjena 12inch LCD ekrana");
+        klijent.setIme("Filip");
+        klijent.setPrezime("Grgic");
+        klijent.setOib("01234567890");
+        klijent.setBrojMob("0957235888");
+        klijent.setEmail("filip@tvz.hr");
+        radnik.setIme("Matej");
+        radnik.setPrezime("Matijevic");
+        radnik.setOib("32866544794");
+        radnik.setIznosOsnovice(3200.00);
+        radnik.setKoefPlace(7.00);
+        StatusRadnogOdnosa status = StatusRadnogOdnosa.ZAPOSLEN;
+        String test = status.toString();
+        VrstaRadnogOdnosa stat = VrstaRadnogOdnosa.NEODREDENO;
+        String testVrsta = stat.toString();
+        radnik.setVrstaRadnogOdnosa(stat);
+        radnik.setStatusRadnogOdnosa(status);
+        //nalog.setDatumIzdavanja();
+        //nalog.setDatumPreuzimanja();
+        nalog.setPrioritet(prioritet);
+        nalog.setRegistracijaVozila("ZG5555FZ");
+        nalog.setKlijent(klijent);
+        nalog.setKvar(kvar);
+        nalog.setRadnik(radnik);
+        nalog.setUtroseniRadniSatiServisa(3);
+
+        given(nalogRepository.save(nalog)).willAnswer(invocation -> invocation.getArgument(0));
+
+        Nalog savedNalog = nalogService.saveOrUpdateNalog(nalog);
+        assertThat(savedNalog).isNotNull();
+        verify(nalogRepository).save(any(Nalog.class));
+    }
+    @Test
+    void test_updateNalog(){
+        final Nalog nalog = new Nalog();
+        Prioritet prioritet = Prioritet.SREDNJI;
+        String priority =prioritet.toString();
+        Klijent klijent = new Klijent();
+        Kvar kvar = new Kvar();
+        Radnik radnik = new Radnik();
+        kvar.setNazivKvara("Zamjena ekrana");
+        kvar.setOpisKvara("Zamjena 12inch LCD ekrana");
+        klijent.setIme("Filip");
+        klijent.setPrezime("Grgic");
+        klijent.setOib("01234567890");
+        klijent.setBrojMob("0957235888");
+        klijent.setEmail("filip@tvz.hr");
+        radnik.setIme("Matej");
+        radnik.setPrezime("Matan");
+        radnik.setOib("32866544794");
+        radnik.setIznosOsnovice(3200.00);
+        radnik.setKoefPlace(7.00);
+        StatusRadnogOdnosa status = StatusRadnogOdnosa.ZAPOSLEN;
+        String test = status.toString();
+        VrstaRadnogOdnosa stat = VrstaRadnogOdnosa.NEODREDENO;
+        String testVrsta = stat.toString();
+        radnik.setVrstaRadnogOdnosa(stat);
+        radnik.setStatusRadnogOdnosa(status);
+        //nalog.setDatumIzdavanja();
+        //nalog.setDatumPreuzimanja();
+        nalog.setPrioritet(prioritet);
+        nalog.setRegistracijaVozila("ZG5555FZ");
+        nalog.setKlijent(klijent);
+        nalog.setKvar(kvar);
+        nalog.setRadnik(radnik);
+        nalog.setUtroseniRadniSatiServisa(3);
+
+        given(nalogRepository.save(nalog)).willReturn(nalog);
+
+        final Nalog expected = nalogService.saveOrUpdateNalog(nalog);
+
+        assertThat(expected).isNotNull();
+
+        verify(nalogRepository).save(any(Nalog.class));
+    }
 }
